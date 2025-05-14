@@ -24,8 +24,9 @@ const Footer = () => {
             <nav className="flex flex-col space-y-2">
               <Link to="/" className="text-gray-300 hover:text-white">Home</Link>
               <Link to="/services" className="text-gray-300 hover:text-white">Services</Link>
-              <Link to="/benefits" className="text-gray-300 hover:text-white">Benefits</Link>
+              <Link to="/auditors-portfolio" className="text-gray-300 hover:text-white">Auditor's Portfolio</Link>
               <Link to="/contact" className="text-gray-300 hover:text-white">Contact</Link>
+              <Link to="/help-services" className="text-gray-300 hover:text-white">Help Services</Link>
               <Link to="/quote" className="text-gray-300 hover:text-white">Request a Quote</Link>
             </nav>
           </div>
