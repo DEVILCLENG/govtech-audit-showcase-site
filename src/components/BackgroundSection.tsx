@@ -22,7 +22,7 @@ const BackgroundSection = () => {
         <span>
           Currently engaged with{" "}
           <Link to="#client-section" className="text-primary underline flex items-center inline-flex">
-            28 government agencies <ExternalLink size={14} className="ml-1" />
+            28 agencies <ExternalLink size={14} className="ml-1" />
           </Link>
         </span>
       )
@@ -37,13 +37,13 @@ const BackgroundSection = () => {
     },
     {
       icon: FileDigit,
-      title: "Government Knowledge",
-      description: "In-depth knowledge of government ICT systems, processes and IM8 policy"
+      title: "Knowledge",
+      description: "In-depth knowledge of ICT systems, processes and IM8 policy"
     },
     {
       icon: Building,
       title: "Capability Development",
-      description: "Develop in-house ICT Audit Capabilities for government agencies"
+      description: "Develop in-house ICT Audit Capabilities for agencies"
     },
     {
       icon: Database,
@@ -78,7 +78,7 @@ const BackgroundSection = () => {
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4">Our Background</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Established to address the critical need for specialized ICT audit services within government agencies.
+            Established to address the critical need for specialized ICT audit services within agencies.
           </p>
         </div>
 
@@ -119,7 +119,7 @@ const BackgroundSection = () => {
             <div className="flex-1">
               <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
               <p className="text-lg opacity-90">
-                To strengthen government IT systems through specialized audit services that understand the unique needs of public agencies.
+                To strengthen IT systems through specialized audit services that understand the unique needs of public agencies.
               </p>
             </div>
             <div className="mt-6 md:mt-0 md:ml-6 flex-shrink-0">

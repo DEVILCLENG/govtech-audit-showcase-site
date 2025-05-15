@@ -14,10 +14,10 @@ const Hero = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <h1 className="text-4xl md:text-5xl font-bold leading-tight">
-              Professional IT Audit Services for Government Agencies
+              Professional IT Audit Services for Agencies
             </h1>
             <p className="text-lg md:text-xl opacity-90">
-              Enhance your agency's security, compliance, and performance with our specialized IT audit services tailored for government institutions.
+              Enhance your agency's security, compliance, and performance with our specialized IT audit services tailored for institutions.
             </p>
             <div>
               <ul className="space-y-2">

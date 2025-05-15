@@ -30,7 +30,7 @@ const ClientSection = () => {
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4">Our Clientele</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Trusted by government agencies across Singapore to deliver exceptional IT audit services.
+            Trusted by agencies across Singapore to deliver exceptional IT audit services.
           </p>
         </div>
 
@@ -44,7 +44,7 @@ const ClientSection = () => {
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead colSpan={5} className="text-center">Government Agencies We Serve</TableHead>
+                <TableHead colSpan={5} className="text-center">Agencies We Serve</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
