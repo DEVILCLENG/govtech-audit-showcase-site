@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import PageBanner from "@/components/PageBanner";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Award, FileCheck, Users } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -120,14 +121,11 @@ const AuditorsPortfolio = () => {
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-grow pt-16">
-        <div className="bg-primary text-white py-16">
-          <div className="container mx-auto px-4 text-center">
-            <h1 className="text-4xl font-bold mb-4">Our Team</h1>
-            <p className="text-lg max-w-3xl mx-auto">
-              Meet our team of certified IT audit specialists with extensive experience working with government agencies.
-            </p>
-          </div>
-        </div>
+        <PageBanner 
+          title="Our Team"
+          description="Meet our team of certified IT audit specialists with extensive experience working with government agencies."
+          backgroundImage="/lovable-uploads/1500673922987-e212871fec22.png"
+        />
         
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4">

@@ -85,3 +85,20 @@
     rgba(30, 101, 165, 0.8) 100%
   );
 }
+
+/* Animation for background elements */
+@keyframes subtle-pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-subtle-pulse {
+  animation: subtle-pulse 10s ease-in-out infinite;
+}

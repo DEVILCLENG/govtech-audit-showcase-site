@@ -1,8 +1,8 @@
-
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ServiceSection from "@/components/ServiceSection";
 import CallToAction from "@/components/CallToAction";
+import PageBanner from "@/components/PageBanner";
 
 const Services = () => {
   const auditProcess = [
@@ -48,14 +48,11 @@ const Services = () => {
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-grow pt-16">
-        <div className="bg-primary text-white py-16">
-          <div className="container mx-auto px-4 text-center">
-            <h1 className="text-4xl font-bold mb-4">Our IT Audit Services</h1>
-            <p className="text-lg max-w-3xl mx-auto">
-              We provide comprehensive IT audit services aligned with government standards and best practices. Our audits cover crucial areas to ensure your IT systems meet the highest security, compliance, and operational requirements.
-            </p>
-          </div>
-        </div>
+        <PageBanner 
+          title="Our IT Audit Services"
+          description="We provide comprehensive IT audit services aligned with government standards and best practices. Our audits cover crucial areas to ensure your IT systems meet the highest security, compliance, and operational requirements."
+          backgroundImage="/lovable-uploads/1487058792275-0ad4aaf24ca7.png"
+        />
         
         <ServiceSection />
         

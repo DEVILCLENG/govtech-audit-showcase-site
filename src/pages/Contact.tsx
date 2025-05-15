@@ -1,7 +1,7 @@
-
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ContactSection from "@/components/ContactSection";
+import PageBanner from "@/components/PageBanner";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -46,14 +46,11 @@ const Contact = () => {
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-grow pt-16">
-        <div className="bg-primary text-white py-16">
-          <div className="container mx-auto px-4 text-center">
-            <h1 className="text-4xl font-bold mb-4">Contact Us</h1>
-            <p className="text-lg max-w-3xl mx-auto">
-              Have questions or ready to discuss your IT audit needs? Our team is here to help you navigate the complexities of government IT systems.
-            </p>
-          </div>
-        </div>
+        <PageBanner 
+          title="Contact Us"
+          description="Have questions or ready to discuss your IT audit needs? Our team is here to help you navigate the complexities of government IT systems."
+          backgroundImage="/lovable-uploads/1470813740244-df37b8c1edcb.png"
+        />
         
         <ContactSection />
         
