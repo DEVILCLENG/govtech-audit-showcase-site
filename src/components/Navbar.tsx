@@ -19,13 +19,17 @@ const Navbar = () => {
   return (
     <header className="fixed w-full bg-white shadow-sm z-50">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-        <Link to="/" className="flex items-center space-x-2">
+        <Link to="/" className="flex items-center space-x-3">
           <div className="flex items-center">
             <img 
               src="/lovable-uploads/7221ae09-9575-4f04-ad23-8dd40b4fc3a7.png" 
               alt="GovTech Singapore" 
               className="h-10"
             />
+            <div className="ml-3 flex flex-col">
+              <span className="font-bold text-primary text-lg leading-tight">IAD-SS</span>
+              <span className="text-xs text-gray-600 leading-tight">IT Audit Division</span>
+            </div>
           </div>
         </Link>
 

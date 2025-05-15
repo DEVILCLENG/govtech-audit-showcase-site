@@ -15,6 +15,10 @@ const Footer = () => {
                   alt="GovTech Singapore" 
                   className="h-8 mr-2"
                 />
+                <div className="ml-2 flex flex-col">
+                  <span className="font-bold text-white text-base leading-tight">IAD-SS</span>
+                  <span className="text-xs text-gray-300 leading-tight">IT Audit Division</span>
+                </div>
               </div>
             </h3>
             <p className="text-gray-300 mb-4">
