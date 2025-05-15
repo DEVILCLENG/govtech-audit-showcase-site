@@ -9,6 +9,10 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 const HelpServices = () => {
   const faqs = [
     {
+      question: "What are the audit objectives and scope?",
+      answer: "Our audits assess controls across key areas including: Accounts and Access Management (privileged access, security controls, account validation), Security Monitoring (logging, independent review, anomalous activity), Vulnerability Management (remediation processes, patch management, EOSL monitoring), Business Continuity (backup plans, disaster recovery, system redundancy), and more. We tailor the scope to your agency's specific requirements while ensuring alignment with government standards."
+    },
+    {
       question: "What types of IT audits does GovTech IAD-SS provide?",
       answer: "We provide comprehensive IT audit services including security audits, compliance audits, performance audits, risk assessments, disaster recovery assessments, and custom audit solutions tailored to your agency's specific needs."
     },
