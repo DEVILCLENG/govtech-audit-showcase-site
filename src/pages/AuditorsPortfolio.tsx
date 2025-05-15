@@ -10,6 +10,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 
 const AuditorsPortfolio = () => {
   const auditors = [
+    // Lead Auditors first
     {
       name: "Koh Sook Bing",
       title: "Lead Auditor",
@@ -27,21 +28,14 @@ const AuditorsPortfolio = () => {
       profile: "Has 24 years of ICT experience in public sector, banking and system integrator environment. He was with GIG managing central services such as GoMAX, SG-VPN and SG-EPP. Prior to joining GovTech and armed with an EEE degree from NTU, he spent 11 years in a demanding trading room environment (DBS and OCBC). His areas of responsibility includes the implementation and maintenance of trading room infra (data center facilities, firewalls, network, fire safety, BCP, etc) and market data infra (Bloomberg, Reuters, etc) in Singapore, Mumbai, Seoul, Shanghai, Taipei and Jakarta. His information security certifications CISA (Certified Information System Auditor) and CCSK (Certificate of Cloud Security Knowledge)"
     },
     {
-      name: "Vivien Yeo",
-      title: "Auditor",
-      certifications: ["CISA", "CCSK"],
-      expertise: ["Internal IT Audits", "Application & Infrastructure Audits", "IT General Controls"],
-      yearsExperience: "27", // 12 years audit + 15 years IT
-      profile: "Vivien has close to 12 years of working experiences in internal IT audits, mainly with the financial services. Prior to audit, she has 15 years of IT experience in the defence, telecommunication, manufacturing and financial sectors. Prior joining GovTech, she has led and/or participated in audits on applications, infrastructure, data centre, project management, outsourcing / third party management, IT general controls, service management, technology governance, and cybersecurity. Vivien holds a Bachelor of Science Degree, from National University of Singapore (in Computational Science and Chemistry). Her relevant information security certifications include CISA (Certified Information System Auditor) and CCSK (Certificate of Cloud Security Knowledge)."
+      name: "Leonard Siau",
+      title: "Lead Auditor",
+      certifications: ["CISA", "CISSP", "CCSP"],
+      expertise: ["Cloud Architecture", "Identity Management", "Infrastructure Consulting"],
+      yearsExperience: "20+",
+      profile: "Leonard comes from an infrastructure consulting background and has been a Cloud, Identity and collaboration architect/consultant for 20+ years. He has worked for companies such as Microsoft, NCS/Singtel, Hewlett Packard and Dimension Data. In his career, he has engaged with numerous enterprise clientele across various industry verticals such as public sector, media and communications, manufacturing, travel and transport and financial services. In Govtech, he has worked on major projects such as GDC, Government Private Cloud, Government Commercial Cloud, Digital Workplace Program and NDI. He holds a Bachelor's Degree in Information Systems from the University of Melbourne and as well multiple professional technical certifications in AWS, Azure and Microsoft. Relevant certifications include CISA, CISSP and CCSP."
     },
-    {
-      name: "Jeremy Low",
-      title: "Auditor",
-      certifications: ["CISA", "CISM"],
-      expertise: ["Infrastructure", "Security", "Technical Services"],
-      yearsExperience: "8+",
-      profile: "Held infrastructure roles in servers, network, desktop and security as technical services consultant (TSC). Supported Agencies like SportSG, MOM and GovTech since 2015. Notable key projects undertaken include the 28th SEA and Para Games with SportSG, GPC cloud migration, facial recognition trials at MOM and Digital Governance Platform (DGP) system for GVG GovTech. His relevant information security certifications include CISA and CISM."
-    },
+    // Senior Auditors second
     {
       name: "Isaac Lau",
       title: "Senior Auditor",
@@ -59,22 +53,6 @@ const AuditorsPortfolio = () => {
       profile: "Luke has been in the Information Technology industry for more than 12 years, where he has always focused on delivering valued outcomes to his clients. Prior to joining GovTech, he was part of Ensign InfoSecurity's consulting arm. There, he led the GRC Team in the delivery of both external and internal information security audits against frameworks and standards such as NIST, PCI DSS, CCoP, and IEC/ISO 27001. Luke has conducted several risk assessments using well-known frameworks, where his most recent one took a threat-informed approach, leveraging cyber threat intelligence, the MITRE ATT&CK framework, and STRIDE threat modelling. His relevant information security certifications include CISSP, CISA, CRISC, and CISM. He holds a Bachelor's Degree in Cyber Forensics, Information Security and Management and Business Information Systems."
     },
     {
-      name: "Cecilia Leng",
-      title: "Auditor",
-      certifications: ["CISA", "CRISC", "ITIL 4", "CQM", "CISSP", "CCSP"],
-      expertise: ["Governance", "Compliance", "Internal Audits", "Third Party Management"],
-      yearsExperience: "24+", // 10 years IT + 14 years global
-      profile: "Cecilia has more than 10 years of IT experience specializing in governance, compliance, internal audits, and as a single Point-Of-Contact (POC) for 3rd party audits in defence, telecommunication, and healthcare industries. Prior to joining ATS (Assurity Trusted Solutions), she has more than 14 years global experiences in leading 1st and 2nd party auditing, Third Party management, spearheading business improvements initiatives, new business functions setup and business re-constructions using LEAN Six-Sigma methodology in Oil and Gas, Chemical, Automotive and Semi-conductor industries. Her relevant certifications include CISA (Certified Information System Auditor), CRISC (Certified Risk Information System Certification), ITIL 4 (Information Technology Infrastructure Library), and CQM (Certified Quality Manager), CISSP and CCSP."
-    },
-    {
-      name: "Leonard Siau",
-      title: "Lead Auditor",
-      certifications: ["CISA", "CISSP", "CCSP"],
-      expertise: ["Cloud Architecture", "Identity Management", "Infrastructure Consulting"],
-      yearsExperience: "20+",
-      profile: "Leonard comes from an infrastructure consulting background and has been a Cloud, Identity and collaboration architect/consultant for 20+ years. He has worked for companies such as Microsoft, NCS/Singtel, Hewlett Packard and Dimension Data. In his career, he has engaged with numerous enterprise clientele across various industry verticals such as public sector, media and communications, manufacturing, travel and transport and financial services. In Govtech, he has worked on major projects such as GDC, Government Private Cloud, Government Commercial Cloud, Digital Workplace Program and NDI. He holds a Bachelor's Degree in Information Systems from the University of Melbourne and as well multiple professional technical certifications in AWS, Azure and Microsoft. Relevant certifications include CISA, CISSP and CCSP."
-    },
-    {
       name: "Leslie Ho",
       title: "Senior Auditor",
       certifications: ["CISA", "CISSP", "CCSP"],
@@ -85,10 +63,35 @@ const AuditorsPortfolio = () => {
     {
       name: "Abdillah Ali",
       title: "Senior Auditor",
-      certifications: ["CISA (undergoing)", "CCSK (undergoing)", "CISSP (undergoing)", "CCSP (undergoing)"],
+      certifications: ["CISA", "CCSK", "CISSP", "CCSP"],
       expertise: ["IT Operations", "Cybersecurity", "Systems Integration"],
       yearsExperience: "18",
       profile: "Abdillah has been working in various IT roles over the past 18 years and took interest in cybersecurity, governance and compliance recently. He has held roles in contributing to the strategic planning, budgeting, design, development, implementation and enforcement of IT operational procedures, policies and standards associated with servers/endpoint security protection technologies for the Whole of Government since 2015. Prior to joining GovTech, he was leading system integration projects, technical support and administration for systems and software for customers such as Changi General Hospital and the Ministry of Education. He is undergoing relevant information security certifications which includes CISA and CCSK, CISSP, CCSP"
+    },
+    // Regular Auditors last
+    {
+      name: "Vivien Yeo",
+      title: "Auditor",
+      certifications: ["CISA", "CCSK"],
+      expertise: ["Internal IT Audits", "Application & Infrastructure Audits", "IT General Controls"],
+      yearsExperience: "27", // 12 years audit + 15 years IT
+      profile: "Vivien has close to 12 years of working experiences in internal IT audits, mainly with the financial services. Prior to audit, she has 15 years of IT experience in the defence, telecommunication, manufacturing and financial sectors. Prior joining GovTech, she has led and/or participated in audits on applications, infrastructure, data centre, project management, outsourcing / third party management, IT general controls, service management, technology governance, and cybersecurity. Vivien holds a Bachelor of Science Degree, from National University of Singapore (in Computational Science and Chemistry). Her relevant information security certifications include CISA (Certified Information System Auditor) and CCSK (Certificate of Cloud Security Knowledge)."
+    },
+    {
+      name: "Jeremy Low",
+      title: "Auditor",
+      certifications: ["CISA", "CISM"],
+      expertise: ["Infrastructure", "Security", "Technical Services"],
+      yearsExperience: "8+",
+      profile: "Held infrastructure roles in servers, network, desktop and security as technical services consultant (TSC). Supported Agencies like SportSG, MOM and GovTech since 2015. Notable key projects undertaken include the 28th SEA and Para Games with SportSG, GPC cloud migration, facial recognition trials at MOM and Digital Governance Platform (DGP) system for GVG GovTech. His relevant information security certifications include CISA and CISM."
+    },
+    {
+      name: "Cecilia Leng",
+      title: "Auditor",
+      certifications: ["CISA", "CRISC", "ITIL 4", "CQM", "CISSP", "CCSP"],
+      expertise: ["Governance", "Compliance", "Internal Audits", "Third Party Management"],
+      yearsExperience: "24+", // 10 years IT + 14 years global
+      profile: "Cecilia has more than 10 years of IT experience specializing in governance, compliance, internal audits, and as a single Point-Of-Contact (POC) for 3rd party audits in defence, telecommunication, and healthcare industries. Prior to joining ATS (Assurity Trusted Solutions), she has more than 14 years global experiences in leading 1st and 2nd party auditing, Third Party management, spearheading business improvements initiatives, new business functions setup and business re-constructions using LEAN Six-Sigma methodology in Oil and Gas, Chemical, Automotive and Semi-conductor industries. Her relevant certifications include CISA (Certified Information System Auditor), CRISC (Certified Risk Information System Certification), ITIL 4 (Information Technology Infrastructure Library), and CQM (Certified Quality Manager), CISSP and CCSP."
     },
     {
       name: "Eileen Tan",
