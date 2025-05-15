@@ -1,6 +1,14 @@
 
 import React from 'react';
-import { Briefcase } from 'lucide-react';
+import { ListChecks } from 'lucide-react';
+import { 
+  Table,
+  TableHeader,
+  TableBody,
+  TableRow,
+  TableHead,
+  TableCell
+} from "@/components/ui/table";
 
 const ClientSection = () => {
   const clients = [
@@ -9,6 +17,12 @@ const ClientSection = () => {
     "PUB", "NDI", "AGC", "CEA", "URA", "MCCY", "CUSTOMS", "NSCS", 
     "NLB", "IRAS", "MDDI"
   ];
+
+  // Arrange clients into rows for the table (5 clients per row)
+  const clientRows = [];
+  for (let i = 0; i < clients.length; i += 5) {
+    clientRows.push(clients.slice(i, i + 5));
+  }
 
   return (
     <section id="client-section" className="py-16 bg-white">
@@ -20,15 +34,35 @@ const ClientSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-6">
-          {clients.map((client, index) => (
-            <div key={index} className="flex flex-col items-center justify-center p-4 bg-gray-50 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-              <div className="bg-primary/10 p-3 rounded-full mb-2">
-                <Briefcase size={24} className="text-primary" />
-              </div>
-              <span className="text-sm font-medium text-gray-800">{client}</span>
-            </div>
-          ))}
+        <div className="flex justify-center items-center mb-8">
+          <div className="bg-primary/10 p-3 rounded-full">
+            <ListChecks size={32} className="text-primary" />
+          </div>
+        </div>
+
+        <div className="max-w-4xl mx-auto">
+          <Table>
+            <TableHeader>
+              <TableRow>
+                <TableHead colSpan={5} className="text-center">Government Agencies We Serve</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {clientRows.map((row, rowIndex) => (
+                <TableRow key={rowIndex}>
+                  {row.map((client, cellIndex) => (
+                    <TableCell key={cellIndex} className="text-center font-medium">
+                      {client}
+                    </TableCell>
+                  ))}
+                  {/* Add empty cells if the row is not complete */}
+                  {Array(5 - row.length).fill(0).map((_, index) => (
+                    <TableCell key={`empty-${index}`}></TableCell>
+                  ))}
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
         </div>
       </div>
     </section>
