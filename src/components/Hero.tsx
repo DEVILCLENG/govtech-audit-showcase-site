@@ -1,7 +1,5 @@
 
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
-import { ArrowRight, CheckCircle } from "lucide-react";
+import { CheckCircle } from "lucide-react";
 
 const Hero = () => {
   const keyPoints = [
@@ -31,16 +29,6 @@ const Hero = () => {
                   </li>
                 ))}
               </ul>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-4 pt-2">
-              <Button asChild size="lg" className="bg-white text-primary hover:bg-gray-100">
-                <Link to="/quote">Request a Quote</Link>
-              </Button>
-              <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
-                <Link to="/services" className="flex items-center">
-                  Explore Our Services <ArrowRight size={16} className="ml-2" />
-                </Link>
-              </Button>
             </div>
           </div>
           <div className="hidden md:block">
