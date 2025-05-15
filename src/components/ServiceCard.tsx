@@ -1,8 +1,6 @@
 
-import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { LucideIcon } from "lucide-react";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 interface ServiceCardProps {
   title: string;
@@ -31,11 +29,6 @@ const ServiceCard = ({ title, description, icon: Icon, features }: ServiceCardPr
           ))}
         </ul>
       </CardContent>
-      <CardFooter>
-        <Button asChild variant="outline" className="w-full">
-          <Link to="/quote">Request Quote</Link>
-        </Button>
-      </CardFooter>
     </Card>
   );
 };
