@@ -30,7 +30,7 @@ const TestimonialSection = () => {
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4">What Our Clients Say</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Don't just take our word for it. Here's what government agencies have to say about our IT audit services.
+            Don't just take our word for it. Here's what agencies have to say about our IT audit services.
           </p>
         </div>
         
