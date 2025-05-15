@@ -5,11 +5,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { CheckCircle, Search } from "lucide-react";
+import { CheckCircle } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
-import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem } from "@/components/ui/command";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { cn } from "@/lib/utils";
 
 // Agency data for dropdown - ensure this data is properly initialized and sorted
 const agencies = [
@@ -76,7 +73,6 @@ const QuoteForm = () => {
     message: "",
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [open, setOpen] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -148,46 +144,21 @@ const QuoteForm = () => {
         </div>
         <div className="space-y-2">
           <Label htmlFor="agency">Agency</Label>
-          <Popover open={open} onOpenChange={setOpen}>
-            <PopoverTrigger asChild>
-              <Button
-                variant="outline"
-                role="combobox"
-                aria-expanded={open}
-                className="w-full justify-between text-left font-normal"
-              >
-                {formState.agency
-                  ? agencies.find((agency) => 
-                      agency.name === formState.agency || agency.acronym === formState.agency
-                    )?.name || formState.agency
-                  : "Select an agency"}
-                <Search className="ml-2 h-4 w-4 shrink-0 opacity-50" />
-              </Button>
-            </PopoverTrigger>
-            <PopoverContent className="w-full p-0" align="start">
-              <Command>
-                <CommandInput placeholder="Search agency..." />
-                <CommandEmpty>No agency found.</CommandEmpty>
-                <CommandGroup className="max-h-64 overflow-auto">
-                  {agencies.map((agency) => (
-                    <CommandItem
-                      key={agency.acronym}
-                      value={agency.name}
-                      onSelect={() => {
-                        handleAgencyChange(agency.name);
-                        setOpen(false);
-                      }}
-                    >
-                      <div className="flex flex-col">
-                        <span>{agency.name}</span>
-                        <span className="text-xs text-gray-500">{agency.acronym}</span>
-                      </div>
-                    </CommandItem>
-                  ))}
-                </CommandGroup>
-              </Command>
-            </PopoverContent>
-          </Popover>
+          <Select onValueChange={handleAgencyChange} value={formState.agency}>
+            <SelectTrigger className="w-full">
+              <SelectValue placeholder="Select an agency" />
+            </SelectTrigger>
+            <SelectContent>
+              {agencies.map((agency) => (
+                <SelectItem key={agency.acronym} value={agency.name}>
+                  <div className="flex flex-col">
+                    <span>{agency.name}</span>
+                    <span className="text-xs text-gray-500">{agency.acronym}</span>
+                  </div>
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
         </div>
         <div className="space-y-2">
           <Label htmlFor="department">Department</Label>
