@@ -47,16 +47,7 @@ const Services = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
-      <main className="flex-grow pt-16">
-        <div className="bg-primary text-white py-16">
-          <div className="container mx-auto px-4 text-center">
-            <h1 className="text-4xl font-bold mb-4">Our IT Audit Services</h1>
-            <p className="text-lg max-w-3xl mx-auto">
-              Comprehensive IT audit solutions specifically designed for government agencies to ensure security, compliance, and optimal performance.
-            </p>
-          </div>
-        </div>
-        
+      <main className="flex-grow">
         <ServiceSection />
         
         <section className="py-16 bg-white">
