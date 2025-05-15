@@ -1,6 +1,7 @@
 
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, ExternalLink } from "lucide-react";
+import VisitCounter from "@/components/VisitCounter";
 
 const Footer = () => {
   return (
@@ -64,12 +65,17 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-8 pt-6 text-sm text-gray-400">
+        <div className="border-t border-gray-800 mt-8 pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <div>© {new Date().getFullYear()} GovTech Singapore. All rights reserved.</div>
-            <div className="mt-4 md:mt-0 space-x-4">
-              <a href="#" className="hover:text-white">Privacy Policy</a>
-              <a href="#" className="hover:text-white">Terms of Service</a>
+            <div className="text-sm text-gray-400">© {new Date().getFullYear()} GovTech Singapore. All rights reserved.</div>
+            <div className="mt-4 md:mt-0 flex items-center">
+              <div className="mr-4">
+                <VisitCounter />
+              </div>
+              <div className="space-x-4 text-sm text-gray-400">
+                <a href="#" className="hover:text-white">Privacy Policy</a>
+                <a href="#" className="hover:text-white">Terms of Service</a>
+              </div>
             </div>
           </div>
         </div>
