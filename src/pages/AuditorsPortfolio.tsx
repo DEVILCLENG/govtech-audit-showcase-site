@@ -1,13 +1,27 @@
-
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Award, FileCheck, Users } from "lucide-react";
 import { Link } from "react-router-dom";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent } from "@/components/ui/card";
 
 const AuditorsPortfolio = () => {
+  // Image mapping for auditors - matching names to uploaded images
+  const auditorImages = {
+    "Koh Sook Bing": "/lovable-uploads/a0a501de-6284-42cb-a506-b0bc25512d5f.png",
+    "Linus Teo": "/lovable-uploads/5f57a04d-7ce3-4379-ac15-0a6fed91ecf1.png",
+    "Leonard Siau": "/lovable-uploads/e301f518-1a23-43bd-831c-ed71ace6a75b.png",
+    "Isaac Lau": "/lovable-uploads/307ee1cb-12a2-45ff-bd12-02fc8137ae74.png",
+    "Luke Chang": "/lovable-uploads/0b8d54d8-6726-4938-b131-2f1c53963f37.png",
+    "Leslie Ho": "/lovable-uploads/ec9a39ea-6eb7-47f6-998f-7e31fbaa84ae.png",
+    "Abdillah Ali": "/lovable-uploads/5c8478f1-fd07-4631-bf58-dbf185c07c13.png",
+    "Vivien Yeo": "/lovable-uploads/b9bdbb14-992b-4f98-aa0f-ed9e22eece96.png",
+    "Jeremy Low": "/lovable-uploads/e399694b-9a15-4c73-b6ea-7e7b6bfeddd6.png",
+    "Cecilia Leng": "/lovable-uploads/3b13132e-0b4e-4bd9-b13f-c77c584cd9ec.png",
+    "Eileen Tan": "/lovable-uploads/b9bdbb14-992b-4f98-aa0f-ed9e22eece96.png" // Using a duplicate as placeholder
+  };
+
   const auditors = [
     // Lead Auditors first
     {
@@ -125,6 +139,10 @@ const AuditorsPortfolio = () => {
                   <CardContent className="p-6">
                     <div className="flex items-center gap-4 mb-4">
                       <Avatar className="h-16 w-16">
+                        <AvatarImage 
+                          src={auditorImages[auditor.name]} 
+                          alt={`${auditor.name} photo`} 
+                        />
                         <AvatarFallback className="bg-primary text-white">
                           {auditor.name.split(' ').map(n => n[0]).join('')}
                         </AvatarFallback>
