@@ -5,6 +5,29 @@ import ServiceSection from "@/components/ServiceSection";
 import CallToAction from "@/components/CallToAction";
 
 const Services = () => {
+  const auditProcess = [
+    {
+      step: 1,
+      title: "Planning",
+      description: "We work with you to understand your needs and define the audit scope."
+    },
+    {
+      step: 2,
+      title: "Assessment",
+      description: "Our expert team conducts a thorough review of your systems and processes."
+    },
+    {
+      step: 3,
+      title: "Reporting",
+      description: "We provide detailed findings with clear recommendations for improvement."
+    },
+    {
+      step: 4,
+      title: "Follow-up",
+      description: "We help implement changes and conduct follow-up assessments to ensure success."
+    }
+  ];
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
@@ -17,44 +40,106 @@ const Services = () => {
             </p>
           </div>
         </div>
+        
         <ServiceSection />
+        
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4">
             <div className="bg-gray-50 rounded-lg p-8 shadow-sm">
               <h2 className="text-2xl font-bold mb-4">Our Audit Process</h2>
               <div className="grid md:grid-cols-4 gap-6">
-                <div className="border-l-4 border-primary pl-4">
-                  <div className="font-bold text-xl mb-2 flex items-center">
-                    <span className="bg-primary text-white rounded-full w-8 h-8 inline-flex items-center justify-center mr-2">1</span>
-                    Planning
+                {auditProcess.map((process) => (
+                  <div key={process.step} className="border-l-4 border-primary pl-4">
+                    <div className="font-bold text-xl mb-2 flex items-center">
+                      <span className="bg-primary text-white rounded-full w-8 h-8 inline-flex items-center justify-center mr-2">{process.step}</span>
+                      {process.title}
+                    </div>
+                    <p className="text-gray-600">{process.description}</p>
                   </div>
-                  <p className="text-gray-600">We work with you to understand your needs and define the audit scope.</p>
-                </div>
-                <div className="border-l-4 border-primary pl-4">
-                  <div className="font-bold text-xl mb-2 flex items-center">
-                    <span className="bg-primary text-white rounded-full w-8 h-8 inline-flex items-center justify-center mr-2">2</span>
-                    Assessment
-                  </div>
-                  <p className="text-gray-600">Our expert team conducts a thorough review of your systems and processes.</p>
-                </div>
-                <div className="border-l-4 border-primary pl-4">
-                  <div className="font-bold text-xl mb-2 flex items-center">
-                    <span className="bg-primary text-white rounded-full w-8 h-8 inline-flex items-center justify-center mr-2">3</span>
-                    Reporting
-                  </div>
-                  <p className="text-gray-600">We provide detailed findings with clear recommendations for improvement.</p>
-                </div>
-                <div className="border-l-4 border-primary pl-4">
-                  <div className="font-bold text-xl mb-2 flex items-center">
-                    <span className="bg-primary text-white rounded-full w-8 h-8 inline-flex items-center justify-center mr-2">4</span>
-                    Follow-up
-                  </div>
-                  <p className="text-gray-600">We help implement changes and conduct follow-up assessments to ensure success.</p>
-                </div>
+                ))}
               </div>
             </div>
           </div>
         </section>
+        
+        <section className="py-16 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-bold mb-8 text-center">Audit Objectives & Scope</h2>
+            <div className="bg-white rounded-lg shadow-sm p-6 mb-8">
+              <h3 className="text-xl font-bold mb-4">Our Comprehensive Audit Approach</h3>
+              <p className="text-gray-600 mb-6">
+                Our IT audit methodology is aligned with industry best practices and government requirements. We conduct detailed assessments across critical areas to ensure your systems meet the highest standards of security and compliance.
+              </p>
+              
+              <div className="overflow-x-auto">
+                <table className="min-w-full border-collapse">
+                  <thead>
+                    <tr className="bg-gray-100 text-left">
+                      <th className="p-4 font-semibold border">Audit Scope</th>
+                      <th className="p-4 font-semibold border">Key Audit Objectives</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td className="p-4 border font-medium">Accounts and Access Management</td>
+                      <td className="p-4 border text-gray-700">
+                        <ul className="list-disc pl-5 space-y-1">
+                          <li>Assess the controls around privileged access management (approval process, access review)</li>
+                          <li>Ensure that access is approved and assigned to appropriate personnel</li>
+                          <li>Verify security controls (MFA, PIM, etc.) are implemented to prevent unauthorized usage</li>
+                          <li>Validate that inactive accounts are reviewed and disabled timely</li>
+                          <li>Assess Central Account Management implementation across systems</li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="p-4 border font-medium">Security Monitoring</td>
+                      <td className="p-4 border text-gray-700">
+                        <ul className="list-disc pl-5 space-y-1">
+                          <li>Verify completeness of privileged account activity logging</li>
+                          <li>Confirm independent review of activity logs</li>
+                          <li>Assess anomalous activity monitoring processes</li>
+                          <li>Evaluate Automated Baseline Log Review (ABLR) implementation</li>
+                          <li>Review correlation between change requests and privileged activities</li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="p-4 border font-medium">Vulnerability Management</td>
+                      <td className="p-4 border text-gray-700">
+                        <ul className="list-disc pl-5 space-y-1">
+                          <li>Assess vulnerability identification and remediation processes</li>
+                          <li>Review patch management effectiveness and timeliness</li>
+                          <li>Verify EOSL asset monitoring and decommissioning planning</li>
+                          <li>Evaluate vulnerability assessment and penetration testing schedules</li>
+                          <li>Assess code review processes and remediation timeframes</li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="p-4 border font-medium">Business Continuity</td>
+                      <td className="p-4 border text-gray-700">
+                        <ul className="list-disc pl-5 space-y-1">
+                          <li>Verify backup and recovery plan testing and adequacy</li>
+                          <li>Review Disaster Recovery Planning (DRP) alignment with BCP</li>
+                          <li>Assess system redundancy implementation</li>
+                          <li>Confirm DRP testing meets RPO and RTO requirements</li>
+                        </ul>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              
+              <div className="mt-6 text-center">
+                <a href="/quote" className="text-primary font-medium hover:underline">
+                  Request a detailed audit scope assessment for your agency
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+        
         <CallToAction />
       </main>
       <Footer />

@@ -1,73 +1,95 @@
 
 import ServiceCard from "@/components/ServiceCard";
-import { Shield, Server, Workflow, FileCheck, Bug, Briefcase } from "lucide-react";
+import { Shield, UserCheck, FileCheck, Bug, Server, LifeBuoy, BadgeAlert, Cloud, Lock, Database } from "lucide-react";
 
 const ServiceSection = () => {
   const services = [
     {
-      title: "Security Audit",
-      description: "Comprehensive security assessment for your IT infrastructure and applications",
+      title: "Accounts & Access Management",
+      description: "Comprehensive assessment of privileged access controls and user access management",
+      icon: UserCheck,
+      features: [
+        "Privileged access management evaluation",
+        "User access management controls",
+        "Account validation and disablement processes",
+        "Central Account Management (CAM) review"
+      ]
+    },
+    {
+      title: "Security Monitoring",
+      description: "Assessment of logging, monitoring, and anomaly detection processes for security events",
       icon: Shield,
       features: [
-        "Vulnerability assessment",
-        "Penetration testing",
-        "Security controls review",
-        "Risk mitigation strategies"
+        "Privileged accounts activity logging",
+        "Independent review verification",
+        "Anomalous activity monitoring",
+        "Automated Baseline Log Review (ABLR) implementation"
       ]
     },
     {
-      title: "Infrastructure Audit",
-      description: "Detailed evaluation of your IT infrastructure to ensure optimal performance",
-      icon: Server,
-      features: [
-        "Hardware and software inventory",
-        "Network configuration review",
-        "Capacity planning assessment",
-        "Disaster recovery evaluation"
-      ]
-    },
-    {
-      title: "Process Audit",
-      description: "Optimization of your IT processes for better efficiency and compliance",
-      icon: Workflow,
-      features: [
-        "ITIL compliance check",
-        "Service delivery review",
-        "Process efficiency analysis",
-        "Improvement recommendations"
-      ]
-    },
-    {
-      title: "Compliance Audit",
-      description: "Ensure your systems align with government and international standards",
-      icon: FileCheck,
-      features: [
-        "Regulatory compliance check",
-        "Policy implementation review",
-        "Documentation assessment",
-        "Compliance reporting"
-      ]
-    },
-    {
-      title: "Application Audit",
-      description: "In-depth analysis of application security, performance, and functionality",
+      title: "Vulnerability Management",
+      description: "Evaluation of processes to identify, assess, and remediate security vulnerabilities",
       icon: Bug,
       features: [
-        "Code review",
-        "Functionality testing",
-        "Performance evaluation",
-        "Security vulnerability scan"
+        "Vulnerability identification and remediation",
+        "Patch management assessment",
+        "End-of-Service-Life (EOSL) monitoring",
+        "Penetration testing and code reviews"
       ]
     },
     {
-      title: "Project Assurance",
-      description: "Ensure your IT projects are on track, within budget, and delivering value",
-      icon: Briefcase,
+      title: "Infrastructure & Cloud Security",
+      description: "Review of infrastructure design, cloud security controls and data protection measures",
+      icon: Cloud,
       features: [
-        "Project governance review",
-        "Risk assessment",
-        "Quality assurance check",
-        "Stakeholder management evaluation"
+        "Network segmentation verification",
+        "Firewall configuration assessment",
+        "Remote administration security",
+        "Cloud service provider evaluation"
+      ]
+    },
+    {
+      title: "Business Continuity",
+      description: "Assessment of backup, recovery, and disaster planning processes",
+      icon: Server,
+      features: [
+        "Backup and recovery plan testing",
+        "Disaster Recovery Planning (DRP) review",
+        "System redundancy verification",
+        "Business Continuity Plan (BCP) alignment"
+      ]
+    },
+    {
+      title: "Third-Party Management",
+      description: "Evaluation of third-party onboarding, monitoring and exit processes",
+      icon: LifeBuoy,
+      features: [
+        "Vendor onboarding process assessment",
+        "Periodic audit verification",
+        "Performance monitoring review",
+        "Exit plan adequacy evaluation"
+      ]
+    },
+    {
+      title: "Application Security",
+      description: "Analysis of application design, secure coding practices and security by design",
+      icon: Lock,
+      features: [
+        "Security by design implementation",
+        "Secure coding practice assessment",
+        "Security testing adequacy",
+        "Interface vulnerability evaluation"
+      ]
+    },
+    {
+      title: "Data Security & Cryptography",
+      description: "Review of data protection controls and cryptographic implementation",
+      icon: Database,
+      features: [
+        "Data protection measures",
+        "Cryptographic key management",
+        "Encryption at rest and in transit",
+        "Personal data protection assessment"
       ]
     }
   ];
@@ -76,13 +98,13 @@ const ServiceSection = () => {
     <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">Our Services</h2>
+          <h2 className="text-3xl font-bold mb-4">Our IT Audit Services</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            We provide comprehensive IT audit services tailored specifically for government agencies. Our team of experts ensures your systems meet the highest standards of security, compliance, and efficiency.
+            We provide comprehensive IT audit services aligned with government standards and best practices. Our audits cover crucial areas to ensure your IT systems meet the highest security, compliance, and operational requirements.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {services.map((service, index) => (
             <ServiceCard
               key={index}
