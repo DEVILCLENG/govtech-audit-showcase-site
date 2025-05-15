@@ -2,7 +2,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, HelpCircle, Phone, Mail, FileQuestion, BookOpen, LifeBuoy } from "lucide-react";
+import { ArrowRight, HelpCircle, Phone, Mail, FileQuestion, BookOpen, LifeBuoy, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
@@ -71,8 +71,10 @@ const HelpServices = () => {
                 </div>
                 <h2 className="text-xl font-bold mb-3">Knowledge Base</h2>
                 <p className="text-gray-600 mb-4">Access guides, best practices, and resources to enhance your understanding of IT audits.</p>
-                <Button variant="outline" className="text-primary">
-                  Browse Resources
+                <Button variant="outline" className="text-primary" asChild>
+                  <a href="https://intranet.mof.gov.sg/portal/IM/Themes/IT-Management.aspx" target="_blank" rel="noopener noreferrer" className="flex items-center">
+                    Browse Resources <ExternalLink className="ml-1" size={16} />
+                  </a>
                 </Button>
               </div>
               
