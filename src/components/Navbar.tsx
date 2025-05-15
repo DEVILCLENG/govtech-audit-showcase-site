@@ -57,7 +57,7 @@ const Navbar = () => {
             to="/help-services" 
             className={`font-medium ${isActive('/help-services') ? 'text-primary' : 'text-gray-700 hover:text-primary'}`}
           >
-            Help Services
+            Help
           </Link>
           <Button asChild>
             <Link to="/quote">Request Quote</Link>
@@ -114,7 +114,7 @@ const Navbar = () => {
               className={`py-2 font-medium ${isActive('/help-services') ? 'text-primary' : 'text-gray-700 hover:text-primary'}`}
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Help Services
+              Help
             </Link>
             <Button asChild className="w-full mt-2">
               <Link to="/quote" onClick={() => setIsMobileMenuOpen(false)}>
