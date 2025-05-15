@@ -70,6 +70,7 @@ const QuoteForm = () => {
     name: "",
     email: "",
     agency: "",
+    department: "",
     phone: "",
     serviceType: "",
     message: "",
@@ -146,7 +147,7 @@ const QuoteForm = () => {
           />
         </div>
         <div className="space-y-2">
-          <Label htmlFor="agency">Agency / Department</Label>
+          <Label htmlFor="agency">Agency</Label>
           <Popover open={open} onOpenChange={setOpen}>
             <PopoverTrigger asChild>
               <Button
@@ -187,6 +188,16 @@ const QuoteForm = () => {
               </Command>
             </PopoverContent>
           </Popover>
+        </div>
+        <div className="space-y-2">
+          <Label htmlFor="department">Department</Label>
+          <Input
+            id="department"
+            name="department"
+            placeholder="Enter your department"
+            value={formState.department}
+            onChange={handleChange}
+          />
         </div>
         <div className="space-y-2">
           <Label htmlFor="phone">Phone Number</Label>
