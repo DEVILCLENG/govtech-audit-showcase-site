@@ -33,7 +33,7 @@ const Hero = () => {
           </div>
           <div className="hidden md:block">
             <img 
-              src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+              src="/lovable-uploads/e869a127-72de-4b9a-aefd-0faf7f96dab2.png" 
               alt="IT Audit Services" 
               className="rounded-lg shadow-lg w-full object-cover"
             />
