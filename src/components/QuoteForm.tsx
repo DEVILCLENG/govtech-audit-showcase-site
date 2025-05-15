@@ -11,7 +11,7 @@ import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem } from "
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { cn } from "@/lib/utils";
 
-// Agency data for dropdown
+// Agency data for dropdown - ensure this data is properly initialized and sorted
 const agencies = [
   { name: "Agency For Science, Technology And Research", acronym: "ASTAR" },
   { name: "Agri-Food & Veterinary", acronym: "AVA" },
