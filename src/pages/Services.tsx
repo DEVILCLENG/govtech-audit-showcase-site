@@ -8,23 +8,39 @@ const Services = () => {
   const auditProcess = [
     {
       step: 1,
-      title: "Planning",
-      description: "We work with you to understand your needs and define the audit scope."
+      title: "Planning Phase",
+      duration: "2-3 weeks",
+      activities: [
+        "Propose IT Audit plan for Audit Committee",
+        "Approval"
+      ]
     },
     {
       step: 2,
-      title: "Assessment",
-      description: "Our expert team conducts a thorough review of your systems and processes."
+      title: "Information Gathering",
+      duration: "2-3 weeks",
+      activities: [
+        "Request for information",
+        "Risks and Process walkthrough"
+      ]
     },
     {
       step: 3,
-      title: "Reporting",
-      description: "We provide detailed findings with clear recommendations for improvement."
+      title: "Testing Phase",
+      duration: "6-8 weeks",
+      activities: [
+        "Control Design Effectiveness Testing",
+        "Control Operating Effectiveness Testing"
+      ]
     },
     {
       step: 4,
-      title: "Follow-up",
-      description: "We help implement changes and conduct follow-up assessments to ensure success."
+      title: "Reporting Phase",
+      duration: "3-4 weeks",
+      activities: [
+        "Draft Audit Findings",
+        "Audit Report"
+      ]
     }
   ];
 
@@ -46,7 +62,7 @@ const Services = () => {
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4">
             <div className="bg-gray-50 rounded-lg p-8 shadow-sm">
-              <h2 className="text-2xl font-bold mb-4">Our Audit Process</h2>
+              <h2 className="text-2xl font-bold mb-6">Our Audit Process</h2>
               <div className="grid md:grid-cols-4 gap-6">
                 {auditProcess.map((process) => (
                   <div key={process.step} className="border-l-4 border-primary pl-4">
@@ -54,7 +70,14 @@ const Services = () => {
                       <span className="bg-primary text-white rounded-full w-8 h-8 inline-flex items-center justify-center mr-2">{process.step}</span>
                       {process.title}
                     </div>
-                    <p className="text-gray-600">{process.description}</p>
+                    <div className="bg-primary/10 text-sm px-3 py-1 rounded-full inline-block mb-3">
+                      {process.duration}
+                    </div>
+                    <ul className="space-y-1 text-gray-600">
+                      {process.activities.map((activity, i) => (
+                        <li key={i}>{activity}</li>
+                      ))}
+                    </ul>
                   </div>
                 ))}
               </div>
