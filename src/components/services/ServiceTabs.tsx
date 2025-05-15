@@ -2,6 +2,7 @@
 import React from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ServiceGrid from "./ServiceGrid";
+import ServiceCard from "@/components/ServiceCard";
 import { Service } from "@/data/services";
 
 interface ServiceTabsProps {
