@@ -69,7 +69,7 @@ const About = () => {
                 <img 
                   src="/lovable-uploads/445e6afb-4e7b-4e2f-abb5-e09b9e7a4d65.png" 
                   alt="Hand holding soil with a growing plant" 
-                  className="rounded-lg shadow-lg w-full object-cover h-auto max-h-[500px]"
+                  className="rounded-lg shadow-lg w-1/2 object-cover h-auto max-h-[250px]"
                 />
               </div>
             </div>
