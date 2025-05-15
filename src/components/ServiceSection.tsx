@@ -1,10 +1,15 @@
 
 import ServiceCard from "@/components/ServiceCard";
-import { Shield, UserCheck, FileCheck, Bug, Server, LifeBuoy, BadgeAlert, Cloud, Lock, Database, Terminal, FileCode, Activity, FileSearch, FileText } from "lucide-react";
+import { 
+  Shield, UserCheck, FileCheck, Bug, Server, LifeBuoy, 
+  BadgeAlert, Cloud, Lock, Database, Terminal, FileCode, 
+  Activity, FileSearch, FileText 
+} from "lucide-react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const ServiceSection = () => {
-  // Core audit services
-  const services = [
+  // All audit services
+  const allServices = [
     {
       title: "Accounts & Access Management",
       description: "Comprehensive assessment of privileged access controls and user access management",
@@ -14,7 +19,8 @@ const ServiceSection = () => {
         "User access management controls",
         "Account validation and disablement processes",
         "Central Account Management (CAM) review"
-      ]
+      ],
+      category: "core"
     },
     {
       title: "Security Monitoring",
@@ -25,7 +31,8 @@ const ServiceSection = () => {
         "Independent review verification",
         "Anomalous activity monitoring",
         "Automated Baseline Log Review (ABLR) implementation"
-      ]
+      ],
+      category: "core"
     },
     {
       title: "Vulnerability Management",
@@ -36,7 +43,8 @@ const ServiceSection = () => {
         "Patch management assessment",
         "End-of-Service-Life (EOSL) monitoring",
         "Penetration testing and code reviews"
-      ]
+      ],
+      category: "core"
     },
     {
       title: "Infrastructure & Cloud Security",
@@ -47,7 +55,8 @@ const ServiceSection = () => {
         "Firewall configuration assessment",
         "Remote administration security",
         "Cloud service provider evaluation"
-      ]
+      ],
+      category: "core"
     },
     {
       title: "Business Continuity",
@@ -58,7 +67,8 @@ const ServiceSection = () => {
         "Disaster Recovery Planning (DRP) review",
         "System redundancy verification",
         "Business Continuity Plan (BCP) alignment"
-      ]
+      ],
+      category: "core"
     },
     {
       title: "Third-Party Management",
@@ -69,7 +79,8 @@ const ServiceSection = () => {
         "Periodic audit verification",
         "Performance monitoring review",
         "Exit plan adequacy evaluation"
-      ]
+      ],
+      category: "core"
     },
     {
       title: "Application Security",
@@ -80,7 +91,8 @@ const ServiceSection = () => {
         "Secure coding practice assessment",
         "Security testing adequacy",
         "Interface vulnerability evaluation"
-      ]
+      ],
+      category: "core"
     },
     {
       title: "Data Security & Cryptography",
@@ -91,12 +103,9 @@ const ServiceSection = () => {
         "Cryptographic key management",
         "Encryption at rest and in transit",
         "Personal data protection assessment"
-      ]
-    }
-  ];
-
-  // Technical thematic audits
-  const specializedAudits = [
+      ],
+      category: "core"
+    },
     {
       title: "ICT System & Secret System Audit",
       description: "Technical Thematic Audits by Systems and Organisation controls",
@@ -106,7 +115,8 @@ const ServiceSection = () => {
         "System configuration review",
         "Organizational control evaluation",
         "Technical control verification"
-      ]
+      ],
+      category: "specialized"
     },
     {
       title: "CCOP",
@@ -117,7 +127,8 @@ const ServiceSection = () => {
         "CSA regulatory alignment",
         "Security control assessment",
         "Compliance gap analysis"
-      ]
+      ],
+      category: "specialized"
     },
     {
       title: "Data Analytics",
@@ -128,7 +139,8 @@ const ServiceSection = () => {
         "Anomaly detection through automation",
         "Continuous control monitoring",
         "Risk-based analytical testing"
-      ]
+      ],
+      category: "specialized"
     },
     {
       title: "Pre-implementation Review",
@@ -139,7 +151,8 @@ const ServiceSection = () => {
         "IM8 compliance verification",
         "Security by design assessment",
         "Pre-deployment security validation"
-      ]
+      ],
+      category: "specialized"
     },
     {
       title: "Integrated Audit",
@@ -150,7 +163,8 @@ const ServiceSection = () => {
         "IT general control assessment",
         "Application control testing",
         "Cross-functional risk assessment"
-      ]
+      ],
+      category: "specialized"
     },
     {
       title: "Sudo Configurations Review",
@@ -161,7 +175,8 @@ const ServiceSection = () => {
         "Wildcard usage evaluation",
         "Permission structure review",
         "Security configuration hardening"
-      ]
+      ],
+      category: "specialized"
     }
   ];
 
@@ -174,32 +189,56 @@ const ServiceSection = () => {
             We provide comprehensive IT audit services aligned with government standards and best practices. Our audits cover crucial areas to ensure your IT systems meet the highest security, compliance, and operational requirements.
           </p>
         </div>
-        
-        <h3 className="text-2xl font-semibold mb-6">Core Audit Services</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12">
-          {services.map((service, index) => (
-            <ServiceCard
-              key={index}
-              title={service.title}
-              description={service.description}
-              icon={service.icon}
-              features={service.features}
-            />
-          ))}
-        </div>
 
-        <h3 className="text-2xl font-semibold mb-6">Specialized Technical Audits</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {specializedAudits.map((service, index) => (
-            <ServiceCard
-              key={index}
-              title={service.title}
-              description={service.description}
-              icon={service.icon}
-              features={service.features}
-            />
-          ))}
-        </div>
+        <Tabs defaultValue="all" className="mb-8">
+          <TabsList className="mx-auto flex justify-center mb-6">
+            <TabsTrigger value="all">All Services</TabsTrigger>
+            <TabsTrigger value="core">Core Services</TabsTrigger>
+            <TabsTrigger value="specialized">Specialized Services</TabsTrigger>
+          </TabsList>
+          
+          <TabsContent value="all">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {allServices.map((service, index) => (
+                <ServiceCard
+                  key={index}
+                  title={service.title}
+                  description={service.description}
+                  icon={service.icon}
+                  features={service.features}
+                />
+              ))}
+            </div>
+          </TabsContent>
+          
+          <TabsContent value="core">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {allServices.filter(service => service.category === "core").map((service, index) => (
+                <ServiceCard
+                  key={index}
+                  title={service.title}
+                  description={service.description}
+                  icon={service.icon}
+                  features={service.features}
+                />
+              ))}
+            </div>
+          </TabsContent>
+          
+          <TabsContent value="specialized">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {allServices.filter(service => service.category === "specialized").map((service, index) => (
+                <ServiceCard
+                  key={index}
+                  title={service.title}
+                  description={service.description}
+                  icon={service.icon}
+                  features={service.features}
+                />
+              ))}
+            </div>
+          </TabsContent>
+        </Tabs>
       </div>
     </section>
   );
