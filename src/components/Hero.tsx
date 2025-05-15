@@ -3,7 +3,6 @@ import { CheckCircle } from "lucide-react";
 
 const Hero = () => {
   const keyPoints = [
-    "Specialized in government IT systems",
     "Comprehensive audit solutions",
     "Compliance with international standards",
     "Expert team of certified auditors"
