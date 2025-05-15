@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, ExternalLink } from "lucide-react";
 
@@ -35,6 +36,8 @@ const Footer = () => {
             <nav className="flex flex-col space-y-2">
               <Link to="/" className="text-gray-300 hover:text-white">Home</Link>
               <Link to="/services" className="text-gray-300 hover:text-white">Services</Link>
+              <Link to="/about" className="text-gray-300 hover:text-white">About</Link>
+              <Link to="/our-clients" className="text-gray-300 hover:text-white">Our Clients</Link>
               <Link to="/auditors-portfolio" className="text-gray-300 hover:text-white">Our Team</Link>
               <Link to="/contact" className="text-gray-300 hover:text-white">Contact</Link>
               <Link to="/help-services" className="text-gray-300 hover:text-white">Help Services</Link>
