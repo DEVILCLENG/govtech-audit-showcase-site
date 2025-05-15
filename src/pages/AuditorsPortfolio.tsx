@@ -6,7 +6,6 @@ import { ArrowRight, Award, FileCheck, Users } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Card, CardContent } from "@/components/ui/card";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
 const AuditorsPortfolio = () => {
   const auditors = [
@@ -118,46 +117,9 @@ const AuditorsPortfolio = () => {
         
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4">
-            <div className="mb-8">
-              <Table>
-                <TableHeader>
-                  <TableRow>
-                    <TableHead>Name</TableHead>
-                    <TableHead>Designation</TableHead>
-                    <TableHead>Certifications</TableHead>
-                    <TableHead>Years Experience</TableHead>
-                    <TableHead>Areas of Expertise</TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  {auditors.map((auditor, index) => (
-                    <TableRow key={index}>
-                      <TableCell className="font-medium">{auditor.name}</TableCell>
-                      <TableCell>{auditor.title}</TableCell>
-                      <TableCell>
-                        <div className="flex flex-wrap gap-1">
-                          {auditor.certifications.map((cert, idx) => (
-                            <span key={idx} className="bg-primary/10 text-primary text-xs py-1 px-2 rounded-md">
-                              {cert}
-                            </span>
-                          ))}
-                        </div>
-                      </TableCell>
-                      <TableCell>{auditor.yearsExperience}</TableCell>
-                      <TableCell>
-                        <ul className="list-disc ml-4 text-sm">
-                          {auditor.expertise.map((area, idx) => (
-                            <li key={idx}>{area}</li>
-                          ))}
-                        </ul>
-                      </TableCell>
-                    </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
-            </div>
+            {/* Table was removed from here */}
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {auditors.map((auditor, index) => (
                 <Card key={index} className="overflow-hidden">
                   <CardContent className="p-6">
