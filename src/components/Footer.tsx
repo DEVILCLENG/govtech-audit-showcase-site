@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, ExternalLink } from "lucide-react";
 
@@ -17,7 +16,7 @@ const Footer = () => {
                 />
                 <div className="ml-2 flex flex-col">
                   <span className="font-bold text-white text-base leading-tight">IAD-SS</span>
-                  <span className="text-xs text-gray-300 leading-tight">IT Audit Division</span>
+                  <span className="text-xs text-gray-300 leading-tight">Shared Services</span>
                 </div>
               </div>
             </h3>

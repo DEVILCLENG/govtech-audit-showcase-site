@@ -28,7 +28,7 @@ const Navbar = () => {
             />
             <div className="ml-3 flex flex-col">
               <span className="font-bold text-primary text-lg leading-tight">IAD-SS</span>
-              <span className="text-xs text-gray-600 leading-tight">IT Audit Division</span>
+              <span className="text-xs text-gray-600 leading-tight">Shared Services</span>
             </div>
           </div>
         </Link>
