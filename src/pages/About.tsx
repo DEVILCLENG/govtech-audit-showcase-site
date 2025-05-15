@@ -65,11 +65,11 @@ const About = () => {
                   </p>
                 </div>
               </div>
-              <div>
+              <div className="h-full flex items-center justify-center">
                 <img 
                   src="/lovable-uploads/445e6afb-4e7b-4e2f-abb5-e09b9e7a4d65.png" 
                   alt="Hand holding soil with a growing plant" 
-                  className="rounded-lg shadow-lg"
+                  className="rounded-lg shadow-lg w-full object-cover h-auto max-h-[500px]"
                 />
               </div>
             </div>
