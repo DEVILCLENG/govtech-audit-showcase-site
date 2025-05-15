@@ -1,6 +1,6 @@
 
 import { Card, CardContent } from "@/components/ui/card";
-import { Clock, Users, BookOpen, Database, FileCheck, UserCheck } from "lucide-react";
+import { Clock, Users, BookOpen, Database, FileCheck, UserCheck, Shield, FileDigit, Building, Lock, Briefcase, Terminal } from "lucide-react";
 
 const BackgroundSection = () => {
   const milestones = [
@@ -41,6 +41,49 @@ const BackgroundSection = () => {
     }
   ];
 
+  const benefits = [
+    {
+      icon: Shield,
+      title: "High Security Clearance",
+      description: "ICT Audit Services team members have Category 1 Security Clearance"
+    },
+    {
+      icon: FileDigit,
+      title: "Government Knowledge",
+      description: "In-depth knowledge of government ICT systems, processes and IM8 policy"
+    },
+    {
+      icon: Building,
+      title: "Capability Development",
+      description: "Develop in-house ICT Audit Capabilities for government agencies"
+    },
+    {
+      icon: Database,
+      title: "Knowledge Retention",
+      description: "Retain the knowledge of the Agency's ICT systems and control environment"
+    },
+    {
+      icon: Lock,
+      title: "Information Security",
+      description: "Minimise the exposure of classified/sensitive information"
+    },
+    {
+      icon: Briefcase,
+      title: "Flexible Model",
+      description: "Flexible working model (outsource, co-source, manpower)"
+    },
+    {
+      icon: Terminal,
+      title: "Direct Access",
+      description: "Direct \"Read\" access to central information repository tools for self-service evidence gathering"
+    },
+    {
+      icon: UserCheck,
+      title: "Close Collaboration",
+      description: "Close Working Relationship with IM8 Clause owners"
+    }
+  ];
+
   return (
     <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
@@ -53,13 +96,26 @@ const BackgroundSection = () => {
 
         <div className="bg-white rounded-lg shadow-sm p-8 mb-10">
           <h3 className="text-xl font-semibold mb-4">Why We Exist</h3>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-6 mb-8">
             {challenges.map((item, index) => (
               <div key={index} className="flex items-start space-x-4">
                 <div className="bg-primary/10 p-3 rounded-full">
                   <item.icon size={24} className="text-primary" />
                 </div>
                 <p className="text-gray-700">{item.text}</p>
+              </div>
+            ))}
+          </div>
+          
+          <h4 className="text-lg font-semibold mb-4">Our Value Proposition</h4>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {benefits.map((benefit, index) => (
+              <div key={index} className="bg-gray-50 p-4 rounded-lg flex flex-col items-start">
+                <div className="bg-primary/10 p-3 rounded-full mb-3">
+                  <benefit.icon size={20} className="text-primary" />
+                </div>
+                <h5 className="font-medium text-gray-900 mb-1">{benefit.title}</h5>
+                <p className="text-sm text-gray-600">{benefit.description}</p>
               </div>
             ))}
           </div>
