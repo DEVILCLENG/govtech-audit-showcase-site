@@ -29,21 +29,6 @@ const BackgroundSection = () => {
     }
   ];
 
-  const challenges = [
-    {
-      icon: Users,
-      text: "Increasing demand for ICT Audit Services but public agencies have limited in-house ICT audit capabilities"
-    },
-    {
-      icon: BookOpen,
-      text: "External auditors lack in-depth knowledge of government policies, ICT systems and processes"
-    },
-    {
-      icon: Database,
-      text: "Audit insights on technology landscape of agencies not retained"
-    }
-  ];
-
   const benefits = [
     {
       icon: Shield,
@@ -98,18 +83,6 @@ const BackgroundSection = () => {
         </div>
 
         <div className="bg-white rounded-lg shadow-sm p-8 mb-10">
-          <h3 className="text-xl font-semibold mb-4">Why We Exist</h3>
-          <div className="grid md:grid-cols-3 gap-6 mb-8">
-            {challenges.map((item, index) => (
-              <div key={index} className="flex items-start space-x-4">
-                <div className="bg-primary/10 p-3 rounded-full">
-                  <item.icon size={24} className="text-primary" />
-                </div>
-                <p className="text-gray-700">{item.text}</p>
-              </div>
-            ))}
-          </div>
-          
           <h4 className="text-lg font-semibold mb-4">Our Value Proposition</h4>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
             {benefits.map((benefit, index) => (
