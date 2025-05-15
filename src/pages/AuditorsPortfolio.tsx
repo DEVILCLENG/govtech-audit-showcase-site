@@ -1,4 +1,3 @@
-
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -123,7 +122,7 @@ const AuditorsPortfolio = () => {
       <main className="flex-grow pt-16">
         <div className="bg-primary text-white py-16">
           <div className="container mx-auto px-4 text-center">
-            <h1 className="text-4xl font-bold mb-4">Our Audit Professionals</h1>
+            <h1 className="text-4xl font-bold mb-4">Our Team</h1>
             <p className="text-lg max-w-3xl mx-auto">
               Meet our team of certified IT audit specialists with extensive experience working with government agencies.
             </p>
@@ -132,8 +131,6 @@ const AuditorsPortfolio = () => {
         
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4">
-            {/* Table was removed from here */}
-            
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {auditors.map((auditor, index) => (
                 <Card key={index} className="overflow-hidden">

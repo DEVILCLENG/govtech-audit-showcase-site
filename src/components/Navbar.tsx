@@ -20,8 +20,12 @@ const Navbar = () => {
     <header className="fixed w-full bg-white shadow-sm z-50">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <Link to="/" className="flex items-center space-x-2">
-          <div className="font-bold text-2xl text-primary">
-            GovTech <span className="text-blue-400">IAD-SS</span>
+          <div className="flex items-center">
+            <img 
+              src="/lovable-uploads/7221ae09-9575-4f04-ad23-8dd40b4fc3a7.png" 
+              alt="GovTech Singapore" 
+              className="h-10"
+            />
           </div>
         </Link>
 
@@ -45,7 +49,7 @@ const Navbar = () => {
             to="/auditors-portfolio" 
             className={`font-medium ${isActive('/auditors-portfolio') ? 'text-primary' : 'text-gray-700 hover:text-primary'}`}
           >
-            Auditor's Portfolio
+            Our Team
           </Link>
           <Link 
             to="/contact" 
@@ -100,7 +104,7 @@ const Navbar = () => {
               className={`py-2 font-medium ${isActive('/auditors-portfolio') ? 'text-primary' : 'text-gray-700 hover:text-primary'}`}
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Auditor's Portfolio
+              Our Team
             </Link>
             <Link 
               to="/contact" 
