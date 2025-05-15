@@ -3,7 +3,6 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageBanner from "@/components/PageBanner";
 import BackgroundSection from "@/components/BackgroundSection";
-import VisitCounter from "@/components/VisitCounter";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Building, Award, Users, FileDigit, ShieldCheck } from "lucide-react";
 
@@ -61,25 +60,19 @@ const About = () => {
                     IT governance, risk management, and compliance.
                   </p>
                   <p>
-                    We understand the unique challenges faced by public sector organizations and 
+                    We understand the unique challenges faced by agencies and 
                     are committed to providing tailored audit solutions that meet their specific needs.
                   </p>
                 </div>
               </div>
               <div>
                 <img 
-                  src="/lovable-uploads/e399694b-9a15-4c73-b6ea-7e7b6bfeddd6.png" 
-                  alt="Team collaboration" 
+                  src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158" 
+                  alt="Professional IT audit team" 
                   className="rounded-lg shadow-lg"
                 />
               </div>
             </div>
-          </div>
-        </section>
-
-        <section className="py-12 bg-gray-100">
-          <div className="container mx-auto px-4">
-            <VisitCounter />
           </div>
         </section>
 
