@@ -12,6 +12,9 @@ const Navbar = () => {
   const isActive = (path: string) => {
     return location.pathname === path;
   };
+  
+  // Check if current page is Help Services
+  const isHelpServicesPage = location.pathname === '/help-services';
 
   return (
     <header className="fixed w-full bg-white shadow-sm z-50">
@@ -30,12 +33,14 @@ const Navbar = () => {
           >
             Home
           </Link>
-          <Link 
-            to="/services" 
-            className={`font-medium ${isActive('/services') ? 'text-primary' : 'text-gray-700 hover:text-primary'}`}
-          >
-            Services
-          </Link>
+          {!isHelpServicesPage && (
+            <Link 
+              to="/services" 
+              className={`font-medium ${isActive('/services') ? 'text-primary' : 'text-gray-700 hover:text-primary'}`}
+            >
+              Services
+            </Link>
+          )}
           <Link 
             to="/auditors-portfolio" 
             className={`font-medium ${isActive('/auditors-portfolio') ? 'text-primary' : 'text-gray-700 hover:text-primary'}`}
@@ -81,13 +86,15 @@ const Navbar = () => {
             >
               Home
             </Link>
-            <Link 
-              to="/services" 
-              className={`py-2 font-medium ${isActive('/services') ? 'text-primary' : 'text-gray-700 hover:text-primary'}`}
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Services
-            </Link>
+            {!isHelpServicesPage && (
+              <Link 
+                to="/services" 
+                className={`py-2 font-medium ${isActive('/services') ? 'text-primary' : 'text-gray-700 hover:text-primary'}`}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Services
+              </Link>
+            )}
             <Link 
               to="/auditors-portfolio" 
               className={`py-2 font-medium ${isActive('/auditors-portfolio') ? 'text-primary' : 'text-gray-700 hover:text-primary'}`}
