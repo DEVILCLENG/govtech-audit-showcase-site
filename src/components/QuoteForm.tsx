@@ -73,6 +73,7 @@ const QuoteForm = () => {
     systemCriticality: "",
     dataSensitivity: "",
     internetAccessibility: "",
+    ciiSii: "",
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -103,6 +104,10 @@ const QuoteForm = () => {
 
   const handleInternetAccessibilityChange = (value: string) => {
     handleSelectChange("internetAccessibility", value);
+  };
+  
+  const handleCiiSiiChange = (value: string) => {
+    handleSelectChange("ciiSii", value);
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -247,20 +252,36 @@ const QuoteForm = () => {
         </div>
       </div>
 
-      <div className="space-y-2">
-        <Label htmlFor="internetAccessibility">Internet Accessibility</Label>
-        <Select onValueChange={handleInternetAccessibilityChange} value={formState.internetAccessibility}>
-          <SelectTrigger>
-            <SelectValue placeholder="Select internet accessibility level" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="not-internet-accessible">Not Internet Accessible</SelectItem>
-            <SelectItem value="not-internet">Not Internet</SelectItem>
-            <SelectItem value="intranet">Intranet</SelectItem>
-            <SelectItem value="internet-facing">Internet-facing</SelectItem>
-            <SelectItem value="internet-accessible">Internet Accessible</SelectItem>
-          </SelectContent>
-        </Select>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="space-y-2">
+          <Label htmlFor="internetAccessibility">Internet Accessibility</Label>
+          <Select onValueChange={handleInternetAccessibilityChange} value={formState.internetAccessibility}>
+            <SelectTrigger>
+              <SelectValue placeholder="Select internet accessibility level" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="not-internet-accessible">Not Internet Accessible</SelectItem>
+              <SelectItem value="not-internet">Not Internet</SelectItem>
+              <SelectItem value="intranet">Intranet</SelectItem>
+              <SelectItem value="internet-facing">Internet-facing</SelectItem>
+              <SelectItem value="internet-accessible">Internet Accessible</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+        <div className="space-y-2">
+          <Label htmlFor="ciiSii">CII/SII Classification</Label>
+          <Select onValueChange={handleCiiSiiChange} value={formState.ciiSii}>
+            <SelectTrigger>
+              <SelectValue placeholder="Select CII/SII classification" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="cii">CII (Critical Information Infrastructure)</SelectItem>
+              <SelectItem value="sii">SII (Strategic Information Infrastructure)</SelectItem>
+              <SelectItem value="non-cii-sii">Non-CII/SII</SelectItem>
+              <SelectItem value="not-applicable">Not Applicable</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
       </div>
 
       <div className="space-y-2">
