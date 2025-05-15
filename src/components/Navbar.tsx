@@ -41,6 +41,12 @@ const Navbar = () => {
           >
             Home
           </Link>
+          <Link 
+            to="/about" 
+            className={`font-medium ${isActive('/about') ? 'text-primary' : 'text-gray-700 hover:text-primary'}`}
+          >
+            About
+          </Link>
           {!isHelpServicesPage && (
             <Link 
               to="/services" 
@@ -49,12 +55,6 @@ const Navbar = () => {
               Services
             </Link>
           )}
-          <Link 
-            to="/about" 
-            className={`font-medium ${isActive('/about') ? 'text-primary' : 'text-gray-700 hover:text-primary'}`}
-          >
-            About
-          </Link>
           <Link 
             to="/our-clients" 
             className={`font-medium ${isActive('/our-clients') ? 'text-primary' : 'text-gray-700 hover:text-primary'}`}
@@ -106,6 +106,13 @@ const Navbar = () => {
             >
               Home
             </Link>
+            <Link 
+              to="/about" 
+              className={`py-2 font-medium ${isActive('/about') ? 'text-primary' : 'text-gray-700 hover:text-primary'}`}
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              About
+            </Link>
             {!isHelpServicesPage && (
               <Link 
                 to="/services" 
@@ -115,13 +122,6 @@ const Navbar = () => {
                 Services
               </Link>
             )}
-            <Link 
-              to="/about" 
-              className={`py-2 font-medium ${isActive('/about') ? 'text-primary' : 'text-gray-700 hover:text-primary'}`}
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              About
-            </Link>
             <Link 
               to="/our-clients" 
               className={`py-2 font-medium ${isActive('/our-clients') ? 'text-primary' : 'text-gray-700 hover:text-primary'}`}
