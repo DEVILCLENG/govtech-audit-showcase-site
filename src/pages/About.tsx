@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageBanner from "@/components/PageBanner";
 import BackgroundSection from "@/components/BackgroundSection";
+import VisitCounter from "@/components/VisitCounter";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Building, Award, Users, FileDigit, ShieldCheck } from "lucide-react";
 
@@ -73,6 +74,12 @@ const About = () => {
                 />
               </div>
             </div>
+          </div>
+        </section>
+
+        <section className="py-12 bg-gray-100">
+          <div className="container mx-auto px-4">
+            <VisitCounter />
           </div>
         </section>
 
