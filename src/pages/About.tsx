@@ -67,8 +67,8 @@ const About = () => {
               </div>
               <div>
                 <img 
-                  src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158" 
-                  alt="Professional IT audit team" 
+                  src="/lovable-uploads/445e6afb-4e7b-4e2f-abb5-e09b9e7a4d65.png" 
+                  alt="Hand holding soil with a growing plant" 
                   className="rounded-lg shadow-lg"
                 />
               </div>
