@@ -71,6 +71,8 @@ const QuoteForm = () => {
     phone: "",
     serviceType: "",
     message: "",
+    systemCriticality: "",
+    dataSensitivity: "",
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -79,12 +81,24 @@ const QuoteForm = () => {
     setFormState((prev) => ({ ...prev, [name]: value }));
   };
 
+  const handleSelectChange = (field: string, value: string) => {
+    setFormState((prev) => ({ ...prev, [field]: value }));
+  };
+
   const handleServiceChange = (value: string) => {
-    setFormState((prev) => ({ ...prev, serviceType: value }));
+    handleSelectChange("serviceType", value);
   };
 
   const handleAgencyChange = (value: string) => {
-    setFormState((prev) => ({ ...prev, agency: value }));
+    handleSelectChange("agency", value);
+  };
+
+  const handleSystemCriticalityChange = (value: string) => {
+    handleSelectChange("systemCriticality", value);
+  };
+
+  const handleDataSensitivityChange = (value: string) => {
+    handleSelectChange("dataSensitivity", value);
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -180,24 +194,53 @@ const QuoteForm = () => {
             onChange={handleChange}
           />
         </div>
+        <div className="space-y-2">
+          <Label htmlFor="serviceType">Service Type</Label>
+          <Select onValueChange={handleServiceChange} value={formState.serviceType}>
+            <SelectTrigger>
+              <SelectValue placeholder="Select a service type" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="security-audit">Security Audit</SelectItem>
+              <SelectItem value="infrastructure-audit">Infrastructure Audit</SelectItem>
+              <SelectItem value="process-audit">Process Audit</SelectItem>
+              <SelectItem value="compliance-audit">Compliance Audit</SelectItem>
+              <SelectItem value="application-audit">Application Audit</SelectItem>
+              <SelectItem value="project-assurance">Project Assurance</SelectItem>
+              <SelectItem value="other">Other (Please specify)</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
       </div>
 
-      <div className="space-y-2">
-        <Label htmlFor="serviceType">Service Type</Label>
-        <Select onValueChange={handleServiceChange} value={formState.serviceType}>
-          <SelectTrigger>
-            <SelectValue placeholder="Select a service type" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="security-audit">Security Audit</SelectItem>
-            <SelectItem value="infrastructure-audit">Infrastructure Audit</SelectItem>
-            <SelectItem value="process-audit">Process Audit</SelectItem>
-            <SelectItem value="compliance-audit">Compliance Audit</SelectItem>
-            <SelectItem value="application-audit">Application Audit</SelectItem>
-            <SelectItem value="project-assurance">Project Assurance</SelectItem>
-            <SelectItem value="other">Other (Please specify)</SelectItem>
-          </SelectContent>
-        </Select>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="space-y-2">
+          <Label htmlFor="systemCriticality">System Criticality</Label>
+          <Select onValueChange={handleSystemCriticalityChange} value={formState.systemCriticality}>
+            <SelectTrigger>
+              <SelectValue placeholder="Select system criticality level" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="official-closed">Official Closed</SelectItem>
+              <SelectItem value="restricted">Restricted</SelectItem>
+              <SelectItem value="confidential">Confidential</SelectItem>
+              <SelectItem value="secret">Secret</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+        <div className="space-y-2">
+          <Label htmlFor="dataSensitivity">Data Sensitivity</Label>
+          <Select onValueChange={handleDataSensitivityChange} value={formState.dataSensitivity}>
+            <SelectTrigger>
+              <SelectValue placeholder="Select data sensitivity level" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="non-sensitive">Non-sensitive</SelectItem>
+              <SelectItem value="sensitive-normal">Sensitive Normal</SelectItem>
+              <SelectItem value="sensitive-high">Sensitive High</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
       </div>
 
       <div className="space-y-2">
