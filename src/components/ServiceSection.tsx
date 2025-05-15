@@ -1,8 +1,9 @@
 
 import ServiceCard from "@/components/ServiceCard";
-import { Shield, UserCheck, FileCheck, Bug, Server, LifeBuoy, BadgeAlert, Cloud, Lock, Database } from "lucide-react";
+import { Shield, UserCheck, FileCheck, Bug, Server, LifeBuoy, BadgeAlert, Cloud, Lock, Database, Terminal, FileCode, Activity, FileSearch, FileText } from "lucide-react";
 
 const ServiceSection = () => {
+  // Core audit services
   const services = [
     {
       title: "Accounts & Access Management",
@@ -94,6 +95,76 @@ const ServiceSection = () => {
     }
   ];
 
+  // Technical thematic audits
+  const specializedAudits = [
+    {
+      title: "ICT System & Secret System Audit",
+      description: "Technical Thematic Audits by Systems and Organisation controls",
+      icon: FileSearch,
+      features: [
+        "Secret system controls assessment",
+        "System configuration review",
+        "Organizational control evaluation",
+        "Technical control verification"
+      ]
+    },
+    {
+      title: "CCOP",
+      description: "Compliance audit on Critical Information Infrastructure (CII) systems against CSA",
+      icon: Shield,
+      features: [
+        "CII system compliance verification",
+        "CSA regulatory alignment",
+        "Security control assessment",
+        "Compliance gap analysis"
+      ]
+    },
+    {
+      title: "Data Analytics",
+      description: "Automated Audit Testing of IT systems and controls",
+      icon: Activity,
+      features: [
+        "Pattern recognition in large datasets",
+        "Anomaly detection through automation",
+        "Continuous control monitoring",
+        "Risk-based analytical testing"
+      ]
+    },
+    {
+      title: "Pre-implementation Review",
+      description: "Review of systems during ICT system development to comply with IM8 requirements",
+      icon: FileCode,
+      features: [
+        "Early design phase security review",
+        "IM8 compliance verification",
+        "Security by design assessment",
+        "Pre-deployment security validation"
+      ]
+    },
+    {
+      title: "Integrated Audit",
+      description: "Partner with business auditors to test IT General controls and application controls",
+      icon: FileText,
+      features: [
+        "Combined business and IT audit approach",
+        "IT general control assessment",
+        "Application control testing",
+        "Cross-functional risk assessment"
+      ]
+    },
+    {
+      title: "Sudo Configurations Review",
+      description: "Review of sudo configuration to assess use of wildcards, executable commands and permissive permissions",
+      icon: Terminal,
+      features: [
+        "Privileged command assessment",
+        "Wildcard usage evaluation",
+        "Permission structure review",
+        "Security configuration hardening"
+      ]
+    }
+  ];
+
   return (
     <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
@@ -104,8 +175,22 @@ const ServiceSection = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <h3 className="text-2xl font-semibold mb-6">Core Audit Services</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12">
           {services.map((service, index) => (
+            <ServiceCard
+              key={index}
+              title={service.title}
+              description={service.description}
+              icon={service.icon}
+              features={service.features}
+            />
+          ))}
+        </div>
+
+        <h3 className="text-2xl font-semibold mb-6">Specialized Technical Audits</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {specializedAudits.map((service, index) => (
             <ServiceCard
               key={index}
               title={service.title}
