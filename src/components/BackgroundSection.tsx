@@ -1,6 +1,7 @@
 
 import { Card, CardContent } from "@/components/ui/card";
-import { Clock, Users, BookOpen, Database, FileCheck, UserCheck, Shield, FileDigit, Building, Lock, Briefcase, Terminal } from "lucide-react";
+import { Clock, Users, BookOpen, Database, FileCheck, UserCheck, Shield, FileDigit, Building, Lock, Briefcase, Terminal, ExternalLink } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const BackgroundSection = () => {
   const milestones = [
@@ -21,8 +22,15 @@ const BackgroundSection = () => {
     },
     {
       icon: FileCheck,
-      title: "Pilot Success",
-      description: "Partnership with AGD providing ICT audit for 3 pilot agencies (VITAL, AGD, PSD)"
+      title: "Current Agencies",
+      description: (
+        <span>
+          Currently engaged with{" "}
+          <Link to="#client-section" className="text-primary underline flex items-center inline-flex">
+            28 government agencies <ExternalLink size={14} className="ml-1" />
+          </Link>
+        </span>
+      )
     }
   ];
 
