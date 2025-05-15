@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -73,6 +72,7 @@ const QuoteForm = () => {
     message: "",
     systemCriticality: "",
     dataSensitivity: "",
+    internetAccessibility: "",
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -99,6 +99,10 @@ const QuoteForm = () => {
 
   const handleDataSensitivityChange = (value: string) => {
     handleSelectChange("dataSensitivity", value);
+  };
+
+  const handleInternetAccessibilityChange = (value: string) => {
+    handleSelectChange("internetAccessibility", value);
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -241,6 +245,22 @@ const QuoteForm = () => {
             </SelectContent>
           </Select>
         </div>
+      </div>
+
+      <div className="space-y-2">
+        <Label htmlFor="internetAccessibility">Internet Accessibility</Label>
+        <Select onValueChange={handleInternetAccessibilityChange} value={formState.internetAccessibility}>
+          <SelectTrigger>
+            <SelectValue placeholder="Select internet accessibility level" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="not-internet-accessible">Not Internet Accessible</SelectItem>
+            <SelectItem value="not-internet">Not Internet</SelectItem>
+            <SelectItem value="intranet">Intranet</SelectItem>
+            <SelectItem value="internet-facing">Internet-facing</SelectItem>
+            <SelectItem value="internet-accessible">Internet Accessible</SelectItem>
+          </SelectContent>
+        </Select>
       </div>
 
       <div className="space-y-2">
