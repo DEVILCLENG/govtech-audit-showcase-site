@@ -13,7 +13,7 @@ const BackgroundSection = () => {
     {
       icon: Users,
       title: "Growing Team",
-      description: "Onboarded 5 GovTechies in FY20, with 4 more joining by Q2 FY23"
+      description: "Current strength of 16 auditors with 1 forward deployment to client agency"
     },
     {
       icon: BookOpen,
