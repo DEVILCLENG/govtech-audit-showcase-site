@@ -1,3 +1,4 @@
+
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -9,17 +10,17 @@ import { Card, CardContent } from "@/components/ui/card";
 const AuditorsPortfolio = () => {
   // Image mapping for auditors - matching names to uploaded images
   const auditorImages = {
-    "Koh Sook Bing": "/lovable-uploads/a0a501de-6284-42cb-a506-b0bc25512d5f.png",
-    "Linus Teo": "/lovable-uploads/5f57a04d-7ce3-4379-ac15-0a6fed91ecf1.png",
-    "Leonard Siau": "/lovable-uploads/e301f518-1a23-43bd-831c-ed71ace6a75b.png",
-    "Isaac Lau": "/lovable-uploads/307ee1cb-12a2-45ff-bd12-02fc8137ae74.png",
-    "Luke Chang": "/lovable-uploads/0b8d54d8-6726-4938-b131-2f1c53963f37.png",
-    "Leslie Ho": "/lovable-uploads/ec9a39ea-6eb7-47f6-998f-7e31fbaa84ae.png",
-    "Abdillah Ali": "/lovable-uploads/5c8478f1-fd07-4631-bf58-dbf185c07c13.png",
-    "Vivien Yeo": "/lovable-uploads/b9bdbb14-992b-4f98-aa0f-ed9e22eece96.png",
-    "Jeremy Low": "/lovable-uploads/e399694b-9a15-4c73-b6ea-7e7b6bfeddd6.png",
-    "Cecilia Leng": "/lovable-uploads/3b13132e-0b4e-4bd9-b13f-c77c584cd9ec.png",
-    "Eileen Tan": "/lovable-uploads/b9bdbb14-992b-4f98-aa0f-ed9e22eece96.png" // Using a duplicate as placeholder
+    "Koh Sook Bing": "/lovable-uploads/ee8c34f1-6b48-4724-a39e-ec70f2dad7ee.png", // Updated
+    "Linus Teo": "/lovable-uploads/b759d527-cd11-4f23-8999-8b9a1ccba130.png", // Updated
+    "Leonard Siau": "/lovable-uploads/6a4f81db-2414-4ef9-9756-fffa27ba940d.png", // Updated
+    "Isaac Lau": "/lovable-uploads/99a12679-22f9-46cf-bb12-7ea1d7ce063c.png", // Updated
+    "Luke Chang": "/lovable-uploads/fb173e29-6be9-42f5-8d99-b5a59802a5b9.png", // Updated
+    "Leslie Ho": "/lovable-uploads/20260385-10a3-49bf-bd48-407547e8b19f.png", // Updated
+    "Abdillah Ali": "/lovable-uploads/b4e858ac-5d06-4c07-8b7f-73cdc5f0c938.png", // Updated
+    "Vivien Yeo": "/lovable-uploads/a1a5b8e9-4936-446a-8915-b06f7a1c76f7.png", // Updated
+    "Jeremy Low": "/lovable-uploads/01c61133-b7b6-4db6-93c7-12b2dca4c951.png", // Updated
+    "Cecilia Leng": "/lovable-uploads/588ceaa3-bec0-418c-bc70-22be16c0c085.png", // Updated
+    "Eileen Tan": "/lovable-uploads/c26670da-1dc8-49e4-8189-d8b04f5d6ccc.png" // Updated
   };
 
   const auditors = [
