@@ -12,12 +12,10 @@ import {
 
 const ClientSection = () => {
   const clients = [
-    "ACRA", "AGC", "AGD", "AGO", "ASTAR", "AVA", "BCA", "CEA", "CPIB", 
-    "CSA", "CUSTOMS", "DSTA", "EDB", "IMDA", "IRAS", "ITE", "MCI", "MCCY", 
-    "MDA", "MDDI", "MFA", "MHA", "MINDEF", "MLAW", "MND", "MOE", "MOF", "MOM", 
-    "MOT", "MSE", "MSF", "MTI", "MUIS", "NAC", "NCSS", "NDI", "NEA", "NHB", "NLB", 
-    "NPB", "NSCS", "PA", "PARL", "PMO", "PSD", "PUB", "SEAD", "SFA", "SLF", 
-    "SNDGO", "SPORTSG", "TOTEBOARD", "URA", "VITAL", "WPPD"
+    "ACRA", "AGD", "BCA", "CEA", "CSA", 
+    "IRAS", "MCCY", "MDDI", "MND", "MOM", 
+    "MSF", "NCSS", "NDI", "NEA", "NLB", 
+    "NSCS", "PARL", "PSD", "PUB", "URA"
   ].sort();
 
   // Arrange clients into rows for the table (5 clients per row)
@@ -32,7 +30,7 @@ const ClientSection = () => {
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4">Our Clientele</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Trusted by agencies across Singapore to deliver exceptional IT audit services.
+            Trusted by <a href="#client-section" className="text-primary hover:underline">agencies</a> across Singapore to deliver exceptional IT audit services.
           </p>
         </div>
 
