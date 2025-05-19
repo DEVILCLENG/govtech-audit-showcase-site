@@ -12,11 +12,13 @@ import {
 
 const ClientSection = () => {
   const clients = [
-    "PMO", "MND", "AGD", "MOM", "CSA", "MSF", "ACRA", "BCA", "PSD", 
-    "NCSS", "SFA", "VITAL", "PARL", "SNDGO", "MSF", "WPPD", "NEA", 
-    "PUB", "NDI", "AGC", "CEA", "URA", "MCCY", "CUSTOMS", "NSCS", 
-    "NLB", "IRAS", "MDDI"
-  ];
+    "ACRA", "AGC", "AGD", "AGO", "ASTAR", "AVA", "BCA", "CEA", "CPIB", 
+    "CSA", "CUSTOMS", "DSTA", "EDB", "IMDA", "IRAS", "ITE", "MCI", "MCCY", 
+    "MDA", "MDDI", "MFA", "MHA", "MINDEF", "MLAW", "MND", "MOE", "MOF", "MOM", 
+    "MOT", "MSE", "MSF", "MTI", "MUIS", "NAC", "NCSS", "NDI", "NEA", "NHB", "NLB", 
+    "NPB", "NSCS", "PA", "PARL", "PMO", "PSD", "PUB", "SEAD", "SFA", "SLF", 
+    "SNDGO", "SPORTSG", "TOTEBOARD", "URA", "VITAL", "WPPD"
+  ].sort();
 
   // Arrange clients into rows for the table (5 clients per row)
   const clientRows = [];
@@ -44,7 +46,7 @@ const ClientSection = () => {
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead colSpan={5} className="text-center">Agencies We Serve</TableHead>
+                <TableHead colSpan={5} className="text-center">Agencies We Serve (Alphabetical Order)</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
