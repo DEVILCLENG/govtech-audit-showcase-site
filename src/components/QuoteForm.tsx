@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -6,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { CheckCircle, Mail } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
+import EmailConfirmation from "./EmailConfirmation";
 
 // Agency data for dropdown - ensure this data is properly initialized and sorted
 const agencies = [
@@ -60,21 +62,23 @@ const agencies = [
   { name: "Vital", acronym: "VITAL" }
 ].sort((a, b) => a.name.localeCompare(b.name));
 
+const initialFormState = {
+  name: "",
+  email: "",
+  agency: "",
+  department: "",
+  phone: "",
+  serviceType: "",
+  message: "",
+  systemCriticality: "",
+  dataSensitivity: "",
+  internetAccessibility: "",
+  ciiSii: "",
+};
+
 const QuoteForm = () => {
   const { toast } = useToast();
-  const [formState, setFormState] = useState({
-    name: "",
-    email: "",
-    agency: "",
-    department: "",
-    phone: "",
-    serviceType: "",
-    message: "",
-    systemCriticality: "",
-    dataSensitivity: "",
-    internetAccessibility: "",
-    ciiSii: "",
-  });
+  const [formState, setFormState] = useState(initialFormState);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [sendConfirmation, setSendConfirmation] = useState(true);
 
@@ -133,6 +137,12 @@ const QuoteForm = () => {
     setIsSubmitted(true);
   };
 
+  const handleResetForm = () => {
+    setFormState(initialFormState);
+    setSendConfirmation(true);
+    setIsSubmitted(false);
+  };
+
   if (isSubmitted) {
     return (
       <div className="flex flex-col items-center justify-center py-12 text-center">
@@ -149,7 +159,22 @@ const QuoteForm = () => {
             </span>
           )}
         </p>
-        <Button onClick={() => setIsSubmitted(false)}>Submit Another Request</Button>
+        <Button onClick={handleResetForm}>Submit Another Request</Button>
+        
+        {/* Preview of the email that would be sent (in a real app this would be sent to the server) */}
+        {sendConfirmation && (
+          <div className="mt-8 border rounded-lg p-4 w-full max-w-2xl">
+            <h4 className="text-sm font-medium mb-2 text-gray-500">Email Preview:</h4>
+            <div className="border rounded">
+              <EmailConfirmation 
+                name={formState.name} 
+                email={formState.email} 
+                agency={formState.agency} 
+                serviceType={formState.serviceType} 
+              />
+            </div>
+          </div>
+        )}
       </div>
     );
   }
