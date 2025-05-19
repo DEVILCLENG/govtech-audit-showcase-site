@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { CheckCircle } from "lucide-react";
+import { CheckCircle, Mail } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
 
 // Agency data for dropdown - ensure this data is properly initialized and sorted
@@ -76,6 +76,7 @@ const QuoteForm = () => {
     ciiSii: "",
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [sendConfirmation, setSendConfirmation] = useState(true);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -113,12 +114,20 @@ const QuoteForm = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Form submitted:", formState);
+    console.log("Send confirmation email:", sendConfirmation);
     
     // In a real app, you would send this data to your server
-    // For now, we'll just simulate a successful submission
+    // and handle email sending there
+    if (sendConfirmation && formState.email) {
+      // Simulate sending confirmation email
+      console.log("Sending confirmation email to:", formState.email);
+    }
+    
     toast({
       title: "Quote Request Submitted",
-      description: "We'll get back to you within 1-2 business days.",
+      description: sendConfirmation 
+        ? "We'll get back to you within 1-2 business days. A confirmation has been sent to your email."
+        : "We'll get back to you within 1-2 business days.",
     });
     
     setIsSubmitted(true);
@@ -133,6 +142,12 @@ const QuoteForm = () => {
         <h3 className="text-2xl font-bold mb-2">Quote Request Submitted</h3>
         <p className="text-gray-600 mb-6 max-w-md">
           Thank you for your interest in our IT audit services. A member of our team will review your request and get back to you within 1-2 business days.
+          {sendConfirmation && (
+            <span className="block mt-2">
+              <Mail className="inline-block mr-1 text-primary" size={16} />
+              A confirmation has been sent to your email.
+            </span>
+          )}
         </p>
         <Button onClick={() => setIsSubmitted(false)}>Submit Another Request</Button>
       </div>
@@ -294,6 +309,19 @@ const QuoteForm = () => {
           value={formState.message}
           onChange={handleChange}
         />
+      </div>
+
+      <div className="flex items-center space-x-2">
+        <input
+          type="checkbox"
+          id="sendConfirmation"
+          checked={sendConfirmation}
+          onChange={() => setSendConfirmation(!sendConfirmation)}
+          className="h-4 w-4 rounded border-gray-300 text-primary"
+        />
+        <Label htmlFor="sendConfirmation" className="text-sm">
+          Send me a confirmation email with details of my quote request
+        </Label>
       </div>
 
       <Button type="submit" className="w-full">Submit Quote Request</Button>
