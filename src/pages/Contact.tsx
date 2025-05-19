@@ -1,3 +1,4 @@
+
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ContactSection from "@/components/ContactSection";
@@ -8,6 +9,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
 import { useToast } from "@/components/ui/use-toast";
+import { MessageSquare, CheckCircle } from "lucide-react";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -17,6 +19,7 @@ const Contact = () => {
     subject: "",
     message: ""
   });
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -30,16 +33,20 @@ const Contact = () => {
     // In a real app, you would send this data to your server
     toast({
       title: "Message Sent",
-      description: "We'll get back to you as soon as possible.",
+      description: "We've sent you a confirmation email with the details of your message.",
     });
     
-    // Reset form
+    setIsSubmitted(true);
+  };
+
+  const handleNewMessage = () => {
     setFormData({
       name: "",
       email: "",
       subject: "",
       message: ""
     });
+    setIsSubmitted(false);
   };
 
   return (
@@ -64,56 +71,102 @@ const Contact = () => {
                 </p>
               </div>
               
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {isSubmitted ? (
+                <div className="text-center py-8 bg-green-50 rounded-lg">
+                  <div className="flex justify-center mb-4">
+                    <div className="h-16 w-16 bg-green-100 rounded-full flex items-center justify-center">
+                      <CheckCircle className="h-8 w-8 text-green-600" />
+                    </div>
+                  </div>
+                  <h3 className="text-xl font-bold mb-2">Message Sent Successfully!</h3>
+                  <p className="text-gray-600 mb-4">
+                    Thank you for contacting us. A confirmation has been sent to <span className="font-medium">{formData.email}</span>.
+                  </p>
+                  <p className="text-sm text-gray-500 mb-6">
+                    Our team will review your message and get back to you as soon as possible.
+                  </p>
+                  
+                  <div className="mt-2 bg-white p-6 border rounded-lg max-w-lg mx-auto shadow-sm">
+                    <div className="text-left">
+                      <div className="border-b pb-2 mb-4">
+                        <div className="flex items-center">
+                          <MessageSquare size={16} className="text-primary mr-2" />
+                          <span className="font-medium">Auto-Reply: Message Received</span>
+                        </div>
+                        <div className="text-xs text-gray-500 mt-1">
+                          From: <span className="text-gray-700">no-reply@tech.gov.sg</span>
+                        </div>
+                        <div className="text-xs text-gray-500">
+                          To: <span className="text-gray-700">{formData.email}</span>
+                        </div>
+                      </div>
+                      <p className="text-sm mb-3">Dear {formData.name},</p>
+                      <p className="text-sm mb-3">
+                        Thank you for contacting our IT Audit Services team. This email confirms that we have received your message regarding "{formData.subject}".
+                      </p>
+                      <p className="text-sm mb-3">
+                        A member of our team will review your inquiry and respond within 1-2 business days.
+                      </p>
+                      <p className="text-sm mb-5">Thank you for your patience.</p>
+                      <p className="text-sm">Best regards,</p>
+                      <p className="text-sm font-medium">IT Audit Services Team</p>
+                    </div>
+                  </div>
+                  
+                  <Button onClick={handleNewMessage} className="mt-6">Send Another Message</Button>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <Label htmlFor="name">Full Name</Label>
+                      <Input
+                        id="name"
+                        name="name"
+                        required
+                        value={formData.name}
+                        onChange={handleChange}
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="email">Email Address</Label>
+                      <Input
+                        id="email"
+                        name="email"
+                        type="email"
+                        required
+                        value={formData.email}
+                        onChange={handleChange}
+                      />
+                    </div>
+                  </div>
+                  
                   <div className="space-y-2">
-                    <Label htmlFor="name">Full Name</Label>
+                    <Label htmlFor="subject">Subject</Label>
                     <Input
-                      id="name"
-                      name="name"
+                      id="subject"
+                      name="subject"
                       required
-                      value={formData.name}
+                      value={formData.subject}
                       onChange={handleChange}
                     />
                   </div>
+                  
                   <div className="space-y-2">
-                    <Label htmlFor="email">Email Address</Label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
+                    <Label htmlFor="message">Message</Label>
+                    <Textarea
+                      id="message"
+                      name="message"
+                      rows={5}
                       required
-                      value={formData.email}
+                      value={formData.message}
                       onChange={handleChange}
                     />
                   </div>
-                </div>
-                
-                <div className="space-y-2">
-                  <Label htmlFor="subject">Subject</Label>
-                  <Input
-                    id="subject"
-                    name="subject"
-                    required
-                    value={formData.subject}
-                    onChange={handleChange}
-                  />
-                </div>
-                
-                <div className="space-y-2">
-                  <Label htmlFor="message">Message</Label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    rows={5}
-                    required
-                    value={formData.message}
-                    onChange={handleChange}
-                  />
-                </div>
-                
-                <Button type="submit" className="w-full">Send Message</Button>
-              </form>
+                  
+                  <Button type="submit" className="w-full">Send Message</Button>
+                </form>
+              )}
             </div>
           </div>
         </section>
