@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -267,20 +266,24 @@ const QuoteForm = () => {
               <SelectItem value="others">Others</SelectItem>
             </SelectContent>
           </Select>
+          
+          {formState.serviceType === "others" && (
+            <div className="mt-2">
+              <Label htmlFor="otherServiceType" className="text-sm">Please specify</Label>
+              <Textarea
+                id="otherServiceType"
+                name="otherServiceType"
+                placeholder="Please specify the service type"
+                value={formState.otherServiceType}
+                onChange={handleChange}
+                required
+                className="mt-1"
+                rows={6}
+                maxLength={3000}
+              />
+            </div>
+          )}
         </div>
-        {formState.serviceType === "others" && (
-          <div className="space-y-2">
-            <Label htmlFor="otherServiceType">Please specify</Label>
-            <Input
-              id="otherServiceType"
-              name="otherServiceType"
-              placeholder="Please specify the service type"
-              value={formState.otherServiceType}
-              onChange={handleChange}
-              required
-            />
-          </div>
-        )}
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
