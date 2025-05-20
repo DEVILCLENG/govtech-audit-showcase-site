@@ -1,5 +1,6 @@
 
 import { Mail, MapPin, Clock } from "lucide-react";
+import { useEffect, useRef } from "react";
 
 const ContactSection = () => {
   const contactInfo = [
@@ -13,7 +14,7 @@ const ContactSection = () => {
       icon: MapPin,
       title: "Address",
       content: "10 Pasir Panjang Road, #10-01, Singapore 117438",
-      link: "https://maps.google.com/?q=10+Pasir+Panjang+Road,+Singapore+117438",
+      link: "https://www.onemap.gov.sg/main/v2/?lat=1.274240&lng=103.798508",
     },
     {
       icon: Clock,
@@ -22,6 +23,11 @@ const ContactSection = () => {
       link: null,
     },
   ];
+
+  const mapRef = useRef<HTMLIFrameElement>(null);
+
+  // Add proper OneMap URL for the iframe
+  const oneMapUrl = "https://www.onemap.gov.sg/minimap/minimap.html?mapStyle=Default&zoomLevel=17&latLng=1.274240,103.798508&popupWidth=200&showPopup=true&popupMsg=GovTech%20Singapore%3Cbr%3E10%20Pasir%20Panjang%20Road%2C%20%2310-01%3Cbr%3ESingapore%20117438";
 
   return (
     <section className="py-16 bg-gray-50">
@@ -41,7 +47,7 @@ const ContactSection = () => {
               </div>
               <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
               {item.link ? (
-                <a href={item.link} className="text-gray-600 hover:text-primary">
+                <a href={item.link} className="text-gray-600 hover:text-primary" target={item.title === "Address" ? "_blank" : undefined} rel={item.title === "Address" ? "noopener noreferrer" : undefined}>
                   {item.content}
                 </a>
               ) : (
@@ -53,12 +59,27 @@ const ContactSection = () => {
 
         <div className="mt-12 bg-white p-8 rounded-lg shadow-sm">
           <h3 className="text-xl font-semibold mb-4">Head Office Location</h3>
-          <div className="aspect-video w-full bg-gray-300 rounded-lg overflow-hidden">
-            {/* In a real implementation, you would embed a Google Map here */}
-            <div className="w-full h-full flex items-center justify-center bg-gray-200">
-              <MapPin size={32} className="text-gray-400 mr-2" />
-              <span className="text-gray-500">Map Loading...</span>
-            </div>
+          <div className="aspect-video w-full rounded-lg overflow-hidden border border-gray-200">
+            <iframe 
+              ref={mapRef}
+              title="GovTech Singapore Location"
+              src={oneMapUrl}
+              width="100%" 
+              height="100%" 
+              className="border-0"
+              allowFullScreen
+            ></iframe>
+          </div>
+          <div className="mt-4 text-center">
+            <a 
+              href="https://www.onemap.gov.sg/main/v2/?lat=1.274240&lng=103.798508" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center text-primary hover:underline"
+            >
+              <MapPin size={16} className="mr-1" />
+              View larger map on OneMap
+            </a>
           </div>
         </div>
       </div>
