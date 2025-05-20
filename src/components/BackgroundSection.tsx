@@ -1,12 +1,8 @@
 
 import { Card, CardContent } from "@/components/ui/card";
-import { Clock, Users, BookOpen, Database, FileCheck, UserCheck, Shield, FileDigit, Building, Lock, Briefcase, Terminal, ExternalLink } from "lucide-react";
-import { Link, useLocation } from "react-router-dom";
+import { Clock, Users, UserCheck, Shield, FileDigit, Building, Lock, Briefcase, Terminal, Database } from "lucide-react";
 
 const BackgroundSection = () => {
-  const location = useLocation();
-  const isClientsPage = location.pathname === "/our-clients";
-  
   const milestones = [
     {
       icon: Clock,
@@ -19,19 +15,9 @@ const BackgroundSection = () => {
       description: "Current strength of 16 auditors"
     },
     {
-      icon: FileCheck,
+      icon: UserCheck,
       title: "Current Clients",
-      description: (
-        <span>
-          Currently engaged with{" "}
-          <Link 
-            to={isClientsPage ? "#" : "/our-clients"}
-            className="text-primary underline flex items-center inline-flex"
-          >
-            20 agencies <ExternalLink size={14} className="ml-1" />
-          </Link>
-        </span>
-      )
+      description: "Currently engaged with 20 agencies"
     }
   ];
 
