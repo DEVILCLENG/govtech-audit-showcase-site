@@ -25,7 +25,7 @@ const BackgroundSection = () => {
         <span>
           Currently engaged with{" "}
           <Link 
-            to={isClientsPage ? "#client-section" : "/our-clients#client-section"}
+            to={isClientsPage ? "#" : "/our-clients"}
             className="text-primary underline flex items-center inline-flex"
           >
             20 agencies <ExternalLink size={14} className="ml-1" />
