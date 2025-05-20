@@ -1,19 +1,13 @@
 
-import { Mail, Phone, MapPin, Clock } from "lucide-react";
+import { Mail, MapPin, Clock } from "lucide-react";
 
 const ContactSection = () => {
   const contactInfo = [
     {
-      icon: Phone,
-      title: "Phone",
-      content: "(+65) 6211 0888",
-      link: "tel:+6562110888",
-    },
-    {
       icon: Mail,
       title: "Email",
-      content: "info@tech.gov.sg",
-      link: "mailto:info@tech.gov.sg",
+      content: "govtech-iad-ss@tech.gov.sg",
+      link: "mailto:govtech-iad-ss@tech.gov.sg",
     },
     {
       icon: MapPin,
@@ -39,7 +33,7 @@ const ContactSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {contactInfo.map((item, index) => (
             <div key={index} className="text-center bg-white p-6 rounded-lg shadow-sm">
               <div className="bg-primary/10 p-4 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">

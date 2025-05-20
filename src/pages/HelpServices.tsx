@@ -1,9 +1,8 @@
-
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageBanner from "@/components/PageBanner";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, HelpCircle, Phone, Mail, BookOpen, LifeBuoy, ExternalLink } from "lucide-react";
+import { ArrowRight, HelpCircle, Mail, BookOpen, LifeBuoy, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
@@ -84,12 +83,8 @@ const HelpServices = () => {
                 <p className="text-gray-600 mb-4">Need personalized assistance? Our support team is ready to help with your inquiries.</p>
                 <div className="space-y-3">
                   <div className="flex items-center">
-                    <Phone className="text-primary mr-2" size={16} />
-                    <span className="text-gray-700">(+65) 6211 0888</span>
-                  </div>
-                  <div className="flex items-center">
                     <Mail className="text-primary mr-2" size={16} />
-                    <span className="text-gray-700">support@tech.gov.sg</span>
+                    <span className="text-gray-700">govtech-iad-ss@tech.gov.sg</span>
                   </div>
                 </div>
               </div>
@@ -130,7 +125,7 @@ const HelpServices = () => {
                 <div>
                   <Button asChild variant="outline">
                     <Link to="/contact" className="flex items-center">
-                      <Phone className="mr-2" size={16} />
+                      <Mail className="mr-2" size={16} />
                       Contact Us
                     </Link>
                   </Button>

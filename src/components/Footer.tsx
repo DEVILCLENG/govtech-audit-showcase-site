@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, ExternalLink } from "lucide-react";
+import { Mail, MapPin, ExternalLink } from "lucide-react";
 import VisitCounter from "@/components/VisitCounter";
 
 const Footer = () => {
@@ -54,12 +54,8 @@ const Footer = () => {
                 <span className="text-gray-300">10 Pasir Panjang Road, #10-01, Singapore 117438</span>
               </div>
               <div className="flex items-center space-x-3">
-                <Phone size={20} />
-                <span className="text-gray-300">(+65) 6211 0888</span>
-              </div>
-              <div className="flex items-center space-x-3">
                 <Mail size={20} />
-                <a href="mailto:info@tech.gov.sg" className="text-gray-300 hover:text-white">info@tech.gov.sg</a>
+                <a href="mailto:govtech-iad-ss@tech.gov.sg" className="text-gray-300 hover:text-white">govtech-iad-ss@tech.gov.sg</a>
               </div>
             </div>
           </div>
