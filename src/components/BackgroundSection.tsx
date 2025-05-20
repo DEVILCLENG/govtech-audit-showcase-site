@@ -21,7 +21,7 @@ const BackgroundSection = () => {
       description: (
         <span>
           Currently engaged with{" "}
-          <Link to="#client-section" className="text-primary underline flex items-center inline-flex">
+          <Link to="/our-clients#client-section" className="text-primary underline flex items-center inline-flex">
             20 agencies <ExternalLink size={14} className="ml-1" />
           </Link>
         </span>
