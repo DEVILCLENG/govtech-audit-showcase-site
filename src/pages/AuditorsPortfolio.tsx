@@ -1,3 +1,4 @@
+
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageBanner from "@/components/PageBanner";
@@ -129,6 +130,12 @@ const AuditorsPortfolio = () => {
         
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4">
+            <div className="mb-12 text-center max-w-3xl mx-auto">
+              <p className="text-gray-700">
+                Our team of IT Audit experts, armed with industry certifications and extensive hands-on experience working with Agencies, serves as your trusted advisors. We identify gaps and provide appropriate recommendation to guide Agencies towards building a resilient cybersecurity posture for the future Singapore.
+              </p>
+            </div>
+            
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {auditors.map((auditor, index) => (
                 <Card key={index} className="overflow-hidden">
