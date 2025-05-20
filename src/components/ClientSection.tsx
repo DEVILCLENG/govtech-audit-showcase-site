@@ -27,13 +27,6 @@ const ClientSection = () => {
   return (
     <section id="client-section" className="py-16 bg-white">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">Our Clientele</h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Trusted by <a href="#client-section" className="text-primary hover:underline">agencies</a> across Singapore to deliver exceptional IT audit services.
-          </p>
-        </div>
-
         <div className="flex justify-center items-center mb-8">
           <div className="bg-primary/10 p-3 rounded-full">
             <ListChecks size={32} className="text-primary" />

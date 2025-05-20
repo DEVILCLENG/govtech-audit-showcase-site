@@ -35,7 +35,7 @@ const OurClients = () => {
       <main className="flex-grow pt-16">
         <PageBanner 
           title="Our Clients" 
-          description="Trusted by 20 agencies across Singapore to deliver exceptional IT audit services." 
+          description="We partner with government agencies across Singapore." 
         />
 
         <ClientSection />
