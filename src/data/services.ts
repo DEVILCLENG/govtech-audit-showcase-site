@@ -11,118 +11,36 @@ export interface Service {
   description: string;
   icon: LucideIcon;
   features: string[];
-  category: "core" | "specialized";
+  category: "what-we-offer";
 }
 
 // All audit services
 export const allServices: Service[] = [
   {
-    title: "Accounts & Access Management",
-    description: "Comprehensive assessment of privileged access controls and user access management",
-    icon: UserCheck,
-    features: [
-      "Privileged access management evaluation",
-      "User access management controls",
-      "Account validation and disablement processes",
-      "Central Account Management (CAM) review"
-    ],
-    category: "core"
-  },
-  {
-    title: "Security Monitoring",
-    description: "Assessment of logging, monitoring, and anomaly detection processes for security events",
-    icon: Shield,
-    features: [
-      "Privileged accounts activity logging",
-      "Independent review verification",
-      "Anomalous activity monitoring",
-      "Automated Baseline Log Review (ABLR) implementation"
-    ],
-    category: "core"
-  },
-  {
-    title: "Vulnerability Management",
-    description: "Evaluation of processes to identify, assess, and remediate security vulnerabilities",
-    icon: Bug,
-    features: [
-      "Vulnerability identification and remediation",
-      "Patch management assessment",
-      "End-of-Service-Life (EOSL) monitoring",
-      "Penetration testing and code reviews"
-    ],
-    category: "core"
-  },
-  {
-    title: "Infrastructure & Cloud Security",
-    description: "Review of infrastructure design, cloud security controls and data protection measures",
-    icon: Cloud,
-    features: [
-      "Network segmentation verification",
-      "Firewall configuration assessment",
-      "Remote administration security",
-      "Cloud service provider evaluation"
-    ],
-    category: "core"
-  },
-  {
-    title: "Business Continuity",
-    description: "Assessment of backup, recovery, and disaster planning processes",
-    icon: Server,
-    features: [
-      "Backup and recovery plan testing",
-      "Disaster Recovery Planning (DRP) review",
-      "System redundancy verification",
-      "Business Continuity Plan (BCP) alignment"
-    ],
-    category: "core"
-  },
-  {
-    title: "Third-Party Management",
-    description: "Evaluation of third-party onboarding, monitoring and exit processes",
-    icon: LifeBuoy,
-    features: [
-      "Vendor onboarding process assessment",
-      "Periodic audit verification",
-      "Performance monitoring review",
-      "Exit plan adequacy evaluation"
-    ],
-    category: "core"
-  },
-  {
-    title: "Application Security",
-    description: "Analysis of application design, secure coding practices and security by design",
-    icon: Lock,
-    features: [
-      "Security by design implementation",
-      "Secure coding practice assessment",
-      "Security testing adequacy",
-      "Interface vulnerability evaluation"
-    ],
-    category: "core"
-  },
-  {
-    title: "Data Security & Cryptography",
-    description: "Review of data protection controls and cryptographic implementation",
-    icon: Database,
-    features: [
-      "Data protection measures",
-      "Cryptographic key management",
-      "Encryption at rest and in transit",
-      "Personal data protection assessment"
-    ],
-    category: "core"
-  },
-  {
-    title: "ICT System & Secret System Audit",
+    title: "ICT System Audit",
     description: "Technical Thematic Audits by Systems and Organisation controls",
     icon: FileSearch,
     features: [
-      "Secret system controls assessment",
-      "System configuration review",
-      "Organizational control evaluation",
-      "Technical control verification"
+      "Accounts & Access Management",
+      "Security Monitoring",
+      "Vulnerability Management",
+      "Application Security",
+      "Data Security & Cryptography",
+      "Business Continuity",
+      "Infrastructure and Cloud Security"
     ],
-    category: "specialized"
+    category: "what-we-offer"
+  },
+  {
+    title: "Secret System",
+    description: "Full spectrum of IM8 requirements",
+    icon: Shield,
+    features: [
+      "Secret system controls assessment",
+      "Risk-based analytical testing and assessment",
+      "IM8 Compliance verification"
+    ],
+    category: "what-we-offer"
   },
   {
     title: "CCOP",
@@ -134,7 +52,7 @@ export const allServices: Service[] = [
       "Security control assessment",
       "Compliance gap analysis"
     ],
-    category: "specialized"
+    category: "what-we-offer"
   },
   {
     title: "Data Analytics",
@@ -146,7 +64,7 @@ export const allServices: Service[] = [
       "Continuous control monitoring",
       "Risk-based analytical testing"
     ],
-    category: "specialized"
+    category: "what-we-offer"
   },
   {
     title: "Pre-implementation Review",
@@ -158,7 +76,7 @@ export const allServices: Service[] = [
       "Security by design assessment",
       "Pre-deployment security validation"
     ],
-    category: "specialized"
+    category: "what-we-offer"
   },
   {
     title: "Integrated Audit",
@@ -170,7 +88,7 @@ export const allServices: Service[] = [
       "Application control testing",
       "Cross-functional risk assessment"
     ],
-    category: "specialized"
+    category: "what-we-offer"
   },
   {
     title: "Sudo Configurations Review",
@@ -182,6 +100,6 @@ export const allServices: Service[] = [
       "Permission structure review",
       "Security configuration hardening"
     ],
-    category: "specialized"
+    category: "what-we-offer"
   }
 ];
