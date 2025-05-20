@@ -1,11 +1,11 @@
 
-import { Shield, TrendingUp, Award, Users } from "lucide-react";
+import { Shield, TrendingUp, Award, Users, Layers } from "lucide-react";
 
 const BenefitSection = () => {
   const benefits = [
     {
       icon: Shield,
-      title: "Enhanced Security",
+      title: "Proactive Defense",
       description: "Identify vulnerabilities in your systems before they can be exploited, protecting sensitive government data and citizen information.",
     },
     {
@@ -15,8 +15,13 @@ const BenefitSection = () => {
     },
     {
       icon: Award,
-      title: "Compliance Assurance",
-      description: "Ensure your agency meets all regulatory requirements and adheres to government standards for IT systems and data management.",
+      title: "Comprehensive Services",
+      description: "From risk assessments to incident response, we cover all aspects of cybersecurity to provide a complete defense to ensure your agency meets IM8 requirements for IT systems and data management.",
+    },
+    {
+      icon: Layers,
+      title: "Tailored Services",
+      description: "Our approach is not one-size-fits-all. We tailor our services to meet the specific needs of your Agency.",
     },
     {
       icon: Users,
@@ -35,7 +40,7 @@ const BenefitSection = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {benefits.map((benefit, index) => (
             <div key={index} className="text-center">
               <div className="bg-primary/10 p-4 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
