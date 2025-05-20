@@ -13,16 +13,16 @@ const BackgroundSection = () => {
     {
       icon: Users,
       title: "Growing Team",
-      description: "Current strength of 16 auditors with 1 forward deployment to client agency"
+      description: "Current strength of 16 auditors"
     },
     {
       icon: FileCheck,
-      title: "Current Agencies",
+      title: "Current Clients",
       description: (
         <span>
           Currently engaged with{" "}
           <Link to="#client-section" className="text-primary underline flex items-center inline-flex">
-            28 agencies <ExternalLink size={14} className="ml-1" />
+            20 agencies <ExternalLink size={14} className="ml-1" />
           </Link>
         </span>
       )
