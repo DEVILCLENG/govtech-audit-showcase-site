@@ -69,6 +69,7 @@ const initialFormState = {
   department: "",
   phone: "",
   serviceType: "",
+  otherServiceType: "",
   message: "",
   systemCriticality: "",
   dataSensitivity: "",
@@ -93,6 +94,10 @@ const QuoteForm = () => {
 
   const handleServiceChange = (value: string) => {
     handleSelectChange("serviceType", value);
+    // Reset otherServiceType when a different service type is selected
+    if (value !== "others") {
+      setFormState((prev) => ({ ...prev, otherServiceType: "" }));
+    }
   };
 
   const handleAgencyChange = (value: string) => {
@@ -250,16 +255,32 @@ const QuoteForm = () => {
               <SelectValue placeholder="Select a service type" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="security-audit">Security Audit</SelectItem>
-              <SelectItem value="infrastructure-audit">Infrastructure Audit</SelectItem>
-              <SelectItem value="process-audit">Process Audit</SelectItem>
-              <SelectItem value="compliance-audit">Compliance Audit</SelectItem>
-              <SelectItem value="application-audit">Application Audit</SelectItem>
-              <SelectItem value="project-assurance">Project Assurance</SelectItem>
-              <SelectItem value="other">Other (Please specify)</SelectItem>
+              <SelectItem value="audit-planning">Audit Planning</SelectItem>
+              <SelectItem value="ict-system-audit">ICT System Audit (Thermatic)</SelectItem>
+              <SelectItem value="secret-system-audit">Secret System Audit</SelectItem>
+              <SelectItem value="ccop-audit">CCOP Audit</SelectItem>
+              <SelectItem value="data-analytics">Data Analytics</SelectItem>
+              <SelectItem value="pre-implementation-review">Pre-Implementation Review</SelectItem>
+              <SelectItem value="integrated-audit">Integrated Audit</SelectItem>
+              <SelectItem value="sudo-configurations">Sudo Configurations</SelectItem>
+              <SelectItem value="third-party-management-audit">Third Party Management Audit (ITSM/ Exit)</SelectItem>
+              <SelectItem value="others">Others</SelectItem>
             </SelectContent>
           </Select>
         </div>
+        {formState.serviceType === "others" && (
+          <div className="space-y-2">
+            <Label htmlFor="otherServiceType">Please specify</Label>
+            <Input
+              id="otherServiceType"
+              name="otherServiceType"
+              placeholder="Please specify the service type"
+              value={formState.otherServiceType}
+              onChange={handleChange}
+              required
+            />
+          </div>
+        )}
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
