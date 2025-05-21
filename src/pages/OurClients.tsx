@@ -1,4 +1,3 @@
-
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageBanner from "@/components/PageBanner";
@@ -6,37 +5,27 @@ import ClientSection from "@/components/ClientSection";
 import TestimonialSection from "@/components/TestimonialSection";
 import { Card, CardContent } from "@/components/ui/card";
 import { ChevronRight } from "lucide-react";
-
 const OurClients = () => {
-  const caseStudies = [
-    {
-      title: "Infrastructure Security Assessment",
-      client: "Agency 1",
-      description: "Comprehensive security assessment of critical IT infrastructure, identifying vulnerabilities and providing remediation strategies.",
-      outcome: "Enhanced security posture with 40% reduction in high-risk vulnerabilities."
-    },
-    {
-      title: "Data Protection Compliance Audit",
-      client: "Agency 2",
-      description: "Evaluation of data protection practices and controls against regulatory requirements and industry standards.",
-      outcome: "Achieved full compliance with Personal Data Protection requirements."
-    },
-    {
-      title: "Cloud Migration Assurance",
-      client: "Agency 3",
-      description: "Audit of cloud migration strategy and implementation to ensure security, compliance, and operational efficiency.",
-      outcome: "Successfully migrated critical applications with zero security incidents."
-    }
-  ];
-
-  return (
-    <div className="min-h-screen flex flex-col">
+  const caseStudies = [{
+    title: "Infrastructure Security Assessment",
+    client: "Agency 1",
+    description: "Comprehensive security assessment of critical IT infrastructure, identifying vulnerabilities and providing remediation strategies.",
+    outcome: "Enhanced security posture with 40% reduction in high-risk vulnerabilities."
+  }, {
+    title: "Data Protection Compliance Audit",
+    client: "Agency 2",
+    description: "Evaluation of data protection practices and controls against regulatory requirements and industry standards.",
+    outcome: "Achieved full compliance with Personal Data Protection requirements."
+  }, {
+    title: "Cloud Migration Assurance",
+    client: "Agency 3",
+    description: "Audit of cloud migration strategy and implementation to ensure security, compliance, and operational efficiency.",
+    outcome: "Successfully migrated critical applications with zero security incidents."
+  }];
+  return <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-grow pt-16">
-        <PageBanner 
-          title="Our Clients" 
-          description="We partner with government agencies across Singapore." 
-        />
+        <PageBanner title="Our Clients" description="We partner with government agencies across Singapore." />
 
         <ClientSection />
         
@@ -50,11 +39,10 @@ const OurClients = () => {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {caseStudies.map((study, index) => (
-                <Card key={index} className="border border-gray-200 transition-all hover:shadow-md">
+              {caseStudies.map((study, index) => <Card key={index} className="border border-gray-200 transition-all hover:shadow-md">
                   <CardContent className="pt-6">
                     <div className="mb-4">
-                      <span className="text-lg md:text-xl lg:text-2xl font-medium text-primary">{study.client}</span>
+                      <span className="text-lg md:text-xl font-medium text-primary lg:text-xl">{study.client}</span>
                       <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mt-1">{study.title}</h3>
                     </div>
                     <p className="text-lg md:text-xl lg:text-2xl text-gray-600 mb-4">{study.description}</p>
@@ -66,8 +54,7 @@ const OurClients = () => {
                       </div>
                     </div>
                   </CardContent>
-                </Card>
-              ))}
+                </Card>)}
             </div>
           </div>
         </section>
@@ -75,8 +62,6 @@ const OurClients = () => {
         <TestimonialSection />
       </main>
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default OurClients;
