@@ -177,14 +177,6 @@ const AuditorsPortfolio = () => {
                       <span className="text-sm md:text-base lg:text-lg font-medium">Experience: {auditor.yearsExperience} years</span>
                     </div>
                     
-                    <div className="flex items-center mb-3">
-                      <FileCheck className="text-primary mr-2" size={20} />
-                      <span className="text-sm md:text-base lg:text-lg font-medium">Areas of Expertise:</span>
-                    </div>
-                    <ul className="text-sm md:text-base lg:text-lg text-gray-600 mb-4 ml-6 list-disc">
-                      {auditor.expertise.map((area, idx) => <li key={idx}>{area}</li>)}
-                    </ul>
-                    
                     <div className="mt-4 pt-4 border-t border-gray-200">
                       <Button
                         variant="ghost" 
@@ -202,7 +194,16 @@ const AuditorsPortfolio = () => {
                       </Button>
                       {expandedBio === index && (
                         <div className="mt-4 text-sm md:text-base lg:text-lg text-gray-700 animate-accordion-down">
-                          {auditor.profile}
+                          <div className="mb-4">
+                            <h4 className="font-medium mb-2">Areas of Expertise:</h4>
+                            <ul className="ml-6 list-disc">
+                              {auditor.expertise.map((area, idx) => <li key={idx}>{area}</li>)}
+                            </ul>
+                          </div>
+                          <div>
+                            <h4 className="font-medium mb-2">Bio:</h4>
+                            <p>{auditor.profile}</p>
+                          </div>
                         </div>
                       )}
                     </div>
