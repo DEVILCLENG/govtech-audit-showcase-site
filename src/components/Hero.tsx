@@ -20,11 +20,11 @@ const Hero = () => {
             <img src="/lovable-uploads/4e7a431e-837d-4f2d-bf04-06cd754e0b22.png" alt="IT Auditor with magnifying glass" className="rounded-lg shadow-lg max-w-full object-cover" />
           </div>
           <div>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl mb-3 text-black font-bold xl:text-5xl my-[30px]">GovTech Shared Services Overview</h2>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl mb-3 text-black font-bold my-[30px] py-0 xl:text-5xl">GovTech Shared Services Overview</h2>
             <p className="text-lg md:text-xl lg:text-2xl text-black mb-6 xl:text-xl font-normal">
               At Shared Services, we are uncovering cybersecurity gaps by pushing the boundaries out from conventional compliance audit methodology to out-of-box. Our turn-key service encompasses customised audit planning for Agencies, leveraging on WOG central and AI tools for detection and risk hunting across Cloud, on-prem to user endpoints. Enabling Agencies to prevent potential vulnerabilities instead of fire-fighting.
             </p>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl leading-tight text-black my-0 text-center py-[100px] font-bold xl:text-4xl">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl leading-tight text-black my-0 text-center py-[20px] xl:text-4xl font-bold">
               One Intelligent Service. Three Reasons to Believe
             </h1>
           </div>

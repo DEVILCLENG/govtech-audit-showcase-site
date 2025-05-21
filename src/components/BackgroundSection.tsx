@@ -64,7 +64,7 @@ const BackgroundSection = () => {
                   <benefit.icon size={20} className="text-primary" />
                 </div>
                 <h5 className="font-medium text-gray-900 mb-1 text-center">{benefit.title}</h5>
-                <p className="text-gray-600 text-base font-normal">{benefit.description}</p>
+                <p className="text-gray-600 font-normal text-lg">{benefit.description}</p>
               </div>)}
           </div>
         </div>
