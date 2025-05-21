@@ -3,9 +3,18 @@ import { CheckCircle } from "lucide-react";
 
 const Hero = () => {
   const keyPoints = [
-    "Comprehensive audit solutions",
-    "Compliance with international standards",
-    "Expert team of certified auditors"
+    {
+      title: "Best-in Class Audit Service",
+      description: "IAD-SS sets the standard for innovative audit methodology with risk-based approach uncovering visibility of what's on your network and control enabling Agencies to focus on vulnerable areas within your systems to autonomously prevent, detect, and recover from threats."
+    },
+    {
+      title: "Recognition & Results", 
+      description: "IAD-SS is a proud Audit Leader in GovTech being recognized by Agencies for our innovative audit skills and delication to aid them uncovering lapses there were never being disovered."
+    },
+    {
+      title: "Measurable, Performance Advantage",
+      description: "IAD-SS is committed to the success of our Agencies with at least 98% satisfaction rate and seamless service engagement and hassle-free security clearance required by Agencies."
+    }
   ];
 
   return (
@@ -14,20 +23,15 @@ const Hero = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <h1 className="text-4xl md:text-5xl font-bold leading-tight">
-              Professional IT Audit Services for Agencies
+              One Intelligent Service. Three Reasons to Believe
             </h1>
-            <p className="text-lg md:text-xl opacity-90">
-              Enhance your agency's security, compliance, and performance with our specialized IT audit services tailored for institutions.
-            </p>
-            <div>
-              <ul className="space-y-2">
-                {keyPoints.map((point, index) => (
-                  <li key={index} className="flex items-center space-x-2">
-                    <CheckCircle size={20} className="text-blue-300 flex-shrink-0" />
-                    <span>{point}</span>
-                  </li>
-                ))}
-              </ul>
+            <div className="space-y-6">
+              {keyPoints.map((point, index) => (
+                <div key={index} className="bg-white/10 p-4 rounded-lg backdrop-blur-sm">
+                  <h3 className="text-xl font-semibold mb-2 text-blue-300">{point.title}</h3>
+                  <p className="text-sm md:text-base opacity-90">{point.description}</p>
+                </div>
+              ))}
             </div>
           </div>
           <div className="hidden md:block">
