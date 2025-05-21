@@ -2,11 +2,20 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageBanner from "@/components/PageBanner";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Award, FileCheck, Users } from "lucide-react";
+import { ArrowRight, Award, ChevronRight, FileCheck, Users } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent } from "@/components/ui/card";
+import { useState } from "react";
+import { cn } from "@/lib/utils";
+
 const AuditorsPortfolio = () => {
+  const [expandedBio, setExpandedBio] = useState<number | null>(null);
+
+  const toggleBio = (index: number) => {
+    setExpandedBio(expandedBio === index ? null : index);
+  };
+
   // Image mapping for auditors - matching names to uploaded images
   const auditorImages = {
     "Koh Sook Bing": "/lovable-uploads/ee8c34f1-6b48-4724-a39e-ec70f2dad7ee.png",
@@ -177,7 +186,25 @@ const AuditorsPortfolio = () => {
                     </ul>
                     
                     <div className="mt-4 pt-4 border-t border-gray-200">
-                      <p className="text-sm md:text-base lg:text-lg text-gray-700 line-clamp-4">{auditor.profile}</p>
+                      <Button
+                        variant="ghost" 
+                        className="text-primary flex items-center text-sm md:text-base lg:text-lg w-full justify-between"
+                        onClick={() => toggleBio(index)}
+                      >
+                        Read Bio
+                        <ChevronRight 
+                          className={cn(
+                            "transition-transform", 
+                            expandedBio === index ? "rotate-90" : ""
+                          )} 
+                          size={20} 
+                        />
+                      </Button>
+                      {expandedBio === index && (
+                        <div className="mt-4 text-sm md:text-base lg:text-lg text-gray-700 animate-accordion-down">
+                          {auditor.profile}
+                        </div>
+                      )}
                     </div>
                   </CardContent>
                 </Card>)}
