@@ -21,22 +21,22 @@ const Hero = () => {
   ];
 
   return (
-    <div className="bg-[#33C3F0] text-white min-h-[600px] flex items-center pt-16">
+    <div className="bg-[#1EAEDB] text-black min-h-[600px] flex items-center pt-16">
       <div className="container mx-auto px-4 py-12">
         <div className="text-center mb-8">
-          <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6 text-black">
             One Intelligent Service. Three Reasons to Believe
           </h1>
         </div>
         
         <div className="grid md:grid-cols-3 gap-6">
           {keyPoints.map((point, index) => (
-            <div key={index} className="bg-white/10 p-6 rounded-lg backdrop-blur-sm flex flex-col items-center">
+            <div key={index} className="bg-[#33C3F0] p-6 rounded-lg shadow-md flex flex-col items-center">
               <div className="bg-white/20 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-4">
-                <point.icon size={32} className="text-white" />
+                <point.icon size={32} className="text-black" />
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-white">{point.title}</h3>
-              <p className="text-sm md:text-base opacity-90 text-center">{point.description}</p>
+              <h3 className="text-xl font-semibold mb-3 text-black">{point.title}</h3>
+              <p className="text-sm md:text-base text-black text-center">{point.description}</p>
             </div>
           ))}
         </div>
