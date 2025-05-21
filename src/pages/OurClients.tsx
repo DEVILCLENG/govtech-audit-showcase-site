@@ -43,8 +43,8 @@ const OurClients = () => {
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4 text-lg md:text-3xl lg:text-5xl">Success Stories</h2>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto text-base md:text-xl lg:text-2xl">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4">Success Stories</h2>
+              <p className="text-xl md:text-2xl lg:text-3xl max-w-3xl mx-auto">
                 See how our IT audit services have helped organizations strengthen their IT governance, risk management, and compliance.
               </p>
             </div>
@@ -54,15 +54,15 @@ const OurClients = () => {
                 <Card key={index} className="border border-gray-200 transition-all hover:shadow-md">
                   <CardContent className="pt-6">
                     <div className="mb-4">
-                      <span className="text-sm font-medium text-primary text-base md:text-lg">{study.client}</span>
-                      <h3 className="text-xl font-bold mt-1 text-xl md:text-2xl lg:text-3xl">{study.title}</h3>
+                      <span className="text-lg md:text-xl lg:text-2xl font-medium text-primary">{study.client}</span>
+                      <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mt-1">{study.title}</h3>
                     </div>
-                    <p className="text-gray-600 mb-4 text-base md:text-lg lg:text-xl">{study.description}</p>
+                    <p className="text-lg md:text-xl lg:text-2xl text-gray-600 mb-4">{study.description}</p>
                     <div className="border-t border-gray-100 pt-4 mt-auto">
-                      <div className="flex items-center text-primary text-base md:text-lg">
+                      <div className="flex items-center text-primary text-lg md:text-xl lg:text-2xl">
                         <span className="font-medium">Outcome:</span> 
                         <span className="ml-2">{study.outcome}</span>
-                        <ChevronRight className="h-4 w-4 ml-1" />
+                        <ChevronRight className="h-5 w-5 ml-1" />
                       </div>
                     </div>
                   </CardContent>

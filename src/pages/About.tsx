@@ -48,8 +48,8 @@ const About = () => {
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-3xl font-bold mb-6">Our Story</h2>
-                <div className="space-y-4 text-gray-700">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">Our Story</h2>
+                <div className="space-y-4 text-lg md:text-xl lg:text-2xl text-gray-700">
                   <p>
                     Established to address the critical need for specialized ICT audit services within agencies, 
                     IAD-SS has grown to become a trusted partner for IT audit and assurance services.
@@ -81,8 +81,8 @@ const About = () => {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">Our Values</h2>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">Our Values</h2>
+              <p className="text-lg md:text-xl lg:text-2xl text-gray-600 max-w-3xl mx-auto">
                 These core values guide our approach to every audit engagement.
               </p>
             </div>
@@ -92,12 +92,12 @@ const About = () => {
                 <Card key={index} className="border border-gray-200 transition-all hover:shadow-md">
                   <CardHeader className="flex flex-row items-center gap-4">
                     <div className="p-2 bg-primary/10 rounded-lg">
-                      <value.icon className="h-6 w-6 text-primary" />
+                      <value.icon className="h-8 w-8 text-primary" />
                     </div>
-                    <CardTitle>{value.title}</CardTitle>
+                    <CardTitle className="text-xl md:text-2xl lg:text-3xl">{value.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <CardDescription className="text-base">{value.description}</CardDescription>
+                    <CardDescription className="text-base md:text-lg lg:text-xl">{value.description}</CardDescription>
                   </CardContent>
                 </Card>
               ))}

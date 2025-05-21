@@ -65,8 +65,8 @@ const Contact = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto">
               <div className="text-center mb-8">
-                <h2 className="text-2xl font-bold">Send Us a Message</h2>
-                <p className="text-gray-600">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6">Send Us a Message</h2>
+                <p className="text-lg md:text-xl lg:text-2xl text-gray-600">
                   Fill out the form below and we'll get back to you as soon as possible.
                 </p>
               </div>
@@ -78,11 +78,11 @@ const Contact = () => {
                       <CheckCircle className="h-8 w-8 text-green-600" />
                     </div>
                   </div>
-                  <h3 className="text-xl font-bold mb-2">Message Sent Successfully!</h3>
-                  <p className="text-gray-600 mb-4">
+                  <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-2">Message Sent Successfully!</h3>
+                  <p className="text-lg md:text-xl lg:text-2xl text-gray-600 mb-4">
                     Thank you for contacting us. A confirmation has been sent to <span className="font-medium">{formData.email}</span>.
                   </p>
-                  <p className="text-sm text-gray-500 mb-6">
+                  <p className="text-base md:text-lg lg:text-xl text-gray-500 mb-6">
                     Our team will review your message and get back to you as soon as possible.
                   </p>
                   
@@ -93,43 +93,44 @@ const Contact = () => {
                           <MessageSquare size={16} className="text-primary mr-2" />
                           <span className="font-medium">Auto-Reply: Message Received</span>
                         </div>
-                        <div className="text-xs text-gray-500 mt-1">
+                        <div className="text-sm md:text-base lg:text-lg text-gray-500 mt-1">
                           From: <span className="text-gray-700">no-reply@tech.gov.sg</span>
                         </div>
-                        <div className="text-xs text-gray-500">
+                        <div className="text-sm md:text-base lg:text-lg text-gray-500">
                           To: <span className="text-gray-700">{formData.email}</span>
                         </div>
                       </div>
-                      <p className="text-sm mb-3">Dear {formData.name},</p>
-                      <p className="text-sm mb-3">
+                      <p className="text-base md:text-lg lg:text-xl mb-3">Dear {formData.name},</p>
+                      <p className="text-base md:text-lg lg:text-xl mb-3">
                         Thank you for contacting our IT Audit Services team. This email confirms that we have received your message regarding "{formData.subject}".
                       </p>
-                      <p className="text-sm mb-3">
+                      <p className="text-base md:text-lg lg:text-xl mb-3">
                         A member of our team will review your inquiry and respond within 1-2 business days.
                       </p>
-                      <p className="text-sm mb-5">Thank you for your patience.</p>
-                      <p className="text-sm">Best regards,</p>
-                      <p className="text-sm font-medium">IT Audit Services Team</p>
+                      <p className="text-base md:text-lg lg:text-xl mb-5">Thank you for your patience.</p>
+                      <p className="text-base md:text-lg lg:text-xl">Best regards,</p>
+                      <p className="text-base md:text-lg lg:text-xl font-medium">IT Audit Services Team</p>
                     </div>
                   </div>
                   
-                  <Button onClick={handleNewMessage} className="mt-6">Send Another Message</Button>
+                  <Button onClick={handleNewMessage} className="mt-6 text-base md:text-lg lg:text-xl">Send Another Message</Button>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <Label htmlFor="name">Full Name</Label>
+                      <Label htmlFor="name" className="text-base md:text-lg lg:text-xl">Full Name</Label>
                       <Input
                         id="name"
                         name="name"
                         required
                         value={formData.name}
                         onChange={handleChange}
+                        className="text-base md:text-lg lg:text-xl"
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="email">Email Address</Label>
+                      <Label htmlFor="email" className="text-base md:text-lg lg:text-xl">Email Address</Label>
                       <Input
                         id="email"
                         name="email"
@@ -137,23 +138,25 @@ const Contact = () => {
                         required
                         value={formData.email}
                         onChange={handleChange}
+                        className="text-base md:text-lg lg:text-xl"
                       />
                     </div>
                   </div>
                   
                   <div className="space-y-2">
-                    <Label htmlFor="subject">Subject</Label>
+                    <Label htmlFor="subject" className="text-base md:text-lg lg:text-xl">Subject</Label>
                     <Input
                       id="subject"
                       name="subject"
                       required
                       value={formData.subject}
                       onChange={handleChange}
+                      className="text-base md:text-lg lg:text-xl"
                     />
                   </div>
                   
                   <div className="space-y-2">
-                    <Label htmlFor="message">Message</Label>
+                    <Label htmlFor="message" className="text-base md:text-lg lg:text-xl">Message</Label>
                     <Textarea
                       id="message"
                       name="message"
@@ -161,10 +164,11 @@ const Contact = () => {
                       required
                       value={formData.message}
                       onChange={handleChange}
+                      className="text-base md:text-lg lg:text-xl"
                     />
                   </div>
                   
-                  <Button type="submit" className="w-full">Send Message</Button>
+                  <Button type="submit" className="w-full text-base md:text-lg lg:text-xl">Send Message</Button>
                 </form>
               )}
             </div>

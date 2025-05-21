@@ -18,9 +18,9 @@ const PageBanner = ({ title, description, backgroundImage = "/lovable-uploads/5c
       
       {/* Content */}
       <div className="container mx-auto px-4 text-center relative z-10">
-        <h1 className="text-4xl font-bold mb-4">{title}</h1>
+        <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4">{title}</h1>
         {description && (
-          <p className="text-lg max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl lg:text-3xl max-w-3xl mx-auto">
             {description}
           </p>
         )}

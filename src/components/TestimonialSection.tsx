@@ -29,8 +29,8 @@ const TestimonialSection = () => {
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4 text-3xl md:text-4xl lg:text-5xl">What Our Clients Say</h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto text-lg md:text-xl lg:text-2xl">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4">What Our Clients Say</h2>
+          <p className="text-xl md:text-2xl lg:text-3xl max-w-3xl mx-auto">
             Don't just take our word for it. Here's what agencies have to say about our IT audit services.
           </p>
         </div>
@@ -42,11 +42,11 @@ const TestimonialSection = () => {
                 <div className="mb-4 flex justify-start">
                   {testimonial.icon}
                 </div>
-                <p className="text-gray-700 mb-6 flex-grow text-base md:text-lg lg:text-xl">{testimonial.quote}</p>
+                <p className="text-lg md:text-xl lg:text-2xl mb-6 flex-grow">{testimonial.quote}</p>
                 <Separator className="mb-4" />
                 <div>
-                  <p className="font-semibold text-base md:text-lg">{testimonial.position}</p>
-                  <p className="text-gray-500 text-sm md:text-base">{testimonial.agency}</p>
+                  <p className="font-semibold text-lg md:text-xl lg:text-2xl">{testimonial.position}</p>
+                  <p className="text-gray-500 text-base md:text-lg lg:text-xl">{testimonial.agency}</p>
                 </div>
               </CardContent>
             </Card>
