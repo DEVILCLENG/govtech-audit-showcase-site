@@ -10,7 +10,7 @@ const Quote = () => {
       <main className="flex-grow pt-16">
         <div className="bg-primary text-white py-16">
           <div className="container mx-auto px-4 text-center">
-            <h1 className="text-4xl font-bold mb-4">Request a Quote</h1>
+            <h1 className="text-4xl font-bold mb-4">Get Started</h1>
             <p className="text-lg max-w-3xl mx-auto">
               Tell us about your IT audit needs, and we'll provide a detailed quote tailored to your agency's specific requirements.
             </p>

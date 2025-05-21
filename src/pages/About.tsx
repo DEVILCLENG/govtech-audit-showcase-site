@@ -40,7 +40,7 @@ const About = () => {
       <Navbar />
       <main className="flex-grow pt-16">
         <PageBanner 
-          title="About Us" 
+          title="Why Shared Services?" 
           description="Learn about our mission, values, and the dedicated team behind our IT audit services."
         />
         

@@ -23,30 +23,37 @@ const Hero = () => {
   return (
     <div className="bg-[#D3E4FD] text-black min-h-[600px] flex items-center pt-16">
       <div className="container mx-auto px-4 py-12">
-        <div className="text-center mb-8">
-          <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6 text-black">
-            One Intelligent Service. Three Reasons to Believe
-          </h1>
+        <div className="text-center mb-12">
+          <h2 className="text-2xl md:text-3xl font-semibold mb-3 text-black">GovTech Shared Services Overview</h2>
+          <p className="text-base md:text-lg max-w-4xl mx-auto text-black">
+            At Shared Services, we are uncovering cybersecurity gaps by pushing the boundaries out from conventional compliance audit methodology to out-of-box. Our turn-key service encompasses customised audit planning for Agencies, leveraging on WOG central and AI tools for detection and risk hunting across Cloud, on-prem to user endpoints. Enabling Agencies to prevent potential vulnerabilities instead of fire-fighting.
+          </p>
         </div>
         
-        <div className="grid md:grid-cols-3 gap-6">
-          {keyPoints.map((point, index) => (
-            <div key={index} className="bg-white p-6 rounded-lg shadow-md flex flex-col items-center">
-              <div className="bg-primary/10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-4">
-                <point.icon size={32} className="text-black" />
-              </div>
-              <h3 className="text-xl font-semibold mb-3 text-black">{point.title}</h3>
-              <p className="text-sm md:text-base text-black text-center">{point.description}</p>
+        <div className="grid md:grid-cols-2 gap-8 mb-12">
+          <div className="flex justify-center items-center">
+            <img 
+              src="/lovable-uploads/4e7a431e-837d-4f2d-bf04-06cd754e0b22.png" 
+              alt="IT Auditor with magnifying glass" 
+              className="rounded-lg shadow-lg max-w-full object-cover"
+            />
+          </div>
+          <div>
+            <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-6 text-black">
+              One Intelligent Service. Three Reasons to Believe
+            </h1>
+            <div className="grid gap-6">
+              {keyPoints.map((point, index) => (
+                <div key={index} className="bg-white p-6 rounded-lg shadow-md flex flex-col items-center">
+                  <div className="bg-primary/10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-4">
+                    <point.icon size={32} className="text-black" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-3 text-black">{point.title}</h3>
+                  <p className="text-sm md:text-base text-black text-center">{point.description}</p>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-        
-        <div className="mt-10 flex justify-center">
-          <img 
-            src="/lovable-uploads/e869a127-72de-4b9a-aefd-0faf7f96dab2.png" 
-            alt="IT Audit Services" 
-            className="rounded-lg shadow-lg max-w-full md:max-w-lg object-cover"
-          />
+          </div>
         </div>
       </div>
     </div>

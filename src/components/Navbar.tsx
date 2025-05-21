@@ -45,7 +45,7 @@ const Navbar = () => {
             to="/about" 
             className={`font-medium ${isActive('/about') ? 'text-primary' : 'text-gray-700 hover:text-primary'}`}
           >
-            About
+            Why Shared Services?
           </Link>
           {!isHelpServicesPage && (
             <Link 
@@ -80,7 +80,7 @@ const Navbar = () => {
             Help
           </Link>
           <Button asChild>
-            <Link to="/quote">Request Quote</Link>
+            <Link to="/quote">Get Started</Link>
           </Button>
         </nav>
 
@@ -111,7 +111,7 @@ const Navbar = () => {
               className={`py-2 font-medium ${isActive('/about') ? 'text-primary' : 'text-gray-700 hover:text-primary'}`}
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              About
+              Why Shared Services?
             </Link>
             {!isHelpServicesPage && (
               <Link 
@@ -152,7 +152,7 @@ const Navbar = () => {
             </Link>
             <Button asChild className="w-full mt-2">
               <Link to="/quote" onClick={() => setIsMobileMenuOpen(false)}>
-                Request Quote
+                Get Started
               </Link>
             </Button>
           </div>

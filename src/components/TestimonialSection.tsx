@@ -1,4 +1,3 @@
-
 import { Separator } from "@/components/ui/separator";
 import { Card, CardContent } from "@/components/ui/card";
 import { Heart, Award, ThumbsUp } from "lucide-react";
@@ -9,21 +8,21 @@ const TestimonialSection = () => {
       quote: "The IT audit provided by GovTech IAD-SS identified critical vulnerabilities in our systems that we weren't aware of. Their recommendations helped us strengthen our security posture significantly.",
       author: "Sarah Lee",
       position: "IT Director",
-      agency: "Ministry of Digital Development",
+      agency: "Agency 1",
       icon: <ThumbsUp className="text-primary" size={28} />
     },
     {
       quote: "Working with the IAD-SS team was a smooth experience from start to finish. Their thorough understanding of government IT infrastructure made the audit process efficient and highly valuable.",
       author: "David Wong",
       position: "CIO",
-      agency: "National Environment Agency",
+      agency: "Agency 2",
       icon: <Heart className="text-primary" size={28} />
     },
     {
       quote: "The compliance audit helped us align our IT practices with international standards. The team provided clear guidance on how to address gaps and improve our processes.",
       author: "Michael Tan",
       position: "Head of Compliance",
-      agency: "Land Transport Authority",
+      agency: "Agency 3",
       icon: <Award className="text-primary" size={28} />
     }
   ];
