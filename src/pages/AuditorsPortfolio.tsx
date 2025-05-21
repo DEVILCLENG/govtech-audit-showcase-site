@@ -191,7 +191,7 @@ const AuditorsPortfolio = () => {
                         className="text-primary flex items-center text-sm md:text-base lg:text-lg w-full justify-between"
                         onClick={() => toggleBio(index)}
                       >
-                        Read Bio
+                        Experience and areas of expertise
                         <ChevronRight 
                           className={cn(
                             "transition-transform", 
