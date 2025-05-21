@@ -11,17 +11,19 @@ import { Card, CardContent } from "@/components/ui/card";
 const AuditorsPortfolio = () => {
   // Image mapping for auditors - matching names to uploaded images
   const auditorImages = {
-    "Koh Sook Bing": "/lovable-uploads/ee8c34f1-6b48-4724-a39e-ec70f2dad7ee.png", // Updated
-    "Linus Teo": "/lovable-uploads/b759d527-cd11-4f23-8999-8b9a1ccba130.png", // Updated
-    "Leonard Siau": "/lovable-uploads/6a4f81db-2414-4ef9-9756-fffa27ba940d.png", // Updated
-    "Isaac Lau": "/lovable-uploads/99a12679-22f9-46cf-bb12-7ea1d7ce063c.png", // Updated
-    "Luke Chang": "/lovable-uploads/fb173e29-6be9-42f5-8d99-b5a59802a5b9.png", // Updated
-    "Leslie Ho": "/lovable-uploads/20260385-10a3-49bf-bd48-407547e8b19f.png", // Updated
-    "Abdillah Ali": "/lovable-uploads/b4e858ac-5d06-4c07-8b7f-73cdc5f0c938.png", // Updated
-    "Vivien Yeo": "/lovable-uploads/a1a5b8e9-4936-446a-8915-b06f7a1c76f7.png", // Updated
-    "Jeremy Low": "/lovable-uploads/01c61133-b7b6-4db6-93c7-12b2dca4c951.png", // Updated
-    "Cecilia Leng": "/lovable-uploads/588ceaa3-bec0-418c-bc70-22be16c0c085.png", // Updated
-    "Eileen Tan": "/lovable-uploads/c26670da-1dc8-49e4-8189-d8b04f5d6ccc.png" // Updated
+    "Koh Sook Bing": "/lovable-uploads/ee8c34f1-6b48-4724-a39e-ec70f2dad7ee.png", 
+    "Linus Teo": "/lovable-uploads/b759d527-cd11-4f23-8999-8b9a1ccba130.png",
+    "Leonard Siau": "/lovable-uploads/6a4f81db-2414-4ef9-9756-fffa27ba940d.png",
+    "Isaac Lau": "/lovable-uploads/99a12679-22f9-46cf-bb12-7ea1d7ce063c.png",
+    "Luke Chang": "/lovable-uploads/fb173e29-6be9-42f5-8d99-b5a59802a5b9.png",
+    "Leslie Ho": "/lovable-uploads/20260385-10a3-49bf-bd48-407547e8b19f.png",
+    "Abdillah Ali": "/lovable-uploads/b4e858ac-5d06-4c07-8b7f-73cdc5f0c938.png",
+    "Vivien Yeo": "/lovable-uploads/a1a5b8e9-4936-446a-8915-b06f7a1c76f7.png",
+    "Jeremy Low": "/lovable-uploads/01c61133-b7b6-4db6-93c7-12b2dca4c951.png",
+    "Cecilia Leng": "/lovable-uploads/588ceaa3-bec0-418c-bc70-22be16c0c085.png",
+    "Eileen Tan": "/lovable-uploads/c26670da-1dc8-49e4-8189-d8b04f5d6ccc.png",
+    "Lionel Lee": "/lovable-uploads/307ee1cb-12a2-45ff-bd12-02fc8137ae74.png", // Placeholder image for now
+    "Hermas Chong": "/lovable-uploads/3b13132e-0b4e-4bd9-b13f-c77c584cd9ec.png" // Placeholder image for now
   };
 
   const auditors = [
@@ -49,6 +51,14 @@ const AuditorsPortfolio = () => {
       expertise: ["Cloud Architecture", "Identity Management", "Infrastructure Consulting"],
       yearsExperience: "20+",
       profile: "Leonard comes from an infrastructure consulting background and has been a Cloud, Identity and collaboration architect/consultant for 20+ years. He has worked for companies such as Microsoft, NCS/Singtel, Hewlett Packard and Dimension Data. In his career, he has engaged with numerous enterprise clientele across various industry verticals such as public sector, media and communications, manufacturing, travel and transport and financial services. In Govtech, he has worked on major projects such as GDC, Government Private Cloud, Government Commercial Cloud, Digital Workplace Program and NDI. He holds a Bachelor's Degree in Information Systems from the University of Melbourne and as well multiple professional technical certifications in AWS, Azure and Microsoft. Relevant certifications include CISA, CISSP and CCSP."
+    },
+    {
+      name: "Lionel Lee",
+      title: "Lead Auditor",
+      certifications: ["GIAC", "CCSK"],
+      expertise: ["Technology Audits", "Cloud Security", "Business Continuity", "Management", "Data Analytics"],
+      yearsExperience: "17",
+      profile: "Lionel has diverse experience in both internal and external IT audits covering government, financial, hospitality and healthcare industries. His previous companies include KPMG and GIC, with strong knowledge in public and private cloud security, network, infrastructure, data loss prevention, identity and access management and business continuity management."
     },
     // Senior Auditors second
     {
@@ -82,6 +92,14 @@ const AuditorsPortfolio = () => {
       expertise: ["IT Operations", "Cybersecurity", "Systems Integration"],
       yearsExperience: "18",
       profile: "Abdillah has been working in various IT roles over the past 18 years and took interest in cybersecurity, governance and compliance recently. He has held roles in contributing to the strategic planning, budgeting, design, development, implementation and enforcement of IT operational procedures, policies and standards associated with servers/endpoint security protection technologies for the Whole of Government since 2015. Prior to joining GovTech, he was leading system integration projects, technical support and administration for systems and software for customers such as Changi General Hospital and the Ministry of Education. He is undergoing relevant information security certifications which includes CISA and CCSK, CISSP, CCSP"
+    },
+    {
+      name: "Hermas Chong",
+      title: "Senior Auditor",
+      certifications: ["CISA", "ITIL"],
+      expertise: ["Infrastructure Service Management", "Incident, Problem and Change Management", "IT operation and Vendor Management", "End User Computing Management"],
+      yearsExperience: "20+",
+      profile: "Hermas has established himself as a seasoned IT leader across diverse sectors managing critical government-wide ICT incidents in GovTech. His leadership at DHL Global Forwarding as Lead Regional Infrastructure Services showcased his ability to manage IT operations across 21 APAC countries. In the healthcare sector, he strengthened IT infrastructure at Integrated Health Information System (IHiS). His manufacturing sector expertise was developed at Acument Asia Pacific and FCI Asia Pacific, where he managed ERP systems and B2B/EDI processes. At Baan Asia Pacific, he provided technical consultancy for ERP and E-Business Suite implementations, while at Singapore Computer System, he focused on ERP software development."
     },
     // Regular Auditors last
     {
@@ -131,7 +149,7 @@ const AuditorsPortfolio = () => {
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4">
             <div className="mb-12 text-center max-w-3xl mx-auto">
-              <p className="text-gray-700">
+              <p className="text-gray-700 text-base md:text-xl lg:text-2xl">
                 Our team of IT Audit experts, armed with industry certifications and extensive hands-on experience working with Agencies, serves as your trusted advisors. We identify gaps and provide appropriate recommendation to guide Agencies towards building a resilient cybersecurity posture for the future Singapore.
               </p>
             </div>
@@ -151,40 +169,40 @@ const AuditorsPortfolio = () => {
                         </AvatarFallback>
                       </Avatar>
                       <div>
-                        <h3 className="text-xl font-bold">{auditor.name}</h3>
-                        <p className="text-sm text-gray-600">{auditor.title}</p>
+                        <h3 className="text-xl md:text-2xl lg:text-3xl font-bold">{auditor.name}</h3>
+                        <p className="text-sm md:text-base lg:text-lg text-gray-600">{auditor.title}</p>
                       </div>
                     </div>
                     
                     <div className="flex items-center mb-3">
-                      <Award className="text-primary mr-2" size={18} />
-                      <span className="text-sm font-medium">Certifications:</span>
+                      <Award className="text-primary mr-2" size={20} />
+                      <span className="text-sm md:text-base lg:text-lg font-medium">Certifications:</span>
                     </div>
                     <div className="flex flex-wrap gap-2 mb-4">
                       {auditor.certifications.map((cert, idx) => (
-                        <span key={idx} className="bg-primary/10 text-primary text-xs py-1 px-2 rounded-md">
+                        <span key={idx} className="bg-primary/10 text-primary text-xs md:text-sm lg:text-base py-1 px-2 rounded-md">
                           {cert}
                         </span>
                       ))}
                     </div>
                     
                     <div className="flex items-center mb-3">
-                      <Users className="text-primary mr-2" size={18} />
-                      <span className="text-sm font-medium">Experience: {auditor.yearsExperience} years</span>
+                      <Users className="text-primary mr-2" size={20} />
+                      <span className="text-sm md:text-base lg:text-lg font-medium">Experience: {auditor.yearsExperience} years</span>
                     </div>
                     
                     <div className="flex items-center mb-3">
-                      <FileCheck className="text-primary mr-2" size={18} />
-                      <span className="text-sm font-medium">Areas of Expertise:</span>
+                      <FileCheck className="text-primary mr-2" size={20} />
+                      <span className="text-sm md:text-base lg:text-lg font-medium">Areas of Expertise:</span>
                     </div>
-                    <ul className="text-sm text-gray-600 mb-4 ml-6 list-disc">
+                    <ul className="text-sm md:text-base lg:text-lg text-gray-600 mb-4 ml-6 list-disc">
                       {auditor.expertise.map((area, idx) => (
                         <li key={idx}>{area}</li>
                       ))}
                     </ul>
                     
                     <div className="mt-4 pt-4 border-t border-gray-200">
-                      <p className="text-sm text-gray-700 line-clamp-4">{auditor.profile}</p>
+                      <p className="text-sm md:text-base lg:text-lg text-gray-700 line-clamp-4">{auditor.profile}</p>
                     </div>
                   </CardContent>
                 </Card>
@@ -192,28 +210,28 @@ const AuditorsPortfolio = () => {
             </div>
             
             <div className="mt-16 text-center">
-              <h2 className="text-2xl font-bold mb-6">Why Choose Our Auditors?</h2>
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6">Why Choose Our Auditors?</h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div className="p-6 bg-gray-50 rounded-lg">
                   <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-4">
-                    <Users className="text-primary" size={24} />
+                    <Users className="text-primary" size={28} />
                   </div>
-                  <h3 className="text-lg font-semibold mb-2">Government Experience</h3>
-                  <p className="text-gray-600">Our auditors specialize in government IT systems and understand their unique requirements and challenges.</p>
+                  <h3 className="text-lg md:text-xl lg:text-2xl font-semibold mb-2">Government Experience</h3>
+                  <p className="text-gray-600 text-base md:text-lg lg:text-xl">Our auditors specialize in government IT systems and understand their unique requirements and challenges.</p>
                 </div>
                 <div className="p-6 bg-gray-50 rounded-lg">
                   <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-4">
-                    <Award className="text-primary" size={24} />
+                    <Award className="text-primary" size={28} />
                   </div>
-                  <h3 className="text-lg font-semibold mb-2">Certified Professionals</h3>
-                  <p className="text-gray-600">All our auditors hold industry-recognized certifications and stay updated with the latest standards.</p>
+                  <h3 className="text-lg md:text-xl lg:text-2xl font-semibold mb-2">Certified Professionals</h3>
+                  <p className="text-gray-600 text-base md:text-lg lg:text-xl">All our auditors hold industry-recognized certifications and stay updated with the latest standards.</p>
                 </div>
                 <div className="p-6 bg-gray-50 rounded-lg">
                   <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-4">
-                    <FileCheck className="text-primary" size={24} />
+                    <FileCheck className="text-primary" size={28} />
                   </div>
-                  <h3 className="text-lg font-semibold mb-2">Proven Track Record</h3>
-                  <p className="text-gray-600">Our team has successfully completed hundreds of IT audits across different government agencies.</p>
+                  <h3 className="text-lg md:text-xl lg:text-2xl font-semibold mb-2">Proven Track Record</h3>
+                  <p className="text-gray-600 text-base md:text-lg lg:text-xl">Our team has successfully completed hundreds of IT audits across different government agencies.</p>
                 </div>
               </div>
             </div>
@@ -222,13 +240,13 @@ const AuditorsPortfolio = () => {
 
         <section className="py-12 bg-gray-50">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-2xl font-bold mb-4">Ready to work with our expert auditors?</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto mb-8">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">Ready to work with our expert auditors?</h2>
+            <p className="text-gray-600 text-base md:text-lg lg:text-xl max-w-2xl mx-auto mb-8">
               Contact us today to discuss how our audit professionals can help your agency improve security, compliance, and performance.
             </p>
-            <Button asChild size="lg">
+            <Button asChild size="lg" className="text-base md:text-lg">
               <Link to="/quote" className="flex items-center">
-                Request a Quote <ArrowRight className="ml-2" size={18} />
+                Get Started <ArrowRight className="ml-2" size={20} />
               </Link>
             </Button>
           </div>

@@ -1,3 +1,4 @@
+
 import { Brain, Award, BarChart } from "lucide-react";
 const Hero = () => {
   const keyPoints = [{
@@ -20,11 +21,11 @@ const Hero = () => {
             <img src="/lovable-uploads/4e7a431e-837d-4f2d-bf04-06cd754e0b22.png" alt="IT Auditor with magnifying glass" className="rounded-lg shadow-lg max-w-full object-cover" />
           </div>
           <div>
-            <h2 className="text-2xl md:text-3xl font-semibold mb-3 text-black">GovTech Shared Services Overview</h2>
-            <p className="text-base md:text-lg text-black mb-6">
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-semibold mb-3 text-black">GovTech Shared Services Overview</h2>
+            <p className="text-base md:text-xl lg:text-2xl text-black mb-6">
               At Shared Services, we are uncovering cybersecurity gaps by pushing the boundaries out from conventional compliance audit methodology to out-of-box. Our turn-key service encompasses customised audit planning for Agencies, leveraging on WOG central and AI tools for detection and risk hunting across Cloud, on-prem to user endpoints. Enabling Agencies to prevent potential vulnerabilities instead of fire-fighting.
             </p>
-            <h1 className="text-3xl leading-tight text-black my-0 text-center py-[100px] font-bold md:text-5xl">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl leading-tight text-black my-0 text-center py-[100px] font-bold">
               One Intelligent Service. Three Reasons to Believe
             </h1>
           </div>
@@ -35,8 +36,8 @@ const Hero = () => {
               <div className="bg-primary/10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-4">
                 <point.icon size={32} className="text-black" />
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-black">{point.title}</h3>
-              <p className="text-sm md:text-base text-black text-center">{point.description}</p>
+              <h3 className="text-xl md:text-2xl lg:text-3xl font-semibold mb-3 text-black">{point.title}</h3>
+              <p className="text-sm md:text-lg lg:text-xl text-black text-center">{point.description}</p>
             </div>)}
         </div>
       </div>
