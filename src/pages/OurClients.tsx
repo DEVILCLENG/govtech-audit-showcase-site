@@ -43,9 +43,9 @@ const OurClients = () => {
                   <CardContent className="pt-6">
                     <div className="mb-4">
                       <span className="text-lg md:text-xl font-medium text-primary lg:text-xl">{study.client}</span>
-                      <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mt-1">{study.title}</h3>
+                      <h3 className="text-2xl md:text-3xl font-bold mt-1 lg:text-2xl">{study.title}</h3>
                     </div>
-                    <p className="text-lg md:text-xl lg:text-2xl text-gray-600 mb-4">{study.description}</p>
+                    <p className="text-lg md:text-xl text-gray-600 mb-4 lg:text-xl">{study.description}</p>
                     <div className="border-t border-gray-100 pt-4 mt-auto">
                       <div className="flex items-center text-primary text-lg md:text-xl lg:text-2xl">
                         <span className="font-medium">Outcome:</span> 
