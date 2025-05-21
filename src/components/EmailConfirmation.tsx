@@ -22,8 +22,8 @@ const EmailConfirmation: React.FC<EmailConfirmationProps> = ({ name, email, agen
           <p style={{ marginBottom: '20px' }}>Dear {name},</p>
           
           <p style={{ marginBottom: '20px' }}>
-            Thank you for submitting your quote request for IT audit services. 
-            We have received your request and a member of our team will review it and get back to you within 1-2 business days.
+            Thank you for submitting your quote request to GOVTECH Shared Services. 
+            We have received your request. Our team will review your request and revert to you within 1-2 business days.
           </p>
           
           <div style={{ background: '#f7f7f7', padding: '15px', borderRadius: '5px', marginBottom: '20px' }}>
@@ -36,17 +36,17 @@ const EmailConfirmation: React.FC<EmailConfirmationProps> = ({ name, email, agen
           
           <p style={{ marginBottom: '20px' }}>
             If you have any urgent questions or need to update your request, please contact us at 
-            <a href="mailto:info@tech.gov.sg" style={{ color: '#0066cc', textDecoration: 'none' }}> info@tech.gov.sg</a> 
+            <a href="mailto:GOVTECH-IAD-SS@tech.gov.sg" style={{ color: '#0066cc', textDecoration: 'none' }}> GOVTECH-IAD-SS@tech.gov.sg</a> 
             or call us at (+65) 6211 0888.
           </p>
           
           <p>Best regards,</p>
-          <p><strong>IT Audit Services Team</strong></p>
+          <p><strong>GOVTECH Shared Services Team</strong></p>
         </div>
         
         <div style={{ borderTop: '1px solid #eee', padding: '20px', textAlign: 'center', color: '#777', fontSize: '12px' }}>
           <p>This is an automated message, please do not reply to this email.</p>
-          <p>© 2025 IT Audit Services. All rights reserved.</p>
+          <p>© 2025 GOVTECH Shared Services. All rights reserved.</p>
         </div>
       </div>
     </div>

@@ -12,8 +12,8 @@ const Services = () => {
       title: "Planning Phase",
       duration: "2-3 weeks",
       activities: [
-        "Propose IT Audit plan for Audit Committee",
-        "Approval"
+        "- Propose IT Audit plan for Audit Committee",
+        "- Approval"
       ]
     },
     {
@@ -21,8 +21,8 @@ const Services = () => {
       title: "Information Gathering",
       duration: "2-3 weeks",
       activities: [
-        "Request for information",
-        "Risks and Process walkthrough"
+        "- Request for information",
+        "- Risks and Process walkthrough"
       ]
     },
     {
@@ -30,8 +30,8 @@ const Services = () => {
       title: "Testing Phase",
       duration: "6-8 weeks",
       activities: [
-        "Control Design Effectiveness Testing",
-        "Control Operating Effectiveness Testing"
+        "- Control Design Effectiveness Testing",
+        "- Control Operating Effectiveness Testing"
       ]
     },
     {
@@ -39,8 +39,8 @@ const Services = () => {
       title: "Reporting Phase",
       duration: "3-4 weeks",
       activities: [
-        "Draft Audit Findings",
-        "Audit Report"
+        "- Draft Audit Findings",
+        "- Audit Report"
       ]
     }
   ];
