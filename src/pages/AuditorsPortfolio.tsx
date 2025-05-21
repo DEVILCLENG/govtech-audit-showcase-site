@@ -177,36 +177,36 @@ const AuditorsPortfolio = () => {
                       <span className="text-sm md:text-base lg:text-lg font-medium">Experience: {auditor.yearsExperience} years</span>
                     </div>
                     
-                    <div className="mt-4 pt-4 border-t border-gray-200">
-                      <Button
-                        variant="ghost" 
-                        className="text-primary flex items-center text-sm md:text-base lg:text-lg w-full justify-between"
-                        onClick={() => toggleBio(index)}
-                      >
-                        Experience and areas of expertise
-                        <ChevronRight 
-                          className={cn(
-                            "transition-transform", 
-                            expandedBio === index ? "rotate-90" : ""
-                          )} 
-                          size={20} 
-                        />
-                      </Button>
-                      {expandedBio === index && (
-                        <div className="mt-4 text-sm md:text-base lg:text-lg text-gray-700 animate-accordion-down">
-                          <div className="mb-4">
-                            <h4 className="font-medium mb-2">Areas of Expertise:</h4>
-                            <ul className="ml-6 list-disc">
-                              {auditor.expertise.map((area, idx) => <li key={idx}>{area}</li>)}
-                            </ul>
-                          </div>
-                          <div>
-                            <h4 className="font-medium mb-2">Bio:</h4>
-                            <p>{auditor.profile}</p>
-                          </div>
-                        </div>
-                      )}
-                    </div>
+                     <div className="mt-4 pt-4 border-t border-gray-200">
+                       <Button
+                         variant="ghost" 
+                         className="text-primary flex items-center text-sm md:text-base lg:text-lg w-full justify-between"
+                         onClick={() => toggleBio(index)}
+                       >
+                         Read Bio
+                         <ChevronRight 
+                           className={cn(
+                             "transition-transform", 
+                             expandedBio === index ? "rotate-90" : ""
+                           )} 
+                           size={20} 
+                         />
+                       </Button>
+                       {expandedBio === index && (
+                         <div className="mt-4 text-sm md:text-base lg:text-lg text-gray-700 animate-accordion-down">
+                           <div className="mb-4">
+                             <h4 className="font-medium mb-2">Areas of Expertise:</h4>
+                             <ul className="ml-6 list-disc">
+                               {auditor.expertise.map((area, idx) => <li key={idx}>{area}</li>)}
+                             </ul>
+                           </div>
+                           <div>
+                             <h4 className="font-medium mb-2">Bio:</h4>
+                             <p>{auditor.profile}</p>
+                           </div>
+                         </div>
+                       )}
+                     </div>
                   </CardContent>
                 </Card>)}
             </div>
