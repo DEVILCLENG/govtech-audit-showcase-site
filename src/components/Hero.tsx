@@ -21,7 +21,7 @@ const Hero = () => {
   ];
 
   return (
-    <div className="bg-[#1EAEDB] text-black min-h-[600px] flex items-center pt-16">
+    <div className="bg-[#D3E4FD] text-black min-h-[600px] flex items-center pt-16">
       <div className="container mx-auto px-4 py-12">
         <div className="text-center mb-8">
           <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6 text-black">
@@ -31,8 +31,8 @@ const Hero = () => {
         
         <div className="grid md:grid-cols-3 gap-6">
           {keyPoints.map((point, index) => (
-            <div key={index} className="bg-[#33C3F0] p-6 rounded-lg shadow-md flex flex-col items-center">
-              <div className="bg-white/20 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-4">
+            <div key={index} className="bg-white p-6 rounded-lg shadow-md flex flex-col items-center">
+              <div className="bg-primary/10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-4">
                 <point.icon size={32} className="text-black" />
               </div>
               <h3 className="text-xl font-semibold mb-3 text-black">{point.title}</h3>
