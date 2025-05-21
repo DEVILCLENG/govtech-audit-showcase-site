@@ -41,7 +41,7 @@ const EmailConfirmation: React.FC<EmailConfirmationProps> = ({ name, email, agen
           </p>
           
           <p>Best regards,</p>
-          <p><strong>GOVTECH Shared Services Team</strong></p>
+          <p><strong>GOVTECH Shared Services</strong></p>
         </div>
         
         <div style={{ borderTop: '1px solid #eee', padding: '20px', textAlign: 'center', color: '#777', fontSize: '12px' }}>

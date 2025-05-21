@@ -80,7 +80,7 @@ const Contact = () => {
                   </div>
                   <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-2">Message Sent Successfully!</h3>
                   <p className="text-lg md:text-xl lg:text-2xl text-gray-600 mb-4">
-                    Thank you for contacting us. A confirmation has been sent to <span className="font-medium">{formData.email}</span>.
+                    Thank you for contacting us. An acknowledgement has been sent to <span className="font-medium">{formData.email}</span>.
                   </p>
                   <p className="text-base md:text-lg lg:text-xl text-gray-500 mb-6">
                     Our team will review your message and get back to you as soon as possible.
