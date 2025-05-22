@@ -18,6 +18,7 @@ const AuditorsPortfolio = () => {
 
   // Image mapping for auditors - matching names to uploaded images
   const auditorImages = {
+    "Nicholas Bok": "/lovable-uploads/0b8d54d8-6726-4938-b131-2f1c53963f37.png", // Using a placeholder image
     "Koh Sook Bing": "/lovable-uploads/ee8c34f1-6b48-4724-a39e-ec70f2dad7ee.png",
     "Linus Teo": "/lovable-uploads/b759d527-cd11-4f23-8999-8b9a1ccba130.png",
     "Leonard Siau": "/lovable-uploads/6a4f81db-2414-4ef9-9756-fffa27ba940d.png",
@@ -30,9 +31,20 @@ const AuditorsPortfolio = () => {
     "Cecilia Leng": "/lovable-uploads/588ceaa3-bec0-418c-bc70-22be16c0c085.png",
     "Eileen Tan": "/lovable-uploads/c26670da-1dc8-49e4-8189-d8b04f5d6ccc.png",
     "Lionel Lee": "/lovable-uploads/307ee1cb-12a2-45ff-bd12-02fc8137ae74.png",
-    // Placeholder image for now
+    "Josephine": "/lovable-uploads/2556f0bd-c142-42c6-947f-6028292a51d1.png", // Using a placeholder image
     "Hermas Chong": "/lovable-uploads/3b13132e-0b4e-4bd9-b13f-c77c584cd9ec.png" // Placeholder image for now
   };
+
+  // Leadership section
+  const leader = {
+    name: "Nicholas Bok",
+    title: "Group Chief Internal Auditor, MDDI, Director, Internal Audit and IT Audit Shared Services",
+    certifications: ["CFA", "CA", "CIA", "CFE"],
+    expertise: ["Audit management and transformation", "Integrated audits", "Data analytics"],
+    yearsExperience: "20+",
+    profile: "Nicholas is a seasoned risk and control specialist with over 20 years of experience in both internal and external audits. He has extensive experience in leading data-driven integrated audits that encompass both business and IT areas within the financial industry. Nicholas is also skilled in change management and audit transformation. His previous roles include positions at GIC, UBS and PwC."
+  };
+  
   const auditors = [
   // Lead Auditors first
   {
@@ -63,6 +75,13 @@ const AuditorsPortfolio = () => {
     expertise: ["Technology Audits", "Cloud Security", "Business Continuity", "Management", "Data Analytics"],
     yearsExperience: "17",
     profile: "Lionel has diverse experience in both internal and external IT audits covering government, financial, hospitality and healthcare industries. His previous companies include KPMG and GIC, with strong knowledge in public and private cloud security, network, infrastructure, data loss prevention, identity and access management and business continuity management."
+  }, {
+    name: "Josephine",
+    title: "Lead Auditor",
+    certifications: ["CISA", "CISM"],
+    expertise: ["Risk Management", "Access Security", "IT General Controls", "Business Continuity Management", "Outsourcing Arrangements"],
+    yearsExperience: "20+",
+    profile: "Josephine has more than 20 years of working experiences in the technology and financial services sector. She first started out as a systems analyst then project manager before switching to IT internal audit. Prior joining GovTech, Josephine was the Risk Officer with one of the local Healthcare Institution that design and develop the control healthcare library that comprise of expected control objectives to comply with security and risk policies. Her areas of specialisation for IT audit include risk management, access security, IT General Controls, Business Continuity Management, Outsourcing Arrangements, application and Infrastructure security controls. Also, she has conducted regulatory reviews to assess the technology risk and cyber security posture of financial institutions in Asia Pacific. She holds a bachelor's degree in Computer Science major in Information System from Australia Deakin University and relevant certifications such as CISA and CISM."
   },
   // Senior Auditors second
   {
@@ -146,6 +165,57 @@ const AuditorsPortfolio = () => {
               </p>
             </div>
             
+            {/* Leadership Section */}
+            <div className="mb-16">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-8 text-center">Leadership</h2>
+              <div className="max-w-4xl mx-auto">
+                <Card className="overflow-hidden border-2 border-primary/20">
+                  <CardContent className="p-6">
+                    <div className="flex flex-col md:flex-row items-center md:items-start gap-6 mb-6">
+                      <Avatar className="h-24 w-24 md:h-32 md:w-32">
+                        <AvatarImage src={auditorImages[leader.name]} alt={`${leader.name} photo`} />
+                        <AvatarFallback className="bg-primary text-white text-2xl">
+                          {leader.name.split(' ').map(n => n[0]).join('')}
+                        </AvatarFallback>
+                      </Avatar>
+                      <div>
+                        <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold">{leader.name}</h3>
+                        <p className="text-base md:text-lg lg:text-xl text-gray-600 mt-1">{leader.title}</p>
+                        
+                        <div className="flex items-center mt-4 mb-2">
+                          <Award className="text-primary mr-2" size={22} />
+                          <span className="text-base md:text-lg lg:text-xl font-medium">Certifications:</span>
+                        </div>
+                        <div className="flex flex-wrap gap-2 mb-4">
+                          {leader.certifications.map((cert, idx) => (
+                            <span key={idx} className="bg-primary/10 text-primary text-sm md:text-base py-1 px-3 rounded-md">
+                              {cert}
+                            </span>
+                          ))}
+                        </div>
+                        
+                        <div className="flex items-center mb-2">
+                          <Users className="text-primary mr-2" size={22} />
+                          <span className="text-base md:text-lg lg:text-xl font-medium">Experience: {leader.yearsExperience} years</span>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div className="mt-6 pt-4 border-t border-gray-200">
+                      <h4 className="font-medium mb-3 text-lg">Areas of Expertise:</h4>
+                      <ul className="ml-6 list-disc grid grid-cols-1 md:grid-cols-2 gap-2 mb-6">
+                        {leader.expertise.map((area, idx) => <li key={idx} className="text-base md:text-lg">{area}</li>)}
+                      </ul>
+                      
+                      <h4 className="font-medium mb-3 text-lg">Bio:</h4>
+                      <p className="text-base md:text-lg">{leader.profile}</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+            
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-8 text-center">Our Audit Team</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {auditors.map((auditor, index) => <Card key={index} className="overflow-hidden">
                   <CardContent className="p-6">
