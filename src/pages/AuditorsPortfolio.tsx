@@ -21,7 +21,7 @@ const AuditorsPortfolio = () => {
     setLeaderBioExpanded(!leaderBioExpanded);
   };
 
-  // Updated image mapping for auditors with new Senior Auditor images
+  // Updated image mapping for auditors with new Auditor images
   const auditorImages = {
     "Nicholas Bok": "/lovable-uploads/8e491009-dcdb-4d20-88a2-0973d3d19221.png",
     "Koh Sook Bing": "/lovable-uploads/84af9c73-bb62-4053-a7b9-ecb62d4f6b98.png",
@@ -31,10 +31,10 @@ const AuditorsPortfolio = () => {
     "Luke Chang": "/lovable-uploads/53240454-e2fa-4f93-a73b-5343c154ea12.png", // Updated with new Senior Auditor image
     "Leslie Ho": "/lovable-uploads/080179e6-0b15-4faf-b6f7-d2375fd12f76.png", // Updated with new Senior Auditor image
     "Abdillah Ali": "/lovable-uploads/7af2e1d7-129c-4942-9a85-debf338957e3.png", // Updated with new Senior Auditor image
-    "Vivien Yeo": "/lovable-uploads/8b639a41-0f8e-4e48-b2d1-b8526bd838b6.png",
-    "Jeremy Low": "/lovable-uploads/c1630ab0-a1fa-495c-98f6-c0a1832949ce.png",
-    "Cecilia Leng": "/lovable-uploads/e14c662f-3a5b-4800-aca2-dc86a4db90a5.png",
-    "Eileen Tan": "/lovable-uploads/828c9d2b-858f-41d3-8f6f-b51f94834701.png",
+    "Vivien Yeo": "/lovable-uploads/df15bd74-05bc-4541-8615-40124e8ea8de.png", // Updated with new Regular Auditor image
+    "Jeremy Low": "/lovable-uploads/fe0614d8-e841-4ce6-a836-e23be8eb6481.png", // Updated with new Regular Auditor image
+    "Cecilia Leng": "/lovable-uploads/4c545afd-4639-4dcf-b8a8-c68839c2cbcd.png", // Updated with new Regular Auditor image
+    "Eileen Tan": "/lovable-uploads/8b2599e0-4720-40f2-9a7e-195158f5c904.png", // Updated with new Regular Auditor image
     "Lionel Lee": "/lovable-uploads/aafd1849-65d2-4ced-aa0e-3c99c1f1e7cf.png",
     "Josephine Foo": "/lovable-uploads/f5de7d67-44a4-4ddc-815e-f3cc07a9cdb3.png",
     "Hermas Chong": "/lovable-uploads/3bfee75b-ae09-4468-aadf-f0c9e93ddff1.png" // Updated with new Senior Auditor image
