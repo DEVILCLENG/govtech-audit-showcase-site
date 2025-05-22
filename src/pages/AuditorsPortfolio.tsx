@@ -1,4 +1,3 @@
-
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageBanner from "@/components/PageBanner";
@@ -22,23 +21,23 @@ const AuditorsPortfolio = () => {
     setLeaderBioExpanded(!leaderBioExpanded);
   };
 
-  // Image mapping for auditors - matching names to uploaded images
+  // Updated image mapping for auditors - using the newly uploaded images
   const auditorImages = {
-    "Nicholas Bok": "/lovable-uploads/0b8d54d8-6726-4938-b131-2f1c53963f37.png", // Using a placeholder image
-    "Koh Sook Bing": "/lovable-uploads/ee8c34f1-6b48-4724-a39e-ec70f2dad7ee.png",
-    "Linus Teo": "/lovable-uploads/b759d527-cd11-4f23-8999-8b9a1ccba130.png",
-    "Leonard Siau": "/lovable-uploads/6a4f81db-2414-4ef9-9756-fffa27ba940d.png",
-    "Isaac Lau": "/lovable-uploads/99a12679-22f9-46cf-bb12-7ea1d7ce063c.png",
-    "Luke Chang": "/lovable-uploads/fb173e29-6be9-42f5-8d99-b5a59802a5b9.png",
-    "Leslie Ho": "/lovable-uploads/20260385-10a3-49bf-bd48-407547e8b19f.png",
-    "Abdillah Ali": "/lovable-uploads/b4e858ac-5d06-4c07-8b7f-73cdc5f0c938.png",
-    "Vivien Yeo": "/lovable-uploads/a1a5b8e9-4936-446a-8915-b06f7a1c76f7.png",
-    "Jeremy Low": "/lovable-uploads/01c61133-b7b6-4db6-93c7-12b2dca4c951.png",
-    "Cecilia Leng": "/lovable-uploads/588ceaa3-bec0-418c-bc70-22be16c0c085.png",
-    "Eileen Tan": "/lovable-uploads/c26670da-1dc8-49e4-8189-d8b04f5d6ccc.png",
-    "Lionel Lee": "/lovable-uploads/307ee1cb-12a2-45ff-bd12-02fc8137ae74.png",
-    "Josephine Foo": "/lovable-uploads/2556f0bd-c142-42c6-947f-6028292a51d1.png", // Updated name here
-    "Hermas Chong": "/lovable-uploads/3b13132e-0b4e-4bd9-b13f-c77c584cd9ec.png" // Placeholder image for now
+    "Nicholas Bok": "/lovable-uploads/8e491009-dcdb-4d20-88a2-0973d3d19221.png", 
+    "Koh Sook Bing": "/lovable-uploads/7074b853-44dc-45f9-8355-053e40e02da4.png",
+    "Linus Teo": "/lovable-uploads/e76a6728-d660-4506-8d49-9b1b30306f9b.png",
+    "Leonard Siau": "/lovable-uploads/0091dd8b-b3fb-4c41-ac04-ee7a455bbaa4.png",
+    "Isaac Lau": "/lovable-uploads/fd136d69-c3aa-42ce-bc51-d0a18032016e.png",
+    "Luke Chang": "/lovable-uploads/8afdb6dc-25af-4e18-93e9-c6ed026e2602.png",
+    "Leslie Ho": "/lovable-uploads/5ae07681-a3e0-4e57-bc8b-481feca93c81.png",
+    "Abdillah Ali": "/lovable-uploads/257c5db9-2e34-4df3-970e-b062d09e62b9.png",
+    "Vivien Yeo": "/lovable-uploads/8b639a41-0f8e-4e48-b2d1-b8526bd838b6.png",
+    "Jeremy Low": "/lovable-uploads/c1630ab0-a1fa-495c-98f6-c0a1832949ce.png",
+    "Cecilia Leng": "/lovable-uploads/e14c662f-3a5b-4800-aca2-dc86a4db90a5.png",
+    "Eileen Tan": "/lovable-uploads/828c9d2b-858f-41d3-8f6f-b51f94834701.png",
+    "Lionel Lee": "/lovable-uploads/6739ee94-b925-4fcc-bade-2f246ad4c9df.png",
+    "Josephine Foo": "/lovable-uploads/14b67c7c-6b2f-48c8-8318-30f9f7d0afa0.png",
+    "Hermas Chong": "/lovable-uploads/f5ffcb4b-61f0-4537-b0dd-b9bd14c7ac13.png"
   };
 
   // Leadership section
