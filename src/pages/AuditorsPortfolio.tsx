@@ -1,3 +1,4 @@
+
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageBanner from "@/components/PageBanner";
@@ -21,10 +22,10 @@ const AuditorsPortfolio = () => {
     setLeaderBioExpanded(!leaderBioExpanded);
   };
 
-  // Updated image mapping for auditors - using the newly uploaded images
+  // Updated image mapping for auditors - with new uploaded images for deputy directors
   const auditorImages = {
-    "Nicholas Bok": "/lovable-uploads/8e491009-dcdb-4d20-88a2-0973d3d19221.png", 
-    "Koh Sook Bing": "/lovable-uploads/7074b853-44dc-45f9-8355-053e40e02da4.png",
+    "Nicholas Bok": "/lovable-uploads/8e491009-dcdb-4d20-88a2-0973d3d19221.png",
+    "Koh Sook Bing": "/lovable-uploads/84af9c73-bb62-4053-a7b9-ecb62d4f6b98.png", // Updated with new image
     "Linus Teo": "/lovable-uploads/e76a6728-d660-4506-8d49-9b1b30306f9b.png",
     "Leonard Siau": "/lovable-uploads/0091dd8b-b3fb-4c41-ac04-ee7a455bbaa4.png",
     "Isaac Lau": "/lovable-uploads/fd136d69-c3aa-42ce-bc51-d0a18032016e.png",
@@ -35,7 +36,7 @@ const AuditorsPortfolio = () => {
     "Jeremy Low": "/lovable-uploads/c1630ab0-a1fa-495c-98f6-c0a1832949ce.png",
     "Cecilia Leng": "/lovable-uploads/e14c662f-3a5b-4800-aca2-dc86a4db90a5.png",
     "Eileen Tan": "/lovable-uploads/828c9d2b-858f-41d3-8f6f-b51f94834701.png",
-    "Lionel Lee": "/lovable-uploads/6739ee94-b925-4fcc-bade-2f246ad4c9df.png",
+    "Lionel Lee": "/lovable-uploads/aafd1849-65d2-4ced-aa0e-3c99c1f1e7cf.png", // Updated with new image
     "Josephine Foo": "/lovable-uploads/14b67c7c-6b2f-48c8-8318-30f9f7d0afa0.png",
     "Hermas Chong": "/lovable-uploads/f5ffcb4b-61f0-4537-b0dd-b9bd14c7ac13.png"
   };
@@ -55,7 +56,7 @@ const AuditorsPortfolio = () => {
   const deputyDirectors = [
     {
       name: "Koh Sook Bing",
-      title: "Deputy Director", // Title updated from "Lead Auditor"
+      title: "Deputy Director",
       certifications: ["CISA", "Masters in Technology"],
       expertise: ["Technology Audit", "Data Science", "Risk & Analytics"],
       yearsExperience: "10+",
@@ -63,7 +64,7 @@ const AuditorsPortfolio = () => {
     },
     {
       name: "Lionel Lee",
-      title: "Deputy Director", // Title updated from "Lead Auditor"
+      title: "Deputy Director",
       certifications: ["GIAC", "CCSK"],
       expertise: ["Technology Audits", "Cloud Security", "Business Continuity", "Management", "Data Analytics"],
       yearsExperience: "17",
