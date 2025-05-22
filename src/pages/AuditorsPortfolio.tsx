@@ -11,9 +11,14 @@ import { cn } from "@/lib/utils";
 
 const AuditorsPortfolio = () => {
   const [expandedBio, setExpandedBio] = useState<number | null>(null);
+  const [leaderBioExpanded, setLeaderBioExpanded] = useState<boolean>(false);
 
   const toggleBio = (index: number) => {
     setExpandedBio(expandedBio === index ? null : index);
+  };
+
+  const toggleLeaderBio = () => {
+    setLeaderBioExpanded(!leaderBioExpanded);
   };
 
   // Image mapping for auditors - matching names to uploaded images
@@ -31,7 +36,7 @@ const AuditorsPortfolio = () => {
     "Cecilia Leng": "/lovable-uploads/588ceaa3-bec0-418c-bc70-22be16c0c085.png",
     "Eileen Tan": "/lovable-uploads/c26670da-1dc8-49e4-8189-d8b04f5d6ccc.png",
     "Lionel Lee": "/lovable-uploads/307ee1cb-12a2-45ff-bd12-02fc8137ae74.png",
-    "Josephine": "/lovable-uploads/2556f0bd-c142-42c6-947f-6028292a51d1.png", // Using a placeholder image
+    "Josephine Foo": "/lovable-uploads/2556f0bd-c142-42c6-947f-6028292a51d1.png", // Updated name here
     "Hermas Chong": "/lovable-uploads/3b13132e-0b4e-4bd9-b13f-c77c584cd9ec.png" // Placeholder image for now
   };
 
@@ -76,7 +81,7 @@ const AuditorsPortfolio = () => {
     yearsExperience: "17",
     profile: "Lionel has diverse experience in both internal and external IT audits covering government, financial, hospitality and healthcare industries. His previous companies include KPMG and GIC, with strong knowledge in public and private cloud security, network, infrastructure, data loss prevention, identity and access management and business continuity management."
   }, {
-    name: "Josephine",
+    name: "Josephine Foo",
     title: "Lead Auditor",
     certifications: ["CISA", "CISM"],
     expertise: ["Risk Management", "Access Security", "IT General Controls", "Business Continuity Management", "Outsourcing Arrangements"],
@@ -201,14 +206,36 @@ const AuditorsPortfolio = () => {
                       </div>
                     </div>
                     
-                    <div className="mt-6 pt-4 border-t border-gray-200">
-                      <h4 className="font-medium mb-3 text-lg">Areas of Expertise:</h4>
-                      <ul className="ml-6 list-disc grid grid-cols-1 md:grid-cols-2 gap-2 mb-6">
-                        {leader.expertise.map((area, idx) => <li key={idx} className="text-base md:text-lg">{area}</li>)}
-                      </ul>
+                    <div className="mt-4 pt-4 border-t border-gray-200">
+                      <Button
+                        variant="ghost" 
+                        className="text-primary flex items-center text-base md:text-lg lg:text-lg w-full justify-between"
+                        onClick={toggleLeaderBio}
+                      >
+                        Read Bio
+                        <ChevronRight 
+                          className={cn(
+                            "transition-transform", 
+                            leaderBioExpanded ? "rotate-90" : ""
+                          )} 
+                          size={20} 
+                        />
+                      </Button>
                       
-                      <h4 className="font-medium mb-3 text-lg">Bio:</h4>
-                      <p className="text-base md:text-lg">{leader.profile}</p>
+                      {leaderBioExpanded && (
+                        <div className="mt-4 text-base md:text-lg lg:text-lg text-gray-700 animate-accordion-down">
+                          <div className="mb-4">
+                            <h4 className="font-medium mb-2">Areas of Expertise:</h4>
+                            <ul className="ml-6 list-disc">
+                              {leader.expertise.map((area, idx) => <li key={idx}>{area}</li>)}
+                            </ul>
+                          </div>
+                          <div>
+                            <h4 className="font-medium mb-2">Bio:</h4>
+                            <p>{leader.profile}</p>
+                          </div>
+                        </div>
+                      )}
                     </div>
                   </CardContent>
                 </Card>
