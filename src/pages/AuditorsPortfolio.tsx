@@ -1,4 +1,3 @@
-
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageBanner from "@/components/PageBanner";
@@ -28,17 +27,17 @@ const AuditorsPortfolio = () => {
     "Koh Sook Bing": "/lovable-uploads/84af9c73-bb62-4053-a7b9-ecb62d4f6b98.png",
     "Linus Teo": "/lovable-uploads/00400227-a0ad-4dd9-bfcc-e7f082ed7250.png",
     "Leonard Siau": "/lovable-uploads/776f0a9d-0232-4a67-b5d1-479d01e7c4c9.png",
-    "Isaac Lau": "/lovable-uploads/d0cd6c6f-0e7a-478a-91a6-9e76e9d86382.png", // Updated with new Senior Auditor image
-    "Luke Chang": "/lovable-uploads/f55c9fee-9a81-4c53-9764-57681ffee863.png", // Updated with new Senior Auditor image
-    "Leslie Ho": "/lovable-uploads/9295bb61-4cdd-4986-b769-4bd6b9909c44.png", // Updated with new Senior Auditor image
-    "Abdillah Ali": "/lovable-uploads/80d13b51-9abc-4db2-bbe0-aee16134855e.png", // Updated with new Senior Auditor image
+    "Isaac Lau": "/lovable-uploads/c88091f9-71d1-4c0e-943f-35759205b3fd.png", // Updated with new Senior Auditor image
+    "Luke Chang": "/lovable-uploads/53240454-e2fa-4f93-a73b-5343c154ea12.png", // Updated with new Senior Auditor image
+    "Leslie Ho": "/lovable-uploads/080179e6-0b15-4faf-b6f7-d2375fd12f76.png", // Updated with new Senior Auditor image
+    "Abdillah Ali": "/lovable-uploads/7af2e1d7-129c-4942-9a85-debf338957e3.png", // Updated with new Senior Auditor image
     "Vivien Yeo": "/lovable-uploads/8b639a41-0f8e-4e48-b2d1-b8526bd838b6.png",
     "Jeremy Low": "/lovable-uploads/c1630ab0-a1fa-495c-98f6-c0a1832949ce.png",
     "Cecilia Leng": "/lovable-uploads/e14c662f-3a5b-4800-aca2-dc86a4db90a5.png",
     "Eileen Tan": "/lovable-uploads/828c9d2b-858f-41d3-8f6f-b51f94834701.png",
     "Lionel Lee": "/lovable-uploads/aafd1849-65d2-4ced-aa0e-3c99c1f1e7cf.png",
     "Josephine Foo": "/lovable-uploads/f5de7d67-44a4-4ddc-815e-f3cc07a9cdb3.png",
-    "Hermas Chong": "/lovable-uploads/f5ffcb4b-61f0-4537-b0dd-b9bd14c7ac13.png"
+    "Hermas Chong": "/lovable-uploads/3bfee75b-ae09-4468-aadf-f0c9e93ddff1.png" // Updated with new Senior Auditor image
   };
 
   // Leadership section
