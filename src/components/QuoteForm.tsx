@@ -1,12 +1,21 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { CheckCircle, Mail } from "lucide-react";
+import { CheckCircle, Mail, ChevronDown } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
 import EmailConfirmation from "./EmailConfirmation";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Checkbox } from "@/components/ui/checkbox";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuCheckboxItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 // Agency data for dropdown - ensure this data is properly initialized and sorted
 const agencies = [
@@ -61,13 +70,28 @@ const agencies = [
   { name: "Vital", acronym: "VITAL" }
 ].sort((a, b) => a.name.localeCompare(b.name));
 
+// Service type options
+const serviceTypes = [
+  { value: "audit-planning", label: "Audit Planning" },
+  { value: "ict-system-audit", label: "ICT System Audit (Thermatic)" },
+  { value: "secret-system-audit", label: "Secret System Audit" },
+  { value: "ccop-audit", label: "CCOP Audit" },
+  { value: "data-analytics", label: "Data Analytics" },
+  { value: "pre-implementation-review", label: "Pre-Implementation Review" },
+  { value: "integrated-audit", label: "Integrated Audit" },
+  { value: "sudo-configurations", label: "Sudo Configurations" },
+  { value: "third-party-management-audit", label: "Third Party Management Audit (ITSM/ Exit)" },
+  { value: "others", label: "Others" }
+];
+
 const initialFormState = {
   name: "",
   email: "",
   agency: "",
+  otherAgency: "",
   department: "",
   phone: "",
-  serviceType: "",
+  serviceTypes: [],
   otherServiceType: "",
   message: "",
   systemCriticality: "",
@@ -81,6 +105,15 @@ const QuoteForm = () => {
   const [formState, setFormState] = useState(initialFormState);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [sendConfirmation, setSendConfirmation] = useState(true);
+  const [validationErrors, setValidationErrors] = useState({
+    agency: false,
+    serviceTypes: false,
+    systemCriticality: false,
+    dataSensitivity: false,
+    internetAccessibility: false,
+    ciiSii: false,
+  });
+  const [selectedServiceTypes, setSelectedServiceTypes] = useState([]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -89,18 +122,42 @@ const QuoteForm = () => {
 
   const handleSelectChange = (field: string, value: string) => {
     setFormState((prev) => ({ ...prev, [field]: value }));
-  };
-
-  const handleServiceChange = (value: string) => {
-    handleSelectChange("serviceType", value);
-    // Reset otherServiceType when a different service type is selected
-    if (value !== "others") {
-      setFormState((prev) => ({ ...prev, otherServiceType: "" }));
+    
+    // Clear validation error when a selection is made
+    if (validationErrors[field]) {
+      setValidationErrors(prev => ({ ...prev, [field]: false }));
     }
   };
 
   const handleAgencyChange = (value: string) => {
-    handleSelectChange("agency", value);
+    // Reset otherAgency if the selected agency is not "other"
+    if (value !== "other") {
+      setFormState((prev) => ({ ...prev, agency: value, otherAgency: "" }));
+    } else {
+      setFormState((prev) => ({ ...prev, agency: value }));
+    }
+    
+    setValidationErrors(prev => ({ ...prev, agency: false }));
+  };
+
+  const handleServiceTypeChange = (value: string, checked: boolean) => {
+    let updatedServiceTypes = [...formState.serviceTypes];
+    
+    if (checked) {
+      updatedServiceTypes.push(value);
+    } else {
+      updatedServiceTypes = updatedServiceTypes.filter(type => type !== value);
+    }
+    
+    setFormState(prev => ({ ...prev, serviceTypes: updatedServiceTypes }));
+    setSelectedServiceTypes(updatedServiceTypes);
+    
+    // Reset otherServiceType if "others" is not selected
+    if (!updatedServiceTypes.includes("others")) {
+      setFormState(prev => ({ ...prev, otherServiceType: "" }));
+    }
+    
+    setValidationErrors(prev => ({ ...prev, serviceTypes: false }));
   };
 
   const handleSystemCriticalityChange = (value: string) => {
@@ -119,9 +176,48 @@ const QuoteForm = () => {
     handleSelectChange("ciiSii", value);
   };
 
+  const getSelectedServiceLabels = () => {
+    return formState.serviceTypes.map(value => {
+      const service = serviceTypes.find(type => type.value === value);
+      return service ? service.label : "";
+    }).filter(Boolean).join(", ");
+  };
+
+  const validateForm = () => {
+    const errors = {
+      agency: !formState.agency || (formState.agency === "other" && !formState.otherAgency),
+      serviceTypes: formState.serviceTypes.length === 0,
+      systemCriticality: !formState.systemCriticality,
+      dataSensitivity: !formState.dataSensitivity,
+      internetAccessibility: !formState.internetAccessibility,
+      ciiSii: !formState.ciiSii,
+    };
+    
+    setValidationErrors(errors);
+    
+    return !Object.values(errors).some(hasError => hasError);
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formState);
+    
+    if (!validateForm()) {
+      toast({
+        title: "Please complete all required fields",
+        description: "Some required fields are missing. Please check the form for alerts.",
+        variant: "destructive",
+      });
+      return;
+    }
+    
+    // Prepare data for submission
+    const submissionData = {
+      ...formState,
+      // Use otherAgency as the agency name if "other" is selected
+      agency: formState.agency === "other" ? formState.otherAgency : formState.agency,
+    };
+    
+    console.log("Form submitted:", submissionData);
     console.log("Send confirmation email:", sendConfirmation);
     
     // In a real app, you would send this data to your server
@@ -145,6 +241,15 @@ const QuoteForm = () => {
     setFormState(initialFormState);
     setSendConfirmation(true);
     setIsSubmitted(false);
+    setSelectedServiceTypes([]);
+    setValidationErrors({
+      agency: false,
+      serviceTypes: false,
+      systemCriticality: false,
+      dataSensitivity: false,
+      internetAccessibility: false,
+      ciiSii: false,
+    });
   };
 
   if (isSubmitted) {
@@ -173,8 +278,8 @@ const QuoteForm = () => {
               <EmailConfirmation 
                 name={formState.name} 
                 email={formState.email} 
-                agency={formState.agency} 
-                serviceType={formState.serviceType} 
+                agency={formState.agency === "other" ? formState.otherAgency : formState.agency} 
+                serviceType={getSelectedServiceLabels()} 
               />
             </div>
           </div>
@@ -209,6 +314,7 @@ const QuoteForm = () => {
             onChange={handleChange}
           />
         </div>
+        
         <div className="space-y-2">
           <Label htmlFor="agency">Agency</Label>
           <Select onValueChange={handleAgencyChange} value={formState.agency}>
@@ -224,9 +330,40 @@ const QuoteForm = () => {
                   </div>
                 </SelectItem>
               ))}
+              <SelectItem value="other">
+                <div className="flex flex-col">
+                  <span>Other</span>
+                  <span className="text-xs text-gray-500">Not in the list</span>
+                </div>
+              </SelectItem>
             </SelectContent>
           </Select>
+          {validationErrors.agency && (
+            <Alert variant="destructive" className="mt-2 py-2">
+              <AlertDescription>Please select an agency</AlertDescription>
+            </Alert>
+          )}
+          
+          {formState.agency === "other" && (
+            <div className="mt-2">
+              <Input
+                id="otherAgency"
+                name="otherAgency"
+                placeholder="Enter agency name"
+                value={formState.otherAgency}
+                onChange={handleChange}
+                className="mt-1"
+                required={formState.agency === "other"}
+              />
+              {formState.agency === "other" && validationErrors.agency && !formState.otherAgency && (
+                <Alert variant="destructive" className="mt-2 py-2">
+                  <AlertDescription>Please enter agency name</AlertDescription>
+                </Alert>
+              )}
+            </div>
+          )}
         </div>
+        
         <div className="space-y-2">
           <Label htmlFor="department">Department</Label>
           <Input
@@ -237,6 +374,7 @@ const QuoteForm = () => {
             onChange={handleChange}
           />
         </div>
+        
         <div className="space-y-2">
           <Label htmlFor="phone">Phone Number</Label>
           <Input
@@ -247,27 +385,37 @@ const QuoteForm = () => {
             onChange={handleChange}
           />
         </div>
+        
         <div className="space-y-2">
-          <Label htmlFor="serviceType">Service Type</Label>
-          <Select onValueChange={handleServiceChange} value={formState.serviceType}>
-            <SelectTrigger>
-              <SelectValue placeholder="Select a service type" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="audit-planning">Audit Planning</SelectItem>
-              <SelectItem value="ict-system-audit">ICT System Audit (Thermatic)</SelectItem>
-              <SelectItem value="secret-system-audit">Secret System Audit</SelectItem>
-              <SelectItem value="ccop-audit">CCOP Audit</SelectItem>
-              <SelectItem value="data-analytics">Data Analytics</SelectItem>
-              <SelectItem value="pre-implementation-review">Pre-Implementation Review</SelectItem>
-              <SelectItem value="integrated-audit">Integrated Audit</SelectItem>
-              <SelectItem value="sudo-configurations">Sudo Configurations</SelectItem>
-              <SelectItem value="third-party-management-audit">Third Party Management Audit (ITSM/ Exit)</SelectItem>
-              <SelectItem value="others">Others</SelectItem>
-            </SelectContent>
-          </Select>
+          <Label htmlFor="serviceTypes">Service Type</Label>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="outline" className="w-full justify-between">
+                {formState.serviceTypes.length > 0 
+                  ? `${formState.serviceTypes.length} selected` 
+                  : "Select service types"}
+                <ChevronDown className="ml-2 h-4 w-4" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="w-full min-w-[200px]">
+              {serviceTypes.map((service) => (
+                <DropdownMenuCheckboxItem
+                  key={service.value}
+                  checked={formState.serviceTypes.includes(service.value)}
+                  onCheckedChange={(checked) => handleServiceTypeChange(service.value, checked)}
+                >
+                  {service.label}
+                </DropdownMenuCheckboxItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
+          {validationErrors.serviceTypes && (
+            <Alert variant="destructive" className="mt-2 py-2">
+              <AlertDescription>Please select at least one service type</AlertDescription>
+            </Alert>
+          )}
           
-          {formState.serviceType === "others" && (
+          {formState.serviceTypes.includes("others") && (
             <div className="mt-2">
               <Label htmlFor="otherServiceType" className="text-sm">Please specify</Label>
               <Textarea
@@ -276,7 +424,7 @@ const QuoteForm = () => {
                 placeholder="Please specify the service type"
                 value={formState.otherServiceType}
                 onChange={handleChange}
-                required
+                required={formState.serviceTypes.includes("others")}
                 className="mt-1"
                 rows={6}
                 maxLength={3000}
@@ -300,6 +448,11 @@ const QuoteForm = () => {
               <SelectItem value="secret">Secret</SelectItem>
             </SelectContent>
           </Select>
+          {validationErrors.systemCriticality && (
+            <Alert variant="destructive" className="mt-2 py-2">
+              <AlertDescription>Please select system criticality level</AlertDescription>
+            </Alert>
+          )}
         </div>
         <div className="space-y-2">
           <Label htmlFor="dataSensitivity">Data Sensitivity</Label>
@@ -313,6 +466,11 @@ const QuoteForm = () => {
               <SelectItem value="sensitive-high">Sensitive High</SelectItem>
             </SelectContent>
           </Select>
+          {validationErrors.dataSensitivity && (
+            <Alert variant="destructive" className="mt-2 py-2">
+              <AlertDescription>Please select data sensitivity level</AlertDescription>
+            </Alert>
+          )}
         </div>
       </div>
 
@@ -331,6 +489,11 @@ const QuoteForm = () => {
               <SelectItem value="internet-accessible">Internet Accessible</SelectItem>
             </SelectContent>
           </Select>
+          {validationErrors.internetAccessibility && (
+            <Alert variant="destructive" className="mt-2 py-2">
+              <AlertDescription>Please select internet accessibility level</AlertDescription>
+            </Alert>
+          )}
         </div>
         <div className="space-y-2">
           <Label htmlFor="ciiSii">CII/SII Classification</Label>
@@ -345,6 +508,11 @@ const QuoteForm = () => {
               <SelectItem value="not-applicable">Not Applicable</SelectItem>
             </SelectContent>
           </Select>
+          {validationErrors.ciiSii && (
+            <Alert variant="destructive" className="mt-2 py-2">
+              <AlertDescription>Please select CII/SII classification</AlertDescription>
+            </Alert>
+          )}
         </div>
       </div>
 
@@ -361,11 +529,10 @@ const QuoteForm = () => {
       </div>
 
       <div className="flex items-center space-x-2">
-        <input
-          type="checkbox"
+        <Checkbox
           id="sendConfirmation"
           checked={sendConfirmation}
-          onChange={() => setSendConfirmation(!sendConfirmation)}
+          onCheckedChange={(checked) => setSendConfirmation(!!checked)}
           className="h-4 w-4 rounded border-gray-300 text-primary"
         />
         <Label htmlFor="sendConfirmation" className="text-sm">
