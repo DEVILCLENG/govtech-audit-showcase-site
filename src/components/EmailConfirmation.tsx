@@ -15,7 +15,7 @@ const EmailConfirmation: React.FC<EmailConfirmationProps> = ({ name, email, agen
     <div className="email-template">
       <div style={{ maxWidth: '600px', margin: '0 auto', padding: '20px', fontFamily: 'Arial, sans-serif' }}>
         <div style={{ textAlign: 'center', padding: '20px 0', borderBottom: '1px solid #eee' }}>
-          <h1 style={{ color: '#333', margin: '0' }}>Quote Request Confirmation</h1>
+          <h1 style={{ color: '#333', margin: '0' }}>Quote Request Acknowledgement</h1>
         </div>
         
         <div style={{ padding: '20px 0' }}>
@@ -36,8 +36,7 @@ const EmailConfirmation: React.FC<EmailConfirmationProps> = ({ name, email, agen
           
           <p style={{ marginBottom: '20px' }}>
             If you have any urgent questions or need to update your request, please contact us at 
-            <a href="mailto:GOVTECH-IAD-SS@tech.gov.sg" style={{ color: '#0066cc', textDecoration: 'none' }}> GOVTECH-IAD-SS@tech.gov.sg</a> 
-            or call us at (+65) 6211 0888.
+            <a href="mailto:GOVTECH-IAD-SS@tech.gov.sg" style={{ color: '#0066cc', textDecoration: 'none' }}> GOVTECH-IAD-SS@tech.gov.sg</a>.
           </p>
           
           <p>Best regards,</p>
