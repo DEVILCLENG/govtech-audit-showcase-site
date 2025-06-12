@@ -36,7 +36,7 @@ const EmailConfirmation: React.FC<EmailConfirmationProps> = ({ name, email, agen
           
           <p style={{ marginBottom: '20px' }}>
             If you have any urgent questions or need to update your request, please contact us at 
-            <a href="mailto:GOVTECH-IAD-SS@tech.gov.sg" style={{ color: '#0066cc', textDecoration: 'none' }}> GOVTECH-IAD-SS@tech.gov.sg</a>.
+            <a href="mailto:GOVTECH-IAD-SS@tech.gov.sg" style={{ color: '#0066cc', textDecoration: 'none' }}> GOVTECH IAD-SS</a>.
           </p>
           
           <p>Best regards,</p>

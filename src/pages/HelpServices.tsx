@@ -1,3 +1,4 @@
+
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageBanner from "@/components/PageBanner";
@@ -84,7 +85,7 @@ const HelpServices = () => {
                 <div className="space-y-3">
                   <div className="flex items-center">
                     <Mail className="text-primary mr-2" size={16} />
-                    <span className="text-gray-700">govtech-iad-ss@tech.gov.sg</span>
+                    <a href="mailto:govtech-iad-ss@tech.gov.sg" className="text-gray-700 hover:text-primary">GOVTECH IAD-SS</a>
                   </div>
                 </div>
               </div>

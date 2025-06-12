@@ -48,7 +48,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <Mail size={20} />
-                <a href="mailto:govtech-iad-ss@tech.gov.sg" className="text-gray-300 hover:text-white">govtech-iad-ss@tech.gov.sg</a>
+                <a href="mailto:govtech-iad-ss@tech.gov.sg" className="text-gray-300 hover:text-white">GOVTECH IAD-SS</a>
               </div>
             </div>
           </div>

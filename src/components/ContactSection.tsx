@@ -1,10 +1,11 @@
+
 import { Mail, MapPin, Clock } from "lucide-react";
 import { useEffect, useRef } from "react";
 const ContactSection = () => {
   const contactInfo = [{
     icon: Mail,
     title: "Email",
-    content: "govtech-iad-ss@tech.gov.sg",
+    content: "GOVTECH IAD-SS",
     link: "mailto:govtech-iad-ss@tech.gov.sg"
   }, {
     icon: MapPin,
