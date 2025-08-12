@@ -123,11 +123,17 @@ const HelpServices = () => {
                     If you couldn't find the information you're looking for, our team is ready to assist. Get in touch with us for personalized support.
                   </p>
                 </div>
-                <div>
+                <div className="space-y-3">
                   <Button asChild variant="outline">
                     <Link to="/contact" className="flex items-center">
                       <Mail className="mr-2" size={16} />
                       Contact Us
+                    </Link>
+                  </Button>
+                  <Button asChild>
+                    <Link to="/thought-leadership" className="flex items-center">
+                      <BookOpen className="mr-2" size={16} />
+                      Thought Leadership
                     </Link>
                   </Button>
                 </div>

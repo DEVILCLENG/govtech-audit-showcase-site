@@ -12,6 +12,7 @@ import Contact from "./pages/Contact";
 import Quote from "./pages/Quote";
 import AuditorsPortfolio from "./pages/AuditorsPortfolio";
 import HelpServices from "./pages/HelpServices";
+import ThoughtLeadership from "./pages/ThoughtLeadership";
 import OurClients from "./pages/OurClients";
 import NotFound from "./pages/NotFound";
 
@@ -32,6 +33,7 @@ const App = () => (
           <Route path="/quote" element={<Quote />} />
           <Route path="/auditors-portfolio" element={<AuditorsPortfolio />} />
           <Route path="/help-services" element={<HelpServices />} />
+          <Route path="/thought-leadership" element={<ThoughtLeadership />} />
           <Route path="/our-clients" element={<OurClients />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
