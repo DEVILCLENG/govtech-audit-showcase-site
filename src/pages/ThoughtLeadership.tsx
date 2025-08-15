@@ -82,6 +82,44 @@ const ThoughtLeadership = () => {
           backgroundImage="/lovable-uploads/c88091f9-71d1-4c0e-943f-35759205b3fd.png"
         />
 
+        {/* Key Features Section - Moved to banner area */}
+        <section className="py-12 bg-primary text-white">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-2xl font-bold text-center mb-8">Why Our Thought Leadership Matters</h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="text-center">
+                  <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center mx-auto mb-4">
+                    <TrendingUp className="text-white" size={24} />
+                  </div>
+                  <h3 className="font-semibold mb-2 text-white">Data-Driven Insights</h3>
+                  <p className="text-white/90 text-sm">
+                    Analytics and metrics that inform better audit decisions
+                  </p>
+                </div>
+                <div className="text-center">
+                  <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center mx-auto mb-4">
+                    <Lightbulb className="text-white" size={24} />
+                  </div>
+                  <h3 className="font-semibold mb-2 text-white">Innovation Focus</h3>
+                  <p className="text-white/90 text-sm">
+                    Emerging technologies and methodologies for modern auditing
+                  </p>
+                </div>
+                <div className="text-center">
+                  <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center mx-auto mb-4">
+                    <Users className="text-white" size={24} />
+                  </div>
+                  <h3 className="font-semibold mb-2 text-white">Collaborative Approach</h3>
+                  <p className="text-white/90 text-sm">
+                    Shared knowledge and best practices across audit teams
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Introduction Section */}
         <section className="py-12 bg-white">
           <div className="container mx-auto px-4">
@@ -127,43 +165,6 @@ const ThoughtLeadership = () => {
           </div>
         </section>
 
-        {/* Key Features Section */}
-        <section className="py-12 bg-gray-50">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-2xl font-bold text-center mb-8">Why Our Thought Leadership Matters</h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="text-center">
-                  <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-4">
-                    <TrendingUp className="text-blue-600" size={24} />
-                  </div>
-                  <h3 className="font-semibold mb-2">Data-Driven Insights</h3>
-                  <p className="text-gray-600 text-sm">
-                    Analytics and metrics that inform better audit decisions
-                  </p>
-                </div>
-                <div className="text-center">
-                  <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4">
-                    <Lightbulb className="text-green-600" size={24} />
-                  </div>
-                  <h3 className="font-semibold mb-2">Innovation Focus</h3>
-                  <p className="text-gray-600 text-sm">
-                    Emerging technologies and methodologies for modern auditing
-                  </p>
-                </div>
-                <div className="text-center">
-                  <div className="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center mx-auto mb-4">
-                    <Users className="text-purple-600" size={24} />
-                  </div>
-                  <h3 className="font-semibold mb-2">Collaborative Approach</h3>
-                  <p className="text-gray-600 text-sm">
-                    Shared knowledge and best practices across audit teams
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* Call to Action */}
         <section className="py-12 bg-primary text-white">
