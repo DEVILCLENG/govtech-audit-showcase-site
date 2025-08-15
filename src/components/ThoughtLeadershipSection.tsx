@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Brain, ArrowRight } from "lucide-react";
+import thoughtLeadershipHero from "@/assets/thought-leadership-hero.jpg";
 
 const ThoughtLeadershipSection = () => {
   return (
@@ -43,7 +44,7 @@ const ThoughtLeadershipSection = () => {
             <div className="relative">
               <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
                 <img 
-                  src="/lovable-uploads/c88091f9-71d1-4c0e-943f-35759205b3fd.png"
+                  src={thoughtLeadershipHero}
                   alt="Central Internal Audit Department - Professional thought leadership and methodologies"
                   className="w-full h-full object-cover"
                 />
