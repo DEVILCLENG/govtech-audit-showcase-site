@@ -76,12 +76,6 @@ const ThoughtLeadership = () => {
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-grow pt-16">
-        <PageBanner 
-          title="Thought Leadership"
-          description="Professional resources and methodologies for central internal audit excellence"
-          backgroundImage="/lovable-uploads/c88091f9-71d1-4c0e-943f-35759205b3fd.png"
-        />
-
         {/* Key Features Section - Moved to banner area */}
         <section className="py-12 bg-primary text-white">
           <div className="container mx-auto px-4">
