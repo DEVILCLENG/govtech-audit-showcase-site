@@ -131,9 +131,9 @@ const HelpServices = () => {
                     </Link>
                   </Button>
                   <Button asChild>
-                    <Link to="/thought-leadership" className="flex items-center">
+                    <Link to="/quote" className="flex items-center">
                       <BookOpen className="mr-2" size={16} />
-                      Thought Leadership
+                      Request Quote
                     </Link>
                   </Button>
                 </div>
