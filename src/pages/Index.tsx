@@ -7,6 +7,7 @@ import FeaturedStats from "@/components/FeaturedStats";
 import TestimonialSection from "@/components/TestimonialSection";
 import CallToAction from "@/components/CallToAction";
 import BackgroundSection from "@/components/BackgroundSection";
+import ThoughtLeadershipSection from "@/components/ThoughtLeadershipSection";
 
 const Index = () => {
   return (
@@ -17,6 +18,7 @@ const Index = () => {
         <FeaturedStats />
         <BackgroundSection />
         <BenefitSection />
+        <ThoughtLeadershipSection />
         <TestimonialSection />
         <CallToAction />
       </main>
