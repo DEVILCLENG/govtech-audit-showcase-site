@@ -25,7 +25,7 @@ const Hero = () => {
               At Shared Services, we are uncovering cybersecurity gaps by pushing the boundaries out from conventional compliance audit methodology to out-of-box. Our turn-key service encompasses customised audit planning for Agencies, leveraging on WOG central and AI tools for detection and risk hunting across Cloud, on-prem to user endpoints. Enabling Agencies to prevent potential vulnerabilities instead of fire-fighting.
             </p>
             <h1 className="text-3xl md:text-4xl lg:text-5xl leading-tight text-black my-0 text-center py-[20px] xl:text-4xl font-bold">
-              One Intelligent Service. Three Reasons to Believe
+              One Intelligent Service. Two Reasons to Believe
             </h1>
           </div>
         </div>
