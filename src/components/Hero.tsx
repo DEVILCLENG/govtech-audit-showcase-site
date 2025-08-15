@@ -6,12 +6,8 @@ const Hero = () => {
     description: "IAD-SS sets the standard for innovative audit methodology with risk-based approach uncovering visibility of what's on your network and control enabling Agencies to focus on vulnerable areas within your systems to autonomously prevent, detect, and recover from threats."
   }, {
     icon: Award,
-    title: "Recognition & Results",
-    description: "IAD-SS is a proud Audit Leader in GovTech being recognized by Agencies for our innovative audit skills and delication to aid them uncovering lapses there were never being disovered."
-  }, {
-    icon: BarChart,
-    title: "Measurable, Performance Advantage",
-    description: "IAD-SS is committed to the success of our Agencies with at least 98% satisfaction rate and seamless service engagement and hassle-free security clearance required by Agencies."
+    title: "Thought Leadership",
+    description: "Access comprehensive audit methodologies, tools, insights, and frameworks designed specifically for government and enterprise internal audit functions combining industry best practices with practical implementation guidance."
   }];
   return <div className="bg-[#D3E4FD] text-black min-h-[600px] flex items-center pt-16">
       <div className="container mx-auto px-4 py-12">
@@ -30,7 +26,7 @@ const Hero = () => {
           </div>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {keyPoints.map((point, index) => <div key={index} className="bg-white p-6 rounded-lg shadow-md flex flex-col items-center">
               <div className="bg-primary/10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-4">
                 <point.icon size={32} className="text-black" />
